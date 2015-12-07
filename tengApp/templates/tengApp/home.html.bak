@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="ie ie9" lang="en-US">
+<![endif]-->
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<title>Innovation - Constuction HTML Template</title>
+
+
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	
+
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/flexslider.css">
+	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" href="assets/css/simple-line-icons.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/icon-font.css">
+	<link rel="stylesheet" href="assets/css/flat-icon.css">
+	<link rel="stylesheet" href="assets/css/innovation.css">
+
+	<link rel="stylesheet" href="assets/rs-plugin/css/settings.css">
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+	
+	<div class="sidebar-menu-container" id="sidebar-menu-container">
+
+		<div class="sidebar-menu-push">
+
+			<div class="sidebar-menu-overlay"></div>
+
+			<div class="sidebar-menu-inner">
+
+				<div id="sub-header">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="left-info">
+									<ul>
+										<li><i class="fa fa-phone"></i>646-325-0357</li>
+										<li><i class="fa fa-envelope-o"></i>innovation@domain.com</li>
+										<li><i class="fa fa-clock-o"></i>Mon - Sat : 08:00 - 18:00</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="social-icons">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-behance"></i></a></li>
+										<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<header class="site-header">
+					<div id="main-header" class="main-header header-sticky">
+						<div class="inner-header container clearfix">
+							<div class="logo">
+								<a href="index.html"><img src="assets/images/logo.png" alt=""></a>
+							</div>
+							<div class="header-right-toggle pull-right hidden-md hidden-lg">
+								<a href="javascript:void(0)" class="side-menu-button"><i class="fa fa-bars"></i></a>
+							</div>
+							<nav class="main-navigation text-right hidden-xs hidden-sm">
+								<ul>
+									<li><a href="index.html" class="has-submenu">Home</a>
+										<ul class="sub-menu">
+											<li><a href="index.html">Homepage 1</a></li>
+											<li><a href="homepage-2.html">Homepage 2</a></li>
+											<li><a href="homepage-3.html">Homepage 3</a></li>
+											<li><a href="homepage-4.html">Homepage 4</a></li>
+											<li><a href="homepage-5.html">Homepage 5</a></li>
+										</ul>
+									</li>
+									<li><a href="#" class="has-submenu">Pages</a>
+										<ul class="sub-menu">
+											<li><a href="about.html">About Us</a></li>
+											<li><a href="contact.html">Contact Us</a></li>
+											<li><a href="404.html">404 Error Page</a></li>
+											<li><a href="coming.html">Coming Soon</a></li>
+										</ul>
+									</li>
+									<li><a href="#" class="has-submenu">Our Services</a>
+										<ul class="sub-menu">
+											<li><a href="services-listing.html">Services Listing</a></li>
+											<li><a href="construction.html">Construction</a></li>
+											<li><a href="isolation.html">Isolation</a></li>
+											<li><a href="renovation.html">Renovation</a></li>
+											<li><a href="electric-welding.html">Electric Welding</a></li>
+											<li><a href="sawn-stone.html">Sawn Stone</a></li>
+										</ul>
+									</li>
+									<li><a href="#" class="has-submenu">Our Projects</a>
+										<ul class="sub-menu">
+											<li><a href="projects.html">Projects Listing</a></li>
+											<li><a href="projects-3-grids.html">3 Columns Grids</a></li>
+											<li><a href="projects-3-full.html">3 Columns Full</a></li>
+											<li><a href="projects-4-grids.html">4 Columns Grids</a></li>
+											<li><a href="projects-4-full.html">4 Columns Full</a></li>
+											<li><a href="single-project.html">Single Project</a></li>
+										</ul>
+									</li>
+									<li><a href="#" class="has-submenu">Blog</a>
+										<ul class="sub-menu">
+											<li><a href="blog-right.html">Blog Classic</a></li>
+											<li><a href="blog-grid.html">Blog Grids</a></li>
+											<li><a href="grid-right.html">Grids Sidebar</a></li>
+											<li><a href="single-blog.html">Single Post</a></li>
+										</ul>
+									</li>
+									<li><a href="contact.html">Contact</a></li>
+									<li>
+										<p><a href="#" id="example-show" class="showLink" onclick="showHide('example');return false;"><i class="fa fa-search"></i></a></p>
+										<div id="example" class="more">
+											<form method="get" id="blog-search" class="blog-search">
+												<input type="text" class="blog-search-field" name="s" placeholder="Type to search" value="">
+											</form>
+											<p><a href="#" id="example-hide" class="hideLink" 
+											onclick="showHide('example');return false;"><i class="
+											fa fa-close"></i></a></p>
+										</div>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+
+				<div class="slider">
+					<div class="fullwidthbanner-container">
+						<div class="fullwidthbanner">
+							<ul>
+								<li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
+									<img src="assets/images/01-slide.jpg" data-fullwidthcentering="on" alt="slide">
+									<div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">This is Innovation<br>Construction</div>
+									<div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
+									<div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Donec gravida ex lacus, vitae ultrices urna blandit vitae. Pellentesque cursus neque<br> urna at vulputate nunc rutrum ut morbi</div>
+									<div class="tp-caption first-banner-button sfb tp-resizeme start container" data-x="left" data-hoffset="0" data-y="450" data-speed="1000" data-start="2200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><a href="#">Contact Us</a></div>
+								</li>
+								<li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
+									<img src="assets/images/02-slide.jpg" data-fullwidthcentering="on" alt="slide">
+									<div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Construction Template<br>Innovation</div>
+									<div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
+									<div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Donec gravida ex lacus, vitae ultrices urna blandit vitae. Pellentesque cursus neque<br> urna at vulputate nunc rutrum ut morbi</div>
+									<div class="tp-caption first-banner-button sfb tp-resizeme start container" data-x="left" data-hoffset="0" data-y="450" data-speed="1000" data-start="2200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><a href="#">Contact Us</a></div>
+								</li>
+								<li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
+									<img src="assets/images/03-slide.jpg" data-fullwidthcentering="on" alt="slide">
+									<div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Creative &amp; Unique<br>Teamplate</div>
+									<div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
+									<div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Donec gravida ex lacus, vitae ultrices urna blandit vitae. Pellentesque cursus neque<br> urna at vulputate nunc rutrum ut morbi</div>
+									<div class="tp-caption first-banner-button sfb tp-resizeme start container" data-x="left" data-hoffset="0" data-y="450" data-speed="1000" data-start="2200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><a href="#">Contact Us</a></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="cta-1">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1">
+								<div class="cta-content">
+									<h6>We are the Expert on this Field, Better Building Solutions Since 1984</h6>
+									<div class="buttons">
+										<div class="border-button learn">
+											<a href="#">Learn More</a>
+										</div>
+										<div class="border-button buy">
+											<a href="#">Buy Now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<section class="services">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="service-item">
+									<img src="assets/images/01-service.jpg" alt="">
+									<h4>Modern Design</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia. Fusce eleifend turpis in dapibus faucibus vestibulum.</p>
+									<a href="#">Read More</a>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="service-item">
+									<img src="assets/images/02-service.jpg" alt="">
+									<h4>Construction Managment</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia. Fusce eleifend turpis in dapibus faucibus vestibulum.</p>
+									<a href="#">Read More</a>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="service-item">
+									<img src="assets/images/03-service.jpg" alt="">
+									<h4>General Contractor</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla cursus pharetra massa at lacinia. Fusce eleifend turpis in dapibus faucibus vestibulum.</p>
+									<a href="#">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="recent-projects">
+					<div class="container">
+						<div class="row">
+							<div class="section-heading col-md-6">
+								<h2>Recent Projects</h2>
+								<div class="line-dec"></div>
+							</div>
+						</div>
+						<div class="group text-right">
+							<span class="btn filter active" data-filter="all">All Projects</span>
+							<span class="btn filter" data-filter=".category-1">Interior Design</span>
+							<span class="btn filter" data-filter=".category-2">Buildings</span>
+							<span class="btn filter" data-filter=".category-3">Constructions</span>
+							<span class="btn filter" data-filter=".category-4">Isolations</span>
+						</div>
+						<div class="row">
+							<div class="projects">
+								<div id="owl-recent">
+								    <div class="mix category-1 category-2 category-3 category-4">
+								    	<div class="thumb-holder">
+								  			<a href="single-project.html"><img src="assets/images/01-recent.jpg" alt=""></a>
+								  			<div class="thumb-content">
+								  				<div class="thumb-link">
+								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
+								  				</div>
+								  				<div class="thumb-text">
+									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
+								  				</div>
+								  			</div>
+								  		</div>
+								    </div>
+								    <div class="mix category-2">
+								    	<div class="thumb-holder">
+								  			<a href="single-project.html"><img src="assets/images/02-recent.jpg" alt=""></a>
+								  			<div class="thumb-content">
+								  				<div class="thumb-link">
+								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
+								  				</div>
+								  				<div class="thumb-text">
+									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
+								  				</div>
+								  			</div>
+								  		</div>
+								    </div>
+								    <div class="mix category-3 category-4">
+								    	<div class="thumb-holder">
+								  			<a href="single-project.html"><img src="assets/images/03-recent.jpg" alt=""></a>
+								  			<div class="thumb-content">
+								  				<div class="thumb-link">
+								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
+								  				</div>
+								  				<div class="thumb-text">
+									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
+								  				</div>
+								  			</div>
+								  		</div>
+								    </div>
+								    <div class="mix category-4 category-1">
+								    	<div class="thumb-holder">
+								  			<a href="single-project.html"><img src="assets/images/04-recent.jpg" alt=""></a>
+								  			<div class="thumb-content">
+								  				<div class="thumb-link">
+								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
+								  				</div>
+								  				<div class="thumb-text">
+									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
+								  				</div>
+								  			</div>
+								  		</div>
+								    </div>
+								    <div class="mix category-3 category-4">
+								    	<div class="thumb-holder">
+								  			<a href="single-project.html"><img src="assets/images/05-recent.jpg" alt=""></a>
+								  			<div class="thumb-content">
+								  				<div class="thumb-link">
+								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
+								  				</div>
+								  				<div class="thumb-text">
+									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
+								  				</div>
+								  			</div>
+								  		</div>
+								    </div>
+								    <div class="mix category-2 category-3">
+								    	<div class="thumb-holder">
+								  			<a href="single-project.html"><img src="assets/images/06-recent.jpg" alt=""></a>
+								  			<div class="thumb-content">
+								  				<div class="thumb-link">
+								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
+								  				</div>
+								  				<div class="thumb-text">
+									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
+								  				</div>
+								  			</div>
+								  		</div>
+								    </div>
+								    <div class="mix category-1 category-4">
+								    	<div class="thumb-holder">
+								  			<a href="single-project.html"><img src="assets/images/07-recent.jpg" alt=""></a>
+								  			<div class="thumb-content">
+								  				<div class="thumb-link">
+								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
+								  				</div>
+								  				<div class="thumb-text">
+									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
+								  				</div>
+								  			</div>
+								  		</div>
+							  		</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<div id="tabs-info">
+					<div class="container">	
+						<div class="row">
+							<div class="col-md-9">
+								<div class="tabs">
+								    <ul class="tab-links">
+								        <li class="active">
+									        <a href="#tab1">
+									        	<span>Construction</span>
+									        	<i class="right-bg"></i>
+									        </a>
+								        </li>
+								        <li>
+								        	<a href="#tab2">
+									        	<i class="left-bg"></i>
+									        	<span>Renovation</span>
+									        	<i class="right-bg"></i>
+									        </a>
+								        </li>
+								        <li>
+								        	<a href="#tab3">
+									        	<i class="left-bg"></i>
+									        	<span>Isolation</span>
+									        	<i class="right-bg"></i>
+									        </a>
+								        </li>
+								        <li class="hidden-sm hidden-xs">
+								        	<a href="#tab4">
+									        	<i class="left-bg"></i>
+									        	<span>Planning</span>
+									        	<i class="right-bg"></i>
+									        </a>
+								        </li>
+								    </ul>
+								    <div class="tab-content">
+								        <div id="tab1" class="tab active">
+								        	<img src="assets/images/01-tab-content.jpg" alt="">
+								        	<div class="text-content">
+								        		<h2>Construction Tools</h2>
+								            	<p>Mauris eu lacus finibus, pharetra libero vel, rhoncus nunc suspend issue felis purus, pharetra non nibh eu, aliquam interdum lectus. Proin tempus vitae justo vitae dictum. In tincidunt nec est id euismod. Nullam ac nisl id urna euismod sodales.<br><br>Sed consectetur erat libero <em>vehicula consequat enim</em> commodo bibendum aenean luctus felis in magna aliquet.</p>
+								        	</div>
+								        </div>								 
+								        <div id="tab2" class="tab">
+								            <img src="assets/images/02-tab-content.jpg" alt="">
+								        	<div class="text-content">
+								        		<h2>Renovation Needed</h2>
+								            	<p>Mauris eu lacus finibus, pharetra libero vel, rhoncus nunc suspend issue felis purus, pharetra non nibh eu, aliquam interdum lectus. Proin tempus vitae justo vitae dictum. In tincidunt nec est id euismod. Nullam ac nisl id urna euismod sodales.<br><br>Sed consectetur erat libero <em>vehicula consequat enim</em> commodo bibendum aenean luctus felis in magna aliquet.</p>
+								        	</div>
+								        </div>							 
+								        <div id="tab3" class="tab">
+								            <img src="assets/images/03-tab-content.jpg" alt="">
+								        	<div class="text-content">
+								        		<h2>Isolation Explore</h2>
+								            	<p>Mauris eu lacus finibus, pharetra libero vel, rhoncus nunc suspend issue felis purus, pharetra non nibh eu, aliquam interdum lectus. Proin tempus vitae justo vitae dictum. In tincidunt nec est id euismod. Nullam ac nisl id urna euismod sodales.<br><br>Sed consectetur erat libero <em>vehicula consequat enim</em> commodo bibendum aenean luctus felis in magna aliquet.</p>
+								        	</div>
+								        </div>
+								        <div id="tab4" class="tab">
+								            <img src="assets/images/04-tab-content.jpg" alt="">
+								        	<div class="text-content">
+								        		<h2>Planing Buildings</h2>
+								            	<p>Mauris eu lacus finibus, pharetra libero vel, rhoncus nunc suspend issue felis purus, pharetra non nibh eu, aliquam interdum lectus. Proin tempus vitae justo vitae dictum. In tincidunt nec est id euismod. Nullam ac nisl id urna euismod sodales.<br><br>Sed consectetur erat libero <em>vehicula consequat enim</em> commodo bibendum aenean luctus felis in magna aliquet.</p>
+								        	</div>
+								        </div>
+								    </div>
+								</div>
+							</div>
+							<div class="col-md-3 hidden-sm hidden-xs">
+								<div class="right-tab">
+									<img src="assets/images/01-right-tab.jpg" alt="">
+									<img src="assets/images/02-right-tab.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<section class="our-services">
+					<div class="container">
+						<div class="row">
+							<div class="section-heading col-md-12">
+								<h2>Our Services</h2>
+								<div class="line-dec"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item text-center">
+									<div class="flipper">
+										<div class="front">
+											<i class="flaticon-hammer38"></i>
+											<h2>Hammer</h2>
+										</div>
+										<div class="back">
+											<h2>Hammer</h2>
+											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item text-center">
+									<div class="flipper">
+										<div class="front">
+											<i class="flaticon-remote6"></i>
+											<h2>Plumbing</h2>
+										</div>
+										<div class="back">
+											<h2>Plumbing</h2>
+											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item text-center">
+									<div class="flipper">
+										<div class="front">
+											<i class="flaticon-astronaut"></i>
+											<h2>Constructor</h2>
+										</div>
+										<div class="back">
+											<h2>Constructor</h2>
+											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="service-item text-center">
+									<div class="flipper">
+										<div class="front">
+											<i class="flaticon-power30"></i>
+											<h2>Power</h2>
+										</div>
+										<div class="back">
+											<h2>Power</h2>
+											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="testimonials">
+					<div class="container">
+						<div class="row">
+							<div class="section-heading col-md-12 text-center">
+								<h2>Testimonial</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2">
+								<div class="testimonials-slider">
+									<ul class="slides">
+									    <li data-thumb="assets/images/01-testimonial.png">
+									      <div class="item">
+												<i class="fa fa-quote-left"></i>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sequi nostrum labore temporibus ex odio dolorem laboriosam cumque animi tempore. Dolor quas minima ullam autem quia!</p>
+												<h4>Delvina G. Sampson</h4>
+												<span>Web Designer</span>
+											</div>
+									    </li>
+									    <li data-thumb="assets/images/02-testimonial.png">
+									      <div class="item">
+												<i class="fa fa-quote-left"></i>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sequi nostrum labore temporibus ex odio dolorem laboriosam cumque animi tempore. Dolor quas minima ullam autem quia!</p>
+												<h4>Andres Statham</h4>
+												<span>Web Designer</span>
+											</div>
+									    </li>
+									    <li data-thumb="assets/images/03-testimonial.png">
+									      <div class="item">
+												<i class="fa fa-quote-left"></i>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad sequi nostrum labore temporibus ex odio dolorem laboriosam cumque animi tempore. Dolor quas minima ullam autem quia!</p>
+												<h4>Maria  Luise</h4>
+												<span>Web Designer</span>
+											</div>
+									    </li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="latest-news">
+					<div class="container">
+						<div class="row">
+							<div class="section-heading col-md-12">
+								<h2>Latest News</h2>
+								<div class="line-dec"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="latest-item">
+									<img src="assets/images/01-blog.jpg" alt="">
+									<div class="down-content">
+										<a href="single-blog.html"><h4>Pellentesque sapien velit</h4></a>
+										<p>In imperdiet tempus nunc, ne hendrerit tortor blan Donec mollis tellus volutpat, porttitor ligula trista. Vesti faucibus risus sit amet risus in</p>
+										<div class="post-info">
+											<ul>
+												<li><em>By: </em><a href="#">Robert Imeri</a></li>
+												<li><a href="single-blog.html">Read More</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="latest-item">
+									<img src="assets/images/02-blog.jpg" alt="">
+									<div class="down-content">
+										<a href="single-blog.html"><h4>Pellentesque sapien velit</h4></a>
+										<p>In imperdiet tempus nunc, ne hendrerit tortor blan Donec mollis tellus volutpat, porttitor ligula trista. Vesti faucibus risus sit amet risus in</p>
+										<div class="post-info">
+											<ul>
+												<li><em>By: </em><a href="#">Robert Imeri</a></li>
+												<li><a href="single-blog.html">Read More</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="latest-item">
+									<img src="assets/images/03-blog.jpg" alt="">
+									<div class="down-content">
+										<a href="single-blog.html"><h4>Pellentesque sapien velit</h4></a>
+										<p>In imperdiet tempus nunc, ne hendrerit tortor blan Donec mollis tellus volutpat, porttitor ligula trista. Vesti faucibus risus sit amet risus in</p>
+										<div class="post-info">
+											<ul>
+												<li><em>By: </em><a href="#">Robert Imeri</a></li>
+												<li><a href="single-blog.html">Read More</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="clients">
+					<div class="container">
+						<div class="row">
+							<div class="section-heading">
+								<h2>Our Clients</h2>
+								<div class="line-dec"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div id="owl-clients">
+									<div class="item">
+										<img src="assets/images/client-1.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-2.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-3.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-4.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-5.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-6.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-3.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-2.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-1.png" alt="">
+									</div>
+									<div class="item">
+										<img src="assets/images/client-4.png" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<footer>
+					<div class="container">
+						<div class="row">
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="about-us">
+									<img src="assets/images/logo-2.png" alt="">
+									<p>Lorem ipsum dolor consectetur adipiscing elit. Donec et dapibus vel uis pretium augue sed metus eleifend acces.<br><br>Vestibulum ultrices fermentum velit, vel tempus augue hendrerit at.</p>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="company-pages">
+									<h2>Compnay Pages</h2>
+									<ul class="first-list">
+										<li><a href="#"><i class="fa fa-angle-double-right"></i>Home</a></li>
+										<li><a href="#"><i class="fa fa-angle-double-right"></i>Services</a></li>
+										<li><a href="#"><i class="fa fa-angle-double-right"></i>Projects</a></li>
+										<li><a href="#"><i class="fa fa-angle-double-right"></i>Blog</a></li>
+									</ul>
+									<ul class="second-list">
+										<li><a href="#"><i class="fa fa-angle-double-right"></i>Shortcodes</a></li>
+										<li><a href="#"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="recent-posts">
+									<h2>Recent Projects</h2>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/01-recent-post.jpg" alt=""></a>
+									</div>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/02-recent-post.jpg" alt=""></a>
+									</div>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/03-recent-post.jpg" alt=""></a>
+									</div>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/04-recent-post.jpg" alt=""></a>
+									</div>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/05-recent-post.jpg" alt=""></a>
+									</div>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/06-recent-post.jpg" alt=""></a>
+									</div>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/07-recent-post.jpg" alt=""></a>
+									</div>
+									<div class="recent-item">
+										<a href="#"><img src="assets/images/08-recent-post.jpg" alt=""></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="subscribe-us">
+									<h2>Subscribe</h2>
+									<input type="text" class="email" name="s" placeholder="" value="">
+									<div class="check-box">
+										<input type="checkbox" id="c1" name="cc"/>
+										<label for="c1">I Accept Newsletter terms</label>
+									</div>
+									<div class="accent-button">
+										<a href="#">Subscribe</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</footer>
+
+				<div id="sub-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								<p>Innovation @ All rights reserved.</p>
+							</div>
+							<div class="col-md-6">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-behance"></i></a></li>
+									<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+									<li><a href="#"><i class="fa fa-google"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+			</div>
+
+		</div>
+
+		<nav class="sidebar-menu slide-from-left">
+			<div class="nano">
+				<div class="content">
+					<nav class="responsive-menu">
+						<ul>
+							<li class="menu-item-has-children"><a href="#">Home</a>
+								<ul class="sub-menu">
+									<li><a href="index.html">Homepage 1</a></li>
+									<li><a href="homepage-2.html">Homepage 2</a></li>
+									<li><a href="homepage-3.html">Homepage 3</a></li>
+									<li><a href="homepage-4.html">Homepage 4</a></li>
+									<li><a href="homepage-5.html">Homepage 5</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children"><a href="#">Pages</a>
+								<ul class="sub-menu">
+									<li><a href="about.html">About Us</a></li>
+									<li><a href="contact.html">Contact Us</a></li>
+									<li><a href="404.html">404 Error Page</a></li>
+									<li><a href="coming.html">Coming Soon</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children"><a href="#">Our Services</a>
+								<ul class="sub-menu">
+									<li><a href="services-listing.html">Services Listing</a></li>
+									<li><a href="construction.html">Construction</a></li>
+									<li><a href="isolation.html">Isolation</a></li>
+									<li><a href="renovation.html">Renovation</a></li>
+									<li><a href="electric-welding.html">Electric Welding</a></li>
+									<li><a href="sawn-stone.html">Sawn Stone</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children"><a href="#">Our Projects</a>
+								<ul class="sub-menu">
+									<li><a href="projects.html">Projects Listing</a></li>
+									<li><a href="projects-3-grids.html">3 Columns Grids</a></li>
+									<li><a href="projects-3-full.html">3 Columns Full</a></li>
+									<li><a href="projects-4-grids.html">4 Columns Grids</a></li>
+									<li><a href="projects-4-full.html">4 Columns Full</a></li>
+									<li><a href="single-project.html">Single Project</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children"><a href="#">Blog</a>
+								<ul class="sub-menu">
+									<li><a href="blog-right.html">Blog Classic</a></li>
+									<li><a href="blog-grid.html">Blog Grids</a></li>
+									<li><a href="grid-right.html">Grids Sidebar</a></li>
+									<li><a href="single-blog.html">Single Post</a></li>
+								</ul>
+							</li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</nav>
+
+	</div>
+
+
+	
+
+	<script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script src="assets/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="assets/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/plugins.js"></script>
+	<script type="text/javascript" src="assets/js/custom.js"></script>
+
+</body>
+</html>
