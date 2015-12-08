@@ -366,7 +366,7 @@ jQuery( document ).ready(function( $ ) {
 	$('.fullwidthbanner').revolution({
     	delay:6000,
     	startwidth:1170,
-    	startheight:680,
+    	startheight:454,
     	onHoverStop: "off",
     	hideTimerBar: "on",
         thumbWidth: 100,

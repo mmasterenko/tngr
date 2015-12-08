@@ -255,11 +255,12 @@ p {
 }
 .site-header {
   border-bottom: 1px solid #0093ff;
-  background-color: #eeeeee;
+  /*background-color: #eeeeee;*/
+  background-image: url('/static/images/subheader-bckgrnd.png');
 
   position: fixed;
   width: 100%;
-  height: 115px;
+  height: 116px;
   top: 50px;
   left: 0;
   z-index: 9999;
@@ -641,7 +642,7 @@ p {
 }
 .scrolled-header {
   top: 0;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #0092ff;
 }
 .header-right-toggle {
   margin-top: 10px;
@@ -2736,10 +2737,10 @@ section.full-width .section-heading .line-dec {
   background-color: #0093ff;
 }
 #cta-1 .cta-content h6 {
-  margin-top: 15px;
+  margin-top: 9px;
   float: left;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   text-transform: uppercase;
   color: #ffffff;
   letter-spacing: 0.1px;
