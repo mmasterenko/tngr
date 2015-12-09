@@ -56,7 +56,7 @@ body.homepage-5 {
   padding-left: 20px;
 }
 section {
-  padding: 80px 0;
+  padding: 60px 0;
 }
 p {
   font-family: 'Montserrat', sans-serif;
@@ -939,7 +939,7 @@ nav.responsive-menu a {
 }
 footer {
   /*background-image: url(../images/footer-bg.jpg);*/
-  padding: 50px 0px;
+  padding: 60px 0px;
   background-color: #303030;
 }
 footer h2 {
@@ -2352,9 +2352,7 @@ section.full-width .section-heading .line-dec {
   }
 }
 .services .service-item img {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #0092ff;
+  /*width: 100%;*/
 }
 .services .service-item h4 {
   margin-top: 30px;
@@ -3290,12 +3288,12 @@ section.full-width .section-heading .line-dec {
   background: #fff;
 }
 #tabs-info .tab-content img {
-  max-width: 100%;
-  float: left;
-  margin-right: 30px;
-  border: 1px solid #0092ff;
-  padding: 5px;
-  background-color: #fff;
+  /*max-width: 100%;*/
+  /*float: left;*/
+  /*margin-right: 30px;*/
+  /*border: 1px solid #0092ff;*/
+  /*padding: 5px;*/
+  /*background-color: #fff;*/
 }
 @media (max-width: 991px) {
   #tabs-info .tab-content img {
@@ -4071,3 +4069,46 @@ html[xmlns] .flexslider .slides {
   border-right: 1px solid #4d4d4d;
 }
 
+.fsi-frame-348x192 {
+  width: 360px;
+  height: 204px;
+  white-space: nowrap;
+  text-align: center;
+
+  border: 1px solid #0092ff;
+}
+.fsi-img-348x192 {
+  float: none;
+  clear: none;
+  margin: 0;
+  vertical-align: middle;
+  max-width: 348px;
+  max-height: 192px;
+}
+/* ----------------------------------------------- */
+.fsi-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+/* ------------------------------------------------ */
+.fsi-frame-360x270 {
+  width: 372px;
+  height: 282px;
+  white-space: nowrap;
+  text-align: center;
+
+  border: 1px solid #0092ff;
+
+  float: left;
+  margin-right: 30px;
+  background-color: white;
+}
+.fsi-img-360x270 {
+  float: none;
+  clear: none;
+  margin: 0;
+  vertical-align: middle;
+  max-width: 360px;
+  max-height: 270px;
+}
