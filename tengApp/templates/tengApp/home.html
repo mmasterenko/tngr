@@ -52,12 +52,12 @@
 									<ul>
 										<li><i class="fa fa-phone"></i>8(921)999 99 99</li>
 										<li><i class="fa fa-envelope-o"></i><a href="mailto:t-enginiring@teyla.com">t-enginiring@teyla.com</a></li>
-										<!--li><i class="fa fa-clock-o"></i>Mon - Sat : 08:00 - 18:00</li-->
 									</ul>
 								</div>
 							</div>
 							<div class="col-md-6">
-								<!--div class="social-icons">
+								{% comment %}
+                                <div class="social-icons">
 									<ul>
 										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -65,7 +65,8 @@
 										<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 										<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 									</ul>
-								</div-->
+								</div>
+                                {% endcomment %}
 							</div>
 						</div>
 					</div>
@@ -82,52 +83,14 @@
 							</div>
 							<nav class="main-navigation text-right hidden-xs hidden-sm">
 								<ul>
-									<li><a href="index.html" class="has-submenu">ГЛАВНАЯ</a>
-										<ul class="sub-menu">
-											<li><a href="index.html">Menu 1</a></li>
-											<li><a href="homepage-2.html">Menu 2</a></li>
-											<li><a href="homepage-3.html">Menu 3</a></li>
-											<li><a href="homepage-4.html">Menu 4</a></li>
-											<li><a href="homepage-5.html">Menu 5</a></li>
-										</ul>
+									<li><a href="/">ГЛАВНАЯ</a>
 									</li>
-									<li><a href="#" class="has-submenu">ПРОЕКТЫ</a>
-										<ul class="sub-menu">
-											<li><a href="about.html">Menu 1</a></li>
-											<li><a href="contact.html">Menu 2</a></li>
-											<li><a href="404.html">Menu 3</a></li>
-											<li><a href="coming.html">Menu 4</a></li>
-										</ul>
+									<li><a href="/projects" class="">ПРОЕКТЫ</a>
 									</li>
-									<li><a href="#" class="has-submenu">О КОМПАНИИ</a>
-										<ul class="sub-menu">
-											<li><a href="services-listing.html">Menu 1</a></li>
-											<li><a href="construction.html">Menu 2</a></li>
-											<li><a href="isolation.html">Menu 3</a></li>
-											<li><a href="renovation.html">Menu 4</a></li>
-											<li><a href="electric-welding.html">Menu 5</a></li>
-											<li><a href="sawn-stone.html">Menu 6</a></li>
-										</ul>
+									<li><a href="/about" class="">О КОМПАНИИ</a>
 									</li>
-									<li><a href="#" class="has-submenu">Т-БИЗНЕСС ГРУППА</a>
-										<ul class="sub-menu">
-											<li><a href="projects.html">Menu 1</a></li>
-											<li><a href="projects-3-grids.html">Menu 2</a></li>
-											<li><a href="projects-3-full.html">Menu 3</a></li>
-											<li><a href="projects-4-grids.html">Menu 4</a></li>
-											<li><a href="projects-4-full.html">Menu 5</a></li>
-											<li><a href="single-project.html">Menu 6</a></li>
-										</ul>
+									<li><a href="/t-business" class="">Т-БИЗНЕСС ГРУППА</a>
 									</li>
-									<!--li><a href="#" class="has-submenu">Blog</a>
-										<ul class="sub-menu">
-											<li><a href="blog-right.html">Blog Classic</a></li>
-											<li><a href="blog-grid.html">Blog Grids</a></li>
-											<li><a href="grid-right.html">Grids Sidebar</a></li>
-											<li><a href="single-blog.html">Single Post</a></li>
-										</ul>
-									</li-->
-									<!--li><a href="contact.html">Contact</a></li-->
 									<li>
                                         {% comment %}
 										<p><a href="#" id="example-show" class="showLink" onclick="showHide('example');return false;"><i class="fa fa-search"></i></a></p>
@@ -187,16 +150,6 @@
 							<div class="col-md-10 col-md-offset-2">
 								<div class="cta-content">
 									<h6>КОГДА ВАЖНЫ СРОКИ И КАЧЕСТВО ПРОФЕССИОНАЛЫ ОБРАЩАЮТСЯ К НАМ !</h6>
-									{% comment %}
-                                    <div class="buttons">
-										<div class="border-button learn">
-											<a href="#">Learn More</a>
-										</div>
-										<div class="border-button buy">
-											<a href="#">Buy Now</a>
-										</div>
-									</div>
-                                    {% endcomment %}
 								</div>
 							</div>
 						</div>
@@ -880,52 +833,14 @@
 				<div class="content">
 					<nav class="responsive-menu">
 						<ul>
-							<li class="menu-item-has-children"><a href="#">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="homepage-2.html">Homepage 2</a></li>
-									<li><a href="homepage-3.html">Homepage 3</a></li>
-									<li><a href="homepage-4.html">Homepage 4</a></li>
-									<li><a href="homepage-5.html">Homepage 5</a></li>
-								</ul>
+							<li class=""><a href="#">Главная</a>
 							</li>
-							<li class="menu-item-has-children"><a href="#">Pages</a>
-								<ul class="sub-menu">
-									<li><a href="about.html">About Us</a></li>
-									<li><a href="contact.html">Contact Us</a></li>
-									<li><a href="404.html">404 Error Page</a></li>
-									<li><a href="coming.html">Coming Soon</a></li>
-								</ul>
+							<li class=""><a href="#">Проекты</a>
 							</li>
-							<li class="menu-item-has-children"><a href="#">Our Services</a>
-								<ul class="sub-menu">
-									<li><a href="services-listing.html">Services Listing</a></li>
-									<li><a href="construction.html">Construction</a></li>
-									<li><a href="isolation.html">Isolation</a></li>
-									<li><a href="renovation.html">Renovation</a></li>
-									<li><a href="electric-welding.html">Electric Welding</a></li>
-									<li><a href="sawn-stone.html">Sawn Stone</a></li>
-								</ul>
+							<li class=""><a href="#">О компании</a>
 							</li>
-							<li class="menu-item-has-children"><a href="#">Our Projects</a>
-								<ul class="sub-menu">
-									<li><a href="projects.html">Projects Listing</a></li>
-									<li><a href="projects-3-grids.html">3 Columns Grids</a></li>
-									<li><a href="projects-3-full.html">3 Columns Full</a></li>
-									<li><a href="projects-4-grids.html">4 Columns Grids</a></li>
-									<li><a href="projects-4-full.html">4 Columns Full</a></li>
-									<li><a href="single-project.html">Single Project</a></li>
-								</ul>
+							<li class=""><a href="#">Т-Бизнесс группа</a>
 							</li>
-							<li class="menu-item-has-children"><a href="#">Blog</a>
-								<ul class="sub-menu">
-									<li><a href="blog-right.html">Blog Classic</a></li>
-									<li><a href="blog-grid.html">Blog Grids</a></li>
-									<li><a href="grid-right.html">Grids Sidebar</a></li>
-									<li><a href="single-blog.html">Single Post</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
