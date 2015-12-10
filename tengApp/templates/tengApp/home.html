@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>Teyla - Enginiring</title>
+	<title>{% block title %}T-ENG main{% endblock %}</title>
 
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -89,7 +89,7 @@
 									</li>
 									<li><a href="/about" class="">О КОМПАНИИ</a>
 									</li>
-									<li><a href="/t-business" class="">Т-БИЗНЕСС ГРУППА</a>
+									<li><a href="/business-group" class="">Т-БИЗНЕСС ГРУППА</a>
 									</li>
 									<li>
                                         {% comment %}
@@ -109,6 +109,8 @@
 						</div>
 					</div>
 				</header>
+
+                {% block page_content %}
 
 				<div class="slider">
 					<div class="fullwidthbanner-container">
@@ -701,7 +703,10 @@
 					</div>
 				</section>
                 {% endcomment %}
-				<footer>
+
+                {% endblock page_content %}
+
+                <footer>
 					<div class="container">
 						<div class="row">
 							<div class="col-md-4 col-sm-6 col-xs-12">
@@ -860,7 +865,8 @@
 
 	<script type="text/javascript" src="/static/js/plugins.js"></script>
 	<script type="text/javascript" src="/static/js/custom.js"></script>
-
-    <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/main_page.png"></script>
+    {% block makeup %}
+        <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/main_page.png"></script>
+    {% endblock makeup %}
 </body>
 </html>

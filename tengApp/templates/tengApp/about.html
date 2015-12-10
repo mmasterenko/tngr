@@ -1,0 +1,13 @@
+{% extends 'tengApp/business_group.html' %}
+{% load staticfiles %}
+{% block title %}About{% endblock %}
+{% block page_content_heading %}
+    <h1>О КОМПАНИИ</h1>
+{% endblock %}
+{% block page_content_body %}
+    <img src="http://placehold.it/500x400?text=About" style="margin: 60px;">
+{% endblock %}
+{% block makeup %}
+    <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/about.png"></script>
+{% endblock makeup %}
+

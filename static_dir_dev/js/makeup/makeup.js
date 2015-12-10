@@ -37,6 +37,8 @@ $(document).ready(function() {
         $(elem).css('height', img.height);
     });
 
+    $(elem).toggle(); // hide
+
     var handler = function(e) {
         // if key '1' pressed: toggle hide/show
         if(e.which == 49) {

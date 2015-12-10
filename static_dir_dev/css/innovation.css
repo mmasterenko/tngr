@@ -2187,21 +2187,26 @@ section.full-width .section-heading .line-dec {
 }
 #page-heading {
   margin-top: 115px;
-  background-image: url(../images/heading-bg.jpg);
+  background-image: url(/static/images/banner-bckgrnd.jpg);
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  padding: 80px 0px;
+  padding: 70px 0px;
 }
 #page-heading h1 {
   margin-top: 0px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 48px;
+  font-size: 45px;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
   letter-spacing: 1px;
+}
+#page-heading h3 {
+  font-style: italic;
+  color: #B7BEC2;
+  font-weight: bold;
 }
 #page-heading span {
   font-family: 'Gerogia', serif;
@@ -4042,9 +4047,9 @@ html[xmlns] .flexslider .slides {
   }
 }
 
-/* ======
-   My Styling (masterenko)
-   ====== */
+/* ============================================================================
+ * My Styling (masterenko)
+ * ============================================================================ */
 
 .line-dec-right {
   margin-left: auto;
@@ -4069,12 +4074,20 @@ html[xmlns] .flexslider .slides {
   border-right: 1px solid #4d4d4d;
 }
 
+/*
+ * --- --- --- fixed size image snippet --- --- ---
+ */
+.fsi-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
 .fsi-frame-348x192 {
   width: 360px;
   height: 204px;
   white-space: nowrap;
   text-align: center;
-
   border: 1px solid #0092ff;
 }
 .fsi-img-348x192 {
@@ -4085,21 +4098,13 @@ html[xmlns] .flexslider .slides {
   max-width: 348px;
   max-height: 192px;
 }
-/* ----------------------------------------------- */
-.fsi-helper {
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-/* ------------------------------------------------ */
+
 .fsi-frame-360x270 {
   width: 372px;
   height: 282px;
   white-space: nowrap;
   text-align: center;
-
   border: 1px solid #0092ff;
-
   float: left;
   margin-right: 30px;
   background-color: white;
@@ -4111,4 +4116,19 @@ html[xmlns] .flexslider .slides {
   vertical-align: middle;
   max-width: 360px;
   max-height: 270px;
+}
+/*
+ * --- --- --- fixed size image snippet /--- /--- /---
+ */
+
+.page-content {
+  margin-top: 115px;
+}
+
+.services .mb {
+  margin-bottom: 70px;
+}
+
+.services.pb {
+  padding-bottom: 20px;
 }
