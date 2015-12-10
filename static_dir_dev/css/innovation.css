@@ -2022,10 +2022,10 @@ section.full-width .section-heading .line-dec {
 }
 .projects-page .group span {
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   text-transform: uppercase;
   color: #373636;
-  padding: 12px 10px;
+  padding: 12px 20px;
 }
 .projects-page .group span.active {
   border-bottom: 3px solid #0092ff;
@@ -4132,3 +4132,12 @@ html[xmlns] .flexslider .slides {
 .services.pb {
   padding-bottom: 20px;
 }
+
+.page-content .services .service-item p a {
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.page-content .services .service-item p a:hover {
+  color: #3d3d3d;
+}
+

@@ -427,10 +427,14 @@ jQuery( document ).ready(function( $ ) {
 	  });
 	  
 
-	  $('.services-slider').flexslider({
+	$('.services-slider').flexslider({
 	    animation: "slide",
 	    controlNav: "thumbnails"
-	  });
+	});
+
+	/* ========================================
+	 * my custom js (masterenko)
+	 * ======================================== */
 
 
 });

@@ -5,7 +5,203 @@
     <h1>О КОМПАНИИ</h1>
 {% endblock %}
 {% block page_content_body %}
-    <img src="http://placehold.it/500x400?text=About" style="margin: 60px;">
+    <section class="projects-page">
+        <div class="container tabs">
+            <div class="row">
+                <div class="group text-center">
+                    <span class="btn filter active" data-filter="">О КОМПАНИИ</span>
+                    <span class="btn filter" data-filter="tab2">ДОКУМЕНТЫ</span>
+                    <span class="btn filter" data-filter="tab3">РЕКВИЗИТЫ</span>
+                    <span class="btn filter" data-filter="tab4">КОНТАКТЫ</span>
+                </div>
+            </div>
+            <div class="row tab-content projects">
+                <div id="tab1" class="tab active">
+                    <div class="fsi-frame-360x270">
+                        <span class="fsi-helper"></span>
+                        <img class="fsi-img-360x270" src='http://placehold.it/360x270' alt="">
+                    </div>
+                    <div class="text-content">
+                        <h2>КОМПАНИЯ Т-ИНЖИНИРИНГ</h2>
+                        <p>"Тейла-Инжиниринг" - профессиональная инженерная компания, входящая в холдинг "ТЕЙЛА"
+                        и специализирующаяся на выполнении работ по проектированию, поставке и монтажу профессиональных
+                        систем связи, комплексных технических средств безопасности, электроснабжения, электроосвещения,
+                        диспетчеризации и автоматизации, инженерных систем, противопожарных систем.</p>
+                        <p>Специализация компании и наработанный опыт позволяет успешно решать нестандартные задачи
+                        и технические вопросы любого уровня сложности. Все работы проводятся "под ключ", с учетом
+                        конкретных требований Заказчика.</p>
+                    </div>
+                </div>
+                <div id="tab2" class="tab" style="display: none;">
+                    <div class="fsi-frame-360x270">
+                        <span class="fsi-helper"></span>
+                        <img class="fsi-img-360x270" src='http://placehold.it/360x270' alt="">
+                    </div>
+                    <div class="text-content">
+                        <h2>ДОКУМЕНТЫ</h2>
+                        <p>"Тейла-Инжиниринг" - профессиональная инженерная компания, входящая в холдинг "ТЕЙЛА"
+                        и специализирующаяся на выполнении работ по проектированию, поставке и монтажу профессиональных
+                        систем связи, комплексных технических средств безопасности, электроснабжения, электроосвещения,
+                        диспетчеризации и автоматизации, инженерных систем, противопожарных систем.</p>
+                        <p>Специализация компании и наработанный опыт позволяет успешно решать нестандартные задачи
+                        и технические вопросы любого уровня сложности. Все работы проводятся "под ключ", с учетом
+                        конкретных требований Заказчика.</p>
+                    </div>
+                </div>
+                <div id="tab3" class="tab" style="display:none;">
+                    <div class="fsi-frame-360x270">
+                        <span class="fsi-helper"></span>
+                        <img class="fsi-img-360x270" src='http://placehold.it/360x270' alt="">
+                    </div>
+                    <div class="text-content">
+                        <h2>РЕКВИЗИТЫ</h2>
+                        <p>"Тейла-Инжиниринг" - профессиональная инженерная компания, входящая в холдинг "ТЕЙЛА"
+                        и специализирующаяся на выполнении работ по проектированию, поставке и монтажу профессиональных
+                        систем связи, комплексных технических средств безопасности, электроснабжения, электроосвещения,
+                        диспетчеризации и автоматизации, инженерных систем, противопожарных систем.</p>
+                        <p>Специализация компании и наработанный опыт позволяет успешно решать нестандартные задачи
+                        и технические вопросы любого уровня сложности. Все работы проводятся "под ключ", с учетом
+                        конкретных требований Заказчика.</p>
+                    </div>
+                </div>
+                <div id="tab4" class="tab" style="display:none;">
+                    <div class="fsi-frame-360x270">
+                        <span class="fsi-helper"></span>
+                        <img class="fsi-img-360x270" src='http://placehold.it/360x270' alt="">
+                    </div>
+                    <div class="text-content">
+                        <h2>КОНТАКТЫ</h2>
+                        <p>"Тейла-Инжиниринг" - профессиональная инженерная компания, входящая в холдинг "ТЕЙЛА"
+                        и специализирующаяся на выполнении работ по проектированию, поставке и монтажу профессиональных
+                        систем связи, комплексных технических средств безопасности, электроснабжения, электроосвещения,
+                        диспетчеризации и автоматизации, инженерных систем, противопожарных систем.</p>
+                        <p>Специализация компании и наработанный опыт позволяет успешно решать нестандартные задачи
+                        и технические вопросы любого уровня сложности. Все работы проводятся "под ключ", с учетом
+                        конкретных требований Заказчика.</p>
+                    </div>
+                </div>
+            </div>
+            {% comment %}
+            <div class="row">
+                <div class="projects">
+                    <div class="mix col-md-3 category-1 category-2 category-3 category-4">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/01-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mix second-row col-md-3 category-2">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/02-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mix second-row col-md-3 category-3 category-4">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/03-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mix second-row col-md-3 category-4 category-1">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/04-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mix second-row col-md-3 category-3 category-4">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/05-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mix second-row col-md-3 category-2 category-3">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/06-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mix second-row col-md-3 category-3 category-4">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/07-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mix second-row col-md-3 category-4 category-1">
+                        <div class="thumb-holder">
+                            <a href="single-project.html"><img src="assets/images/08-recent.jpg" alt=""></a>
+                            <div class="thumb-content">
+                                <div class="thumb-link">
+                                    <a href="single-project.html"><i class="fa fa-plus"></i></a>
+                                </div>
+                                <div class="thumb-text">
+                                    <a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
+                                    <span><i class="fa fa-folder-o"></i>Interior Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            {% endcomment %}
+        </div>
+    </section>
 {% endblock %}
 {% block makeup %}
     <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/about.png"></script>
