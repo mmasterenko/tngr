@@ -3302,11 +3302,11 @@ section.full-width .section-heading .line-dec {
 }
 @media (max-width: 991px) {
   #tabs-info .tab-content img {
-    margin-bottom: 40px;
-    width: 100%;
-    border: 1px solid #0092ff;
-    padding: 5px;
-    background-color: #fff;
+    /*margin-bottom: 40px;*/
+    /*width: 100%;*/
+    /*border: 1px solid #0092ff;*/
+    /*padding: 5px;*/
+    /*background-color: #fff;*/
   }
 }
 #tabs-info .tab-content .text-content {
@@ -4117,6 +4117,37 @@ html[xmlns] .flexslider .slides {
   max-width: 360px;
   max-height: 270px;
 }
+
+.fsi-frame-360x410 {
+  max-width: 360px;
+  max-height: 410px;
+  width: 100%;
+  height: 100%;
+  /*width: 360px;*/
+  /*height: 410px;*/
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid #0092ff;
+  background-color: white;
+  padding: 5px 0;
+}
+.fsi-frame-360x410 .fsi-img {
+  float: none;
+  clear: none;
+  margin: 0;
+  vertical-align: middle;
+  max-width: 350px;
+  max-height: 400px;
+  width: 96%;
+  height: 96%;
+}
+@media (min-width: 1200px) {
+  .fsi-frame-360x410 {
+    width: 360px;
+    height: 410px;
+    padding: 0;
+  }
+}
 /*
  * --- --- --- fixed size image snippet /--- /--- /---
  */
@@ -4140,4 +4171,40 @@ html[xmlns] .flexslider .slides {
 .page-content .services .service-item p a:hover {
   color: #3d3d3d;
 }
+/*
+ * --- --- --- Page /about/ --- --- ---
+ */
+.page-content .projects-page .tab-content .tab {
+  display: none;
+}
+.page-content .projects-page .tab-content .tab.active {
+  display: block;
+}
+
+.page-content .projects-page .tab-content .tab.about .text-content {
+  text-align: left;
+}
+.page-content .projects-page .tab-content .tab.about h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.page-content .projects-page .tab-content .tab.about .par,
+.page-content .projects-page .tab-content .tab.about .par p {
+  font-size: 14px;
+  color: #3d3d3d;
+}
+
+.page-content .projects-page .tab-content .tab.docs h5 {
+  text-align: left;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.page-content .projects-page .tab-content .tab.docs .row {
+  margin-bottom: 50px;
+}
+
+/*
+ * --- --- --- Page /about/ /--- /--- /---
+ */
 

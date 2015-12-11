@@ -436,5 +436,58 @@ jQuery( document ).ready(function( $ ) {
 	 * my custom js (masterenko)
 	 * ======================================== */
 
+	if(location.pathname === '/about/') {
+		var about_menu = $('.page-content .projects-page .tabs .group .btn.filter');
+		var current_menu;
+		if(location.hash) {
+			current_menu = about_menu.filter(function () {
+				return $(this).data('hash') == location.hash
+			});
+		} else {
+			current_menu = about_menu.first();
+		}
+		current_menu.addClass('active');
+		var tab_id = current_menu.data('tab');
+		var tab_content = $('.page-content .projects-page .tabs .tab-content .tab');
+		tab_content.each(function(){
+			if($(this).attr('id') == tab_id){
+				$(this).addClass('active');
+			} else {
+				$(this).removeClass('active');
+			}
+		});
+
+		about_menu.each(function(){
+			$(this).on('click', function(event){
+				tab_id = $(this).data('tab');
+				refreshTabs(tab_id)
+			})
+		});
+
+	}
+
+	function refreshTabs(tab_id){
+		// var about_menu = $('.page-content .projects-page .tabs .group .btn.filter');
+		about_menu.each(function(){
+			if($(this).data('tab') == tab_id){
+				$(this).addClass('active');
+			} else {
+				$(this).removeClass('active');
+			}
+		});
+
+		var fade_speed = 200;
+		// var tab_content = $('.page-content .projects-page .tabs .tab-content .tab');
+		tab_content.filter('.active').fadeOut(fade_speed, function(){
+			$(this).removeClass('active');
+			tab_content.each(function(){
+				if($(this).attr('id') == tab_id){
+					$(this).fadeIn(fade_speed).addClass('active');
+				} else {
+					$(this).fadeOut(fade_speed).removeClass('active');
+				}
+			});
+		});
+	}
 
 });
