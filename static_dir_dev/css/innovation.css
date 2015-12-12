@@ -4204,6 +4204,82 @@ html[xmlns] .flexslider .slides {
   margin-bottom: 50px;
 }
 
+.page-content .projects-page .tab-content .tab.requisites .container-fluid {
+  padding: 0;
+}
+.page-content .projects-page .tab-content .tab.requisites .container-fluid ul {
+  list-style: none;
+  padding: 0 0 0 5px;
+  margin-top: 10px;
+}
+.page-content .projects-page .tab-content .tab.requisites .container-fluid ul li {
+  margin-bottom: 20px;
+}
+.page-content .projects-page .tab-content .tab.requisites .container-fluid ul li a {
+  display: inline-block;
+  border: 1px solid #0092ff;
+  border-radius: 2px;
+  color: #0092ff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px 0;
+  width: 255px;
+}
+.page-content .projects-page .tab-content .tab.requisites .container-fluid ul li a:hover {
+  color: #fff;
+  background-color: #0092ff;
+  transition: all 0.5s;
+}
+.page-content .projects-page .tab-content .tab.requisites .container-fluid .par {
+  text-align: left;
+  padding-left: 40px;
+}
+.page-content .projects-page .tab-content .tab.requisites .container-fluid .par h4 {
+  font-weight: bold;
+}
+.page-content .projects-page .tab-content .tab.requisites .container-fluid .par pre {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  font-size: 14px;
+  color: #3d3d3d;
+  line-height: 26px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.page-content .projects-page .tab-content .tab.contacts .container-fluid>.row:not(:last-child) {
+  margin-bottom: 60px;
+}
+.page-content .projects-page .tab-content .tab.contacts img {
+  border: 1px solid #0092ff;
+  padding: 5px;
+}
+.page-content .projects-page .tab-content .tab.contacts .text-content {
+  text-align: left;
+  padding-left: 45px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+.page-content .projects-page .tab-content .tab.contacts .text-content h4 {
+  font-weight: bold;
+  margin-top: 0;
+}
+.page-content .projects-page .tab-content .tab.contacts .text-content .top-text {
+  margin: 20px 0;
+}
+.page-content .projects-page .tab-content .tab.contacts .text-content ul {
+  list-style-type: none;
+  font-size: 24px;
+  padding: 0;
+  margin: 16px 0;
+}
+.page-content .projects-page .tab-content .tab.contacts .text-content ul li span:first-child {
+  display: inline-block;
+  width: 35%;
+}
+.page-content .projects-page .tab-content .tab.contacts .text-content .bottom-text {
+  line-height: 24px;
+}
 /*
  * --- --- --- Page /about/ /--- /--- /---
  */
