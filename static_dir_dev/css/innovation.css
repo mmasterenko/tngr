@@ -1190,6 +1190,9 @@ footer .subscribe-us .accent-button {
   text-transform: uppercase;
   font-weight: 700;
 }
+.latest-news .latest-item .down-content h4:hover {
+  color: #0092ff;
+}
 .latest-news .latest-item .down-content .date {
   font-size: 12px;
   color: #888888;
