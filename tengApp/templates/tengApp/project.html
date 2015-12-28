@@ -1,11 +1,20 @@
 {% extends 'tengApp/business_group.html' %}
 {% load staticfiles %}
-{% block title %}Project{% endblock %}
-{% block page_content_heading %}
-    <h1>ПРОЕКТЫ</h1>
+{% block title %}Наши проекты{% endblock %}
+{% block page_content_header %}
 {% endblock %}
 {% block page_content_body %}
-    <img src="http://placehold.it/500x400?text=Projects" style="margin: 60px;">
+
+    <section id="projects" class="clearfix">
+        <div id="google-map"></div>
+    </section>
+
+{% endblock %}
+{% block js_plugins %}
+    <script src="{% static 'js/map.js' %}"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC37S4JUrdlmWAB3CmczT6gL_U0pP-Dvj0&callback=initMap">
+    </script>
 {% endblock %}
 {% block makeup %}
     <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/projects.png"></script>

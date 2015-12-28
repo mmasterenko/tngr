@@ -4294,3 +4294,10 @@ html[xmlns] .flexslider .slides {
  * --- --- --- Page /about/ /--- /--- /---
  */
 
+section#projects {
+  padding: 0;
+}
+
+section#projects #google-map {
+  height: 515px;
+}

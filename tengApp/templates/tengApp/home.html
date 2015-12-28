@@ -835,6 +835,8 @@
 
 	<script type="text/javascript" src="/static/js/plugins.js"></script>
 	<script type="text/javascript" src="/static/js/custom.js"></script>
+    {% block js_plugins %}
+    {% endblock %}
     {% block makeup %}
         <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/main_page.png"></script>
     {% endblock makeup %}
