@@ -13,5 +13,5 @@ urlpatterns = [
     url(r'^news/', views.news, name='news'),
 
 
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^teyladmin/', include(admin.site.urls)),
 ]
