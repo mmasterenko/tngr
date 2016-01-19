@@ -678,6 +678,7 @@ a.side-menu-button i {
 nav.main-navigation {
   position: relative;
   z-index: 20;
+  margin-left: 200px;
 }
 nav.main-navigation ul {
   margin: 0;
@@ -2814,7 +2815,7 @@ section.full-width .section-heading .line-dec {
   margin-top: 9px;
   float: left;
   font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
   color: #ffffff;
   letter-spacing: 0.1px;
@@ -4300,4 +4301,24 @@ section#projects {
 
 section#projects #google-map {
   height: 515px;
+}
+
+section#news .article-col {
+  padding-bottom: 40px;
+}
+
+section#news .article-col .h3 {
+  color: #333;
+}
+
+section#news .article-col .date {
+  font-size: 14px;
+  float: right;
+  padding: 5px 0;
+  color: #0092ff;
+}
+
+section#news .article-col .full-text p {
+  color: #777777;
+  font-size: 13px;
 }

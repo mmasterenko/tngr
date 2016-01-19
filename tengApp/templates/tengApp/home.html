@@ -76,20 +76,20 @@
 					<div id="main-header" class="main-header header-sticky">
 						<div class="inner-header container clearfix">
 							<div class="logo">
-								<a href="index.html"><img src="/static/images/ti-logo.png" alt=""></a>
+								<a href="{% url 'home' %}"><img src="/static/images/ti-logo.png" alt=""></a>
 							</div>
 							<div class="header-right-toggle pull-right hidden-md hidden-lg">
 								<a href="javascript:void(0)" class="side-menu-button"><i class="fa fa-bars"></i></a>
 							</div>
 							<nav class="main-navigation text-right hidden-xs hidden-sm">
 								<ul>
-									<li><a href="/">ГЛАВНАЯ</a>
+									<li><a href="{% url 'home' %}">ГЛАВНАЯ</a>
 									</li>
-									<li><a href="/projects" class="">ПРОЕКТЫ</a>
+									<li><a href="{% url 'project' %}" class="">ПРОЕКТЫ</a>
 									</li>
-									<li><a href="/about" class="">О КОМПАНИИ</a>
+									<li><a href="{% url 'about' %}" class="">О КОМПАНИИ</a>
 									</li>
-									<li><a href="/business-group" class="">Т-БИЗНЕСС ГРУППА</a>
+									<li><a href="{% url 'business_group' %}" class="">Т-БИЗНЕСС ГРУППА</a>
 									</li>
 									<li>
                                         {% comment %}
@@ -226,129 +226,6 @@
 						</div>
 					</div>
 				</section>
-                {% comment %}
-				<section class="recent-projects">
-					<div class="container">
-						<div class="row">
-							<div class="section-heading col-md-6">
-								<h2>Recent Projects</h2>
-								<div class="line-dec"></div>
-							</div>
-						</div>
-						<div class="group text-right">
-							<span class="btn filter active" data-filter="all">All Projects</span>
-							<span class="btn filter" data-filter=".category-1">Interior Design</span>
-							<span class="btn filter" data-filter=".category-2">Buildings</span>
-							<span class="btn filter" data-filter=".category-3">Constructions</span>
-							<span class="btn filter" data-filter=".category-4">Isolations</span>
-						</div>
-						<div class="row">
-							<div class="projects">
-								<div id="owl-recent">
-								    <div class="mix category-1 category-2 category-3 category-4">
-								    	<div class="thumb-holder">
-								  			<a href="single-project.html"><img src="/static/images/01-recent.jpg" alt=""></a>
-								  			<div class="thumb-content">
-								  				<div class="thumb-link">
-								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
-								  				</div>
-								  				<div class="thumb-text">
-									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
-								  				</div>
-								  			</div>
-								  		</div>
-								    </div>
-								    <div class="mix category-2">
-								    	<div class="thumb-holder">
-								  			<a href="single-project.html"><img src="/static/images/02-recent.jpg" alt=""></a>
-								  			<div class="thumb-content">
-								  				<div class="thumb-link">
-								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
-								  				</div>
-								  				<div class="thumb-text">
-									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
-								  				</div>
-								  			</div>
-								  		</div>
-								    </div>
-								    <div class="mix category-3 category-4">
-								    	<div class="thumb-holder">
-								  			<a href="single-project.html"><img src="/static/images/03-recent.jpg" alt=""></a>
-								  			<div class="thumb-content">
-								  				<div class="thumb-link">
-								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
-								  				</div>
-								  				<div class="thumb-text">
-									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
-								  				</div>
-								  			</div>
-								  		</div>
-								    </div>
-								    <div class="mix category-4 category-1">
-								    	<div class="thumb-holder">
-								  			<a href="single-project.html"><img src="/static/images/04-recent.jpg" alt=""></a>
-								  			<div class="thumb-content">
-								  				<div class="thumb-link">
-								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
-								  				</div>
-								  				<div class="thumb-text">
-									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
-								  				</div>
-								  			</div>
-								  		</div>
-								    </div>
-								    <div class="mix category-3 category-4">
-								    	<div class="thumb-holder">
-								  			<a href="single-project.html"><img src="/static/images/05-recent.jpg" alt=""></a>
-								  			<div class="thumb-content">
-								  				<div class="thumb-link">
-								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
-								  				</div>
-								  				<div class="thumb-text">
-									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
-								  				</div>
-								  			</div>
-								  		</div>
-								    </div>
-								    <div class="mix category-2 category-3">
-								    	<div class="thumb-holder">
-								  			<a href="single-project.html"><img src="/static/images/06-recent.jpg" alt=""></a>
-								  			<div class="thumb-content">
-								  				<div class="thumb-link">
-								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
-								  				</div>
-								  				<div class="thumb-text">
-									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
-								  				</div>
-								  			</div>
-								  		</div>
-								    </div>
-								    <div class="mix category-1 category-4">
-								    	<div class="thumb-holder">
-								  			<a href="single-project.html"><img src="/static/images/07-recent.jpg" alt=""></a>
-								  			<div class="thumb-content">
-								  				<div class="thumb-link">
-								  					<a href="single-project.html"><i class="fa fa-plus"></i></a>
-								  				</div>
-								  				<div class="thumb-text">
-									  				<a href="single-project.html"><h4>Liverpool: Castle Street</h4></a>
-									  				<span><i class="fa fa-folder-o"></i>Interior Design</span>
-								  				</div>
-								  			</div>
-								  		</div>
-							  		</div>
-							    </div>
-							</div>
-						</div>
-					</div>
-				</section>
-                {% endcomment %}
 				<div id="tabs-info">
 					<div class="container">	
 						<div class="row">
@@ -387,7 +264,7 @@
                                             </ul>
                                         </div>
                                         <div class="section-heading col-md-3 text-right">
-                                            <h6><a href="">ПЕРЕЙТИ В РАЗДЕЛ</a></h6>
+                                            <h6><a href="{% url 'about' %}">ПЕРЕЙТИ В РАЗДЕЛ</a></h6>
                                             <div class="line-dec line-dec-right"></div>
                                         </div>
                                     </div>
@@ -471,76 +348,6 @@
 						</div>
 					</div>
 				</div>
-                {% comment %}
-				<section class="our-services">
-					<div class="container">
-						<div class="row">
-							<div class="section-heading col-md-12">
-								<h2>Our Services</h2>
-								<div class="line-dec"></div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item text-center">
-									<div class="flipper">
-										<div class="front">
-											<i class="flaticon-hammer38"></i>
-											<h2>Hammer</h2>
-										</div>
-										<div class="back">
-											<h2>Hammer</h2>
-											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item text-center">
-									<div class="flipper">
-										<div class="front">
-											<i class="flaticon-remote6"></i>
-											<h2>Plumbing</h2>
-										</div>
-										<div class="back">
-											<h2>Plumbing</h2>
-											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item text-center">
-									<div class="flipper">
-										<div class="front">
-											<i class="flaticon-astronaut"></i>
-											<h2>Constructor</h2>
-										</div>
-										<div class="back">
-											<h2>Constructor</h2>
-											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6 col-xs-12">
-								<div class="service-item text-center">
-									<div class="flipper">
-										<div class="front">
-											<i class="flaticon-power30"></i>
-											<h2>Power</h2>
-										</div>
-										<div class="back">
-											<h2>Power</h2>
-											<p>Vestibulum ante ipsum primisorci luctus ultrices posuere cubilia Curaes In facilisis vestibulum.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-                {% endcomment %}
 				<section class="testimonials">
 					<div class="container">
 						<div class="row">
@@ -593,7 +400,7 @@
                             <div class="section-heading col-md-6">
 							</div>
                             <div class="section-heading col-md-3 text-right">
-								<h6><a href="">ПОСМОТРЕТЬ ВСЕ</a></h6>
+								<h6><a href="{% url 'news' %}">ПОСМОТРЕТЬ ВСЕ</a></h6>
 								<div class="line-dec line-dec-right"></div>
 							</div>
 						</div>
@@ -655,54 +462,6 @@
 						</div>
 					</div>
 				</section>
-                {% comment %}
-				<section class="clients">
-					<div class="container">
-						<div class="row">
-							<div class="section-heading">
-								<h2>Our Clients</h2>
-								<div class="line-dec"></div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div id="owl-clients">
-									<div class="item">
-										<img src="/static/images/client-1.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-2.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-3.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-4.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-5.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-6.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-3.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-2.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-1.png" alt="">
-									</div>
-									<div class="item">
-										<img src="/static/images/client-4.png" alt="">
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-                {% endcomment %}
 
                 {% endblock page_content %}
 
@@ -808,13 +567,13 @@
 				<div class="content">
 					<nav class="responsive-menu">
 						<ul>
-							<li class=""><a href="#">Главная</a>
+							<li class=""><a href="{% url 'home' %}">Главная</a>
 							</li>
-							<li class=""><a href="#">Проекты</a>
+							<li class=""><a href="{% url 'project' %}">Проекты</a>
 							</li>
-							<li class=""><a href="#">О компании</a>
+							<li class=""><a href="{% url 'about' %}">О компании</a>
 							</li>
-							<li class=""><a href="#">Т-Бизнесс группа</a>
+							<li class=""><a href="{% url 'business_group' %}">Т-Бизнесс группа</a>
 							</li>
 						</ul>
 					</nav>
@@ -837,8 +596,8 @@
 	<script type="text/javascript" src="/static/js/custom.js"></script>
     {% block js_plugins %}
     {% endblock %}
-    {% block makeup %}
+    {% comment %}{% block makeup %}
         <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/main_page.png"></script>
-    {% endblock makeup %}
+    {% endblock makeup %}{% endcomment %}
 </body>
 </html>

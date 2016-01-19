@@ -16,3 +16,7 @@ def about(req):
 def project(req):
     return render(req, 'tengApp/project.html')
 
+
+def news(req):
+    return render(req, 'tengApp/news.html')
+
