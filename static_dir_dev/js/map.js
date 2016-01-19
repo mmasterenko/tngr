@@ -57,6 +57,6 @@ function initMap() {
             alert(this.teng_id)
         });
     }
-    var markerCluster = new MarkerClusterer(map, markers);
+    //var markerCluster = new MarkerClusterer(map, markers);
 
 }
