@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Django settings for tengProject project.
 
@@ -34,6 +36,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = (
+    'admin_shortcuts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +45,65 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'tengApp'
 )
+
+ADMIN_SHORTCUTS = [
+    {
+        'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_generalinfo_changelist',
+                'title': u'Общая информация',
+            }
+        ]
+    },
+    {
+        'title': u'Главная Страница',
+        'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_project_changelist',
+                'title': u'Список проектов',
+            },
+            {
+                'url_name': 'admin:tengApp_about_changelist',
+                'title': u'Информационный блок',
+            },
+            {
+                'url_name': 'admin:tengApp_stuff_changelist',
+                'title': u'Наша команда',
+            },
+            {
+                'url_name': 'admin:tengApp_news_changelist',
+                'title': u'Новости',
+            },
+        ]
+    },
+    {
+        'title': u'Страница "О компании"',
+        'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_document_changelist',
+                'title': u'Документы',
+            },
+            {
+                'url_name': 'admin:tengApp_requisites_changelist',
+                'title': u'Реквизиты',
+            },
+        ]
+    },
+    {
+        'title': u'Страница "Т-Бизнесс группа"',
+        'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_teylagroup_changelist',
+                'title': u'Группа компаний Teyla',
+            }
+        ]
+    },
+]
+
+ADMIN_SHORTCUTS_SETTINGS = {
+    'hide_app_list': True,
+    'open_new_window': False,
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
