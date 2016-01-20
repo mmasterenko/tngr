@@ -168,61 +168,29 @@
                             <div class="section-heading col-md-6">
 							</div>
                             <div class="section-heading col-md-3 text-right">
-								<h6><a href="">ПОСМОТРЕТЬ ВСЕ</a></h6>
+								<h6><a href="{% url 'project' %}">ПОСМОТРЕТЬ ВСЕ</a></h6>
 								<div class="line-dec line-dec-right"></div>
 							</div>
 						</div>
                         <br><br>
 						<div class="row">
-							<div class="col-md-4">
-								<div class="service-item">
-                                    <div class="fsi-frame-348x192">
-                                        <span class="fsi-helper"></span>
-                                        <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
+                            {% for project in projects %}
+                                <div class="col-md-4">
+                                    <div class="service-item">
+                                        <div class="fsi-frame-348x192">
+                                            <span class="fsi-helper"></span>
+                                            <img class="fsi-img-348x192" src='{{ project.image.url }}' alt="">
+                                        </div>
+                                        <h4>{{ project.name }}</h4>
+                                        <p>{{ project.company }}</p>
+                                        <div class="latest-projects">
+                                        {% autoescape off %}
+                                            {{ project.desc }}
+                                        {% endautoescape %}
+                                        </div>
                                     </div>
-									<h4>КОМПЛЕКС ОФИСНЫХ ПОМЕЩЕНИЙ ПОДРАЗДЕЛЕНИЙ ОАО "ГАЗПРОМ"</h4>
-                                    <p>ОАО "ГАЗПРОМ"</p>
-                                    <ul>
-                                        <li>КОННОГВАРДЕЙСКИЙ БУЛЬВАР 4А,</li>
-                                        <li>ХЕРСОНСКАЯ 12/14,</li>
-                                        <li>ГАЛЕРНАЯ 5,</li>
-                                        <li>ЗООЛОГИЧЕСКИЙ ПЕР., Д. 2-4 ЛИТ.Б</li>
-                                    </ul>
-                                    {% comment %}<a href="#">Read More</a>{% endcomment %}
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="service-item">
-                                    <div class="fsi-frame-348x192">
-                                        <span class="fsi-helper"></span>
-                                        <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                    </div>
-									<h4>МОНТАЖ ОХРАННО-ПОЖАРНОЙ СИСТЕМЫ СКЛАДСКОГО КОМПЛЕКСА</h4>
-									<p>ТОРГОВЫЙ ДОМ "ЭТМ"</p>
-                                    <ul>
-                                        <li>ПОЖАРНАЯ СИСТЕМА</li>
-                                        <li>СКЛАДСКОЙ КОМПЛЕКС</li>
-                                        <li>СИГНАЛИЗАЦИЯ И СИСТЕМА ОПОВЕЩЕНИЯ ОБ ОПАСНОСИ ВОСПЛАМЕНЕНИЯ</li>
-                                    </ul>
-									{% comment %}<a href="#">Read More</a>{% endcomment %}
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="service-item">
-                                    <div class="fsi-frame-348x192">
-                                        <span class="fsi-helper"></span>
-                                        <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                    </div>
-									<h4>СИСТЕМЫ ВИДЕОНАБЛЮДЕНИЯ И СКС В КОММЕРЧЕСКИХ ПОМЕЩЕНИЯХ КОМПАНИИ</h4>
-									<p>ОАО "ВОЗДУШНЫЕ ВОРОТА СЕВЕРНОЙ СТОЛИЦЫ"</p>
-                                    <ul>
-                                        <li>ВИДЕОНАБЛЮДЕНИЕ</li>
-                                        <li>СКС</li>
-                                        <li>ПОМЕЩЕНИЯ КОМПАНИИ</li>
-                                    </ul>
-									{% comment %}<a href="#">Read More</a>{% endcomment %}
-								</div>
-							</div>
+                                </div>
+                            {% endfor %}
 						</div>
 					</div>
 				</section>
