@@ -14,7 +14,8 @@ def home(req):
         'contacts': info.get(code='contacts')
     }
     context = {
-        'info_block': info_block
+        'info_block': info_block,
+        'stuff': Stuff.objects.all()
     }
     return render(req, 'tengApp/home.html', context)
 

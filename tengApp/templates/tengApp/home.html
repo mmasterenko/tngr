@@ -351,30 +351,16 @@
 							<div class="col-md-8 col-md-offset-2">
 								<div class="testimonials-slider">
 									<ul class="slides">
-									    <li data-thumb="http://placehold.it/88x88">
-									      <div class="item">
-												<i class="fa fa-quote-left"></i>
-												<p>Мы всегда работаем на результат, к нам обращаются профессионалы, когда им крайне важны сроки и качество.</p>
-												<h4>ИВАНОВ ИВАН</h4>
-												<span>Директор по стратегическому развитию</span>
-											</div>
-									    </li>
-									    <li data-thumb="http://placehold.it/88x88">
-									      <div class="item">
-												<i class="fa fa-quote-left"></i>
-												<p>Мы всегда работаем на результат, к нам обращаются профессионалы, когда им крайне важны сроки и качество.</p>
-												<h4>ПЕТР ИВАНОВ</h4>
-												<span>Главный инженер</span>
-											</div>
-									    </li>
-									    <li data-thumb="http://placehold.it/88x88">
-									      <div class="item">
-												<i class="fa fa-quote-left"></i>
-												<p>Мы всегда работаем на результат, к нам обращаются профессионалы, когда им крайне важны сроки и качество.</p>
-												<h4>ИВАН СИДОРОВ</h4>
-												<span>Просто хороший человек</span>
-											</div>
-									    </li>
+                                        {% for person in stuff %}
+                                            <li data-thumb="{{ person.photo.url }}">
+                                                <div class="item">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    <p>{{ person.quote }}</p>
+                                                    <h4>{{ person.full_name }}</h4>
+                                                    <span>{{ person.position }}</span>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
 									</ul>
 								</div>
 							</div>

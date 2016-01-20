@@ -62,11 +62,15 @@ class About(models.Model):
 
 class Stuff(models.Model):
     class Meta:
-        verbose_name = u'персонал'
-        verbose_name_plural = u'персонал'
+        verbose_name = u'наша команда'
+        verbose_name_plural = verbose_name
+
+    @property
+    def full_name(self):
+        return '%s %s' % (self.name, self.surname)
 
     def __unicode__(self):
-        return self.name
+        return self.full_name
 
     name = models.CharField(u'Имя', max_length=50)
     surname = models.CharField(u'Фамилия', max_length=50)
