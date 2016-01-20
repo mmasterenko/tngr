@@ -51,6 +51,7 @@ ADMIN_SHORTCUTS = [
         'shortcuts': [
             {
                 'url_name': 'admin:tengApp_generalinfo_changelist',
+                'url_extra': '1',
                 'title': u'Общая информация',
             }
         ]
@@ -85,6 +86,7 @@ ADMIN_SHORTCUTS = [
             },
             {
                 'url_name': 'admin:tengApp_requisites_changelist',
+                'url_extra': '1',
                 'title': u'Реквизиты',
             },
         ]

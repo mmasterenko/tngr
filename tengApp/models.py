@@ -135,7 +135,7 @@ class Requisites(models.Model):
         verbose_name_plural = verbose_name
 
     def __unicode__(self):
-        return self.header
+        return u'реквизиты'
 
     header = models.CharField(u'Заголовок', max_length=100)
     text = models.TextField(u'Текст')

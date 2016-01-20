@@ -4,6 +4,10 @@ from django.contrib import admin
 from .models import About, Document, GeneralInfo, News, Project, Requisites, Stuff, TeylaGroup
 
 
+class AboutAdmin(admin.ModelAdmin):
+    fields = ['name', 'desc', 'image']
+
+
 class ProjectAdmin(admin.ModelAdmin):
     class Media:
         css = {
@@ -20,7 +24,7 @@ class TeylaGroupAdmin(admin.ModelAdmin):
         js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js", "model_assets/project.js")
 
 
-admin.site.register(About)
+admin.site.register(About, AboutAdmin)
 admin.site.register(Document)
 admin.site.register(GeneralInfo)
 admin.site.register(News)
