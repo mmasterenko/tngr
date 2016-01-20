@@ -4326,7 +4326,11 @@ section#news .article-col .full-text p {
   font-size: 13px;
 }
 
-.services .service-item .latest-projects, .services .service-item .latest-projects p {
+.services .service-item .latest-projects,
+.services .service-item .latest-projects p,
+.services .service-item .teyla-group,
+.services .service-item .teyla-group p
+{
   color: #333333;
   font-size: 14px;
 }

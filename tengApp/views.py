@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
 from .models import About, TeylaGroup, Project, News, Stuff, Document, Requisites
+from django.core.paginator import Paginator
 
 
 def home(req):
@@ -23,7 +24,11 @@ def home(req):
 
 
 def business_group(req):
-    return render(req, 'tengApp/business_group.html')
+    pagntor = Paginator(TeylaGroup.objects.all(), 3)
+    context = {
+        'teyla_group': [pagntor.page(number).object_list for number in pagntor.page_range]
+    }
+    return render(req, 'tengApp/business_group.html', context)
 
 
 def about(req):

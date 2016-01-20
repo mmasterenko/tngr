@@ -105,10 +105,16 @@ class TeylaGroup(models.Model):
     def __unicode__(self):
         return self.name
 
+    @property
+    def link_plain(self):
+        dlmtr = 'http://'  # dlmtr stands for delimiter
+        if self.link.startswith(dlmtr):
+            return self.link.split(dlmtr)[1]
+
     name = models.CharField(u'Название', max_length=100)
     link = models.URLField(u'Ссылка')
     desc = models.TextField(u'Описание')
-    photo = models.ImageField(u'Картинка', upload_to=upload_path)
+    image = models.ImageField(u'Картинка', upload_to=upload_path)
 
 
 class Document(models.Model):

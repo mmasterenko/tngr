@@ -35,150 +35,27 @@
                         </div>
                     </div>
                     <br><br>
-                    <div class="row mb">
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
+                    {% for teyla_row in teyla_group %}
+                        <div class="row mb">
+                        {% for affiliate in teyla_row %}
+                            <div class="col-md-4">
+                                <div class="service-item">
+                                    <div class="fsi-frame-348x192">
+                                        <span class="fsi-helper"></span>
+                                        <img class="fsi-img-348x192" src='{{ affiliate.image.url }}' alt="">
+                                    </div>
+                                    <h4>{{ affiliate.name }}</h4>
+                                    <p><a target="_blank" href="{{ affiliate.link }}">{{ affiliate.link_plain }}</a></p>
+                                    <div class="teyla-group">
+                                        {% autoescape off %}
+                                            {{ affiliate.desc }}
+                                        {% endautoescape %}
+                                    </div>
                                 </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>КОННОГВАРДЕЙСКИЙ БУЛЬВАР 4А,</li>
-                                    <li>ХЕРСОНСКАЯ 12/14,</li>
-                                    <li>ГАЛЕРНАЯ 5,</li>
-                                    <li>ЗООЛОГИЧЕСКИЙ ПЕР., Д. 2-4 ЛИТ.Б</li>
-                                </ul>
                             </div>
+                        {% endfor %}
                         </div>
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>ПОЖАРНАЯ СИСТЕМА</li>
-                                    <li>СКЛАДСКОЙ КОМПЛЕКС</li>
-                                    <li>СИГНАЛИЗАЦИЯ И СИСТЕМА ОПОВЕЩЕНИЯ ОБ ОПАСНОСИ ВОСПЛАМЕНЕНИЯ</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>ВИДЕОНАБЛЮДЕНИЕ</li>
-                                    <li>СКС</li>
-                                    <li>ПОМЕЩЕНИЯ КОМПАНИИ</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb">
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>КОННОГВАРДЕЙСКИЙ БУЛЬВАР 4А,</li>
-                                    <li>ХЕРСОНСКАЯ 12/14,</li>
-                                    <li>ГАЛЕРНАЯ 5,</li>
-                                    <li>ЗООЛОГИЧЕСКИЙ ПЕР., Д. 2-4 ЛИТ.Б</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>ПОЖАРНАЯ СИСТЕМА</li>
-                                    <li>СКЛАДСКОЙ КОМПЛЕКС</li>
-                                    <li>СИГНАЛИЗАЦИЯ И СИСТЕМА ОПОВЕЩЕНИЯ ОБ ОПАСНОСИ ВОСПЛАМЕНЕНИЯ</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>ВИДЕОНАБЛЮДЕНИЕ</li>
-                                    <li>СКС</li>
-                                    <li>ПОМЕЩЕНИЯ КОМПАНИИ</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb">
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>КОННОГВАРДЕЙСКИЙ БУЛЬВАР 4А,</li>
-                                    <li>ХЕРСОНСКАЯ 12/14,</li>
-                                    <li>ГАЛЕРНАЯ 5,</li>
-                                    <li>ЗООЛОГИЧЕСКИЙ ПЕР., Д. 2-4 ЛИТ.Б</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>ПОЖАРНАЯ СИСТЕМА</li>
-                                    <li>СКЛАДСКОЙ КОМПЛЕКС</li>
-                                    <li>СИГНАЛИЗАЦИЯ И СИСТЕМА ОПОВЕЩЕНИЯ ОБ ОПАСНОСИ ВОСПЛАМЕНЕНИЯ</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="service-item">
-                                <div class="fsi-frame-348x192">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img-348x192" src='http://placehold.it/348x192' alt="">
-                                </div>
-                                <h4>НАЗВАНИЕ ПОДРАЗДЕЛЕНИЯ</h4>
-                                <p><a href="#">www.teyla.com</a></p>
-                                <ul>
-                                    <li>ВИДЕОНАБЛЮДЕНИЕ</li>
-                                    <li>СКС</li>
-                                    <li>ПОМЕЩЕНИЯ КОМПАНИИ</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </section>
         {% endblock %}
