@@ -44,12 +44,20 @@ class About(models.Model):
         verbose_name = u'информационный блок'
         verbose_name_plural = verbose_name
 
+    CODE_CHOICE = (
+        ('about', u'о компании'),
+        ('docs', u'документы'),
+        ('requisites', u'реквизиты'),
+        ('contacts', u'контакты'),
+    )
+
     def __unicode__(self):
-        return self.name
+        return self.get_code_display()
 
     name = models.CharField(u'Заголовок', max_length=100)
     desc = models.TextField(u'Текст')
-    image = models.ImageField(u'Картинка', upload_to=upload_path)
+    image = models.ImageField(u'Картинка', upload_to=upload_path, null=True, blank=True)
+    code = models.CharField(max_length=15, choices=CODE_CHOICE, null=True)  # hidden in admin interface
 
 
 class Stuff(models.Model):

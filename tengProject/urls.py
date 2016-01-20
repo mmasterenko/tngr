@@ -3,15 +3,13 @@ from django.contrib import admin
 from tengApp import views
 
 urlpatterns = [
-    # Examples:
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^teyladmin/', include(admin.site.urls)),
+
+    url(r'^media/(?P<path>images/.+(?:\.jpeg|\.jpg|\.png))$', views.media, name='media'),
 
     url(r'^$', 'tengApp.views.home', name='home'),
     url(r'^projects/', 'tengApp.views.project', name='project'),
     url(r'^about/', 'tengApp.views.about', name='about'),
     url(r'^business-group/', 'tengApp.views.business_group', name='business_group'),
     url(r'^news/', views.news, name='news'),
-
-
-    url(r'^teyladmin/', include(admin.site.urls)),
 ]
