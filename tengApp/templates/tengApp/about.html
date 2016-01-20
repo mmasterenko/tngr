@@ -17,71 +17,37 @@
             </div>
             <div class="row tab-content projects">
                 <div id="tab1" class="tab about active">
+                    {% if about.image %}
                     <div class="fsi-frame-360x270">
                         <span class="fsi-helper"></span>
-                        <img class="fsi-img-360x270" src='http://placehold.it/360x270' alt="">
+                        <img class="fsi-img-360x270" src='{{ about.image.url }}' alt="">
                     </div>
+                    {% endif %}
                     <div class="text-content">
-                        <h2>КОМПАНИЯ Т-ИНЖИНИРИНГ</h2>
+                        <h2>{{ about.name }}</h2>
                         <div class="par">
-                            <p>"Тейла-Инжиниринг" - профессиональная инженерная компания, входящая в холдинг "ТЕЙЛА"
-                        и специализирующаяся на выполнении работ по проектированию, поставке и монтажу профессиональных
-                        систем связи, комплексных технических средств безопасности, электроснабжения, электроосвещения,
-                        диспетчеризации и автоматизации, инженерных систем, противопожарных систем.</p>
-                            <p>Специализация компании и наработанный опыт позволяет успешно решать нестандартные задачи
-                            и технические вопросы любого уровня сложности. Все работы проводятся "под ключ", с учетом
-                            конкретных требований Заказчика.</p>
+                            {% autoescape off %}
+                                {{ about.desc }}
+                            {% endautoescape %}
+
                         </div>
                     </div>
                 </div>
                 <div id="tab2" class="tab docs">
                     <div class="container-fluid">
+                        {% for docs_row in docs %}
                         <div class="row">
+                            {% for doc in docs_row %}
                             <div class="col-sm-6 col-md-4 col-lg-4">
                                 <div class="fsi-frame-360x410">
                                     <span class="fsi-helper"></span>
-                                    <img class="fsi-img" src='http://placehold.it/350x400' alt="">
+                                    <img class="fsi-img" src='{{ doc.img.url }}' alt="">
                                 </div>
-                                <h5>ЛИЦЕНЗИЯ НА ОБЕСПЕЧЕНИЕ УСЛУГ МЕСТНОЙ ТЕЛЕФОННОЙ СВЯЗИ</h5>
+                                <h5>{{ doc.name }}</h5>
                             </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <div class="fsi-frame-360x410">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img" src='http://placehold.it/350x400' alt="">
-                                </div>
-                                <h5>ЛИЦЕНЗИЯ НА ОБЕСПЕЧЕНИЕ УСЛУГ МЕСТНОЙ ТЕЛЕФОННОЙ СВЯЗИ</h5>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <div class="fsi-frame-360x410">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img" src='http://placehold.it/350x400' alt="">
-                                </div>
-                                <h5>ЛИЦЕНЗИЯ НА ОБЕСПЕЧЕНИЕ УСЛУГ МЕСТНОЙ ТЕЛЕФОННОЙ СВЯЗИ</h5>
-                            </div>
+                            {% endfor %}
                         </div>
-                        <div class="row">
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <div class="fsi-frame-360x410">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img" src='http://placehold.it/350x400' alt="">
-                                </div>
-                                <h5>ЛИЦЕНЗИЯ НА ОБЕСПЕЧЕНИЕ УСЛУГ МЕСТНОЙ ТЕЛЕФОННОЙ СВЯЗИ</h5>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <div class="fsi-frame-360x410">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img" src='http://placehold.it/350x400' alt="">
-                                </div>
-                                <h5>ЛИЦЕНЗИЯ НА ОБЕСПЕЧЕНИЕ УСЛУГ МЕСТНОЙ ТЕЛЕФОННОЙ СВЯЗИ</h5>
-                            </div>
-                            <div class="col-sm-6 col-md-4 col-lg-4">
-                                <div class="fsi-frame-360x410">
-                                    <span class="fsi-helper"></span>
-                                    <img class="fsi-img" src='http://placehold.it/350x400' alt="">
-                                </div>
-                                <h5>ЛИЦЕНЗИЯ НА ОБЕСПЕЧЕНИЕ УСЛУГ МЕСТНОЙ ТЕЛЕФОННОЙ СВЯЗИ</h5>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div id="tab3" class="tab requisites">
@@ -89,20 +55,15 @@
                         <div class="row">
                             <div class="col-md-4 col-lg-3">
                                 <ul>
-                                    <li><a href="#">Скачать .pdf</a></li>
-                                    <li><a href="#">Скачать .doc</a></li>
-                                    <li><a href="#">Скачать .txt</a></li>
+                                    <li><a href="{{ requisites.pdf.url }}">Скачать .pdf</a></li>
+                                    <li><a href="{{ requisites.doc.url }}">Скачать .doc</a></li>
+                                    <li><a href="{{ requisites.txt.url }}">Скачать .txt</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-8 col-lg-9 par">
-                                <h4>КОМПАНИЯ Т-ИНЖИНИРИНГ</h4>
+                                <h4>{{ requisites.header }}</h4>
                                 <pre>
-ООО "Тейла"
-198320, г.Санкт-Петербург, г.Красное Село, ул.Лермонтова, д.15, корп.2
-Тел.(812)326-37-11
-ИНН 7807343584
-КПП 7807343584
-Красносельское ОСБ №1892
+{{ requisites.text }}
                                 </pre>
                             </div>
                         </div>

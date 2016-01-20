@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^teyladmin/', include(admin.site.urls)),
 
     url(r'^media/(?P<path>images/.+(?:\.jpeg|\.jpg|\.png))$', views.media, name='media'),
+    url(r'^media/(?P<path>files/.+(?:\.pdf|\.doc|\.docx|\.txt))$', views.media, name='media'),
 
     url(r'^$', 'tengApp.views.home', name='home'),
     url(r'^projects/', 'tengApp.views.project', name='project'),

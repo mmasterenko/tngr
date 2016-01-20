@@ -32,7 +32,15 @@ def business_group(req):
 
 
 def about(req):
-    return render(req, 'tengApp/about.html')
+    info = About.objects.all()
+    pagntor = Paginator(Document.objects.all(), 3)
+    context = {
+        'about': info.get(code='about'),
+        'docs': [pagntor.page(number).object_list for number in pagntor.page_range],
+        'requisites': Requisites.objects.first(),
+        'contacts': ''
+    }
+    return render(req, 'tengApp/about.html', context)
 
 
 def project(req):
@@ -52,6 +60,12 @@ def media(req, path):
         content_type = 'image/jpeg'
     if file_ext.lower() in ('.png',):
         content_type = 'image/png'
+    if file_ext.lower() in ('.pdf',):
+        content_type = 'application/pdf'
+    if file_ext.lower() in ('.txt',):
+        content_type = 'text/plain'
+    if file_ext.lower() in ('.doc', '.docx'):
+        content_type = 'application/octet-stream'
 
     image_data = open(file_name, 'rb').read()
     return HttpResponse(image_data, content_type=content_type)
