@@ -55,6 +55,7 @@ def media(req, path):
     file_name = os.path.join(settings.MEDIA_ROOT, path)
     _, file_ext = os.path.splitext(file_name)
 
+    # todo: заменить эту цепочку if-ов на словарь
     content_type = 'image/jpeg'  # default value
     if file_ext.lower() in ('.jpg', '.jpeg'):
         content_type = 'image/jpeg'

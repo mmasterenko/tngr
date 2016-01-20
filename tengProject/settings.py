@@ -105,6 +105,10 @@ ADMIN_SHORTCUTS_SETTINGS = {
     'open_new_window': False,
 }
 
+# todo:
+# ADMIN_SHORTCUTS_CLASS_MAPPINGS
+# https://github.com/alesdotio/django-admin-shortcuts/blob/master/admin_shortcuts/templatetags/admin_shortcuts_tags.py
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
