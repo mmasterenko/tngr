@@ -369,6 +369,7 @@
 				</section>
 
 				<section class="latest-news">
+                    {% if news %}
 					<div class="container">
 						<div class="row">
 							<div class="section-heading col-md-3">
@@ -383,62 +384,33 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-4">
-								<div class="latest-item">
-									{% comment %}<img src="/static/images/01-blog.jpg" alt="">{% endcomment %}
-									<div class="down-content">
-										<a href="single-blog.html"><h4>НАЗВАНИЕ НОВОСТИ</h4></a>
-                                        <div class="date">01.01.15</div>
-                                        <div class="news">
-                                            <p>In imperdiet tempus nunc, ne hendrerit tortor blan Donec mollis tellus volutpat, porttitor ligula trista. Vesti faucibus risus sit amet risus in</p>
+                            {% for single_news in news %}
+                                <div class="col-md-4">
+                                    <div class="latest-item">
+                                        {% comment %}<img src="/static/images/01-blog.jpg" alt="">{% endcomment %}
+                                        <div class="down-content">
+                                            <a href="{% url 'news' %}"><h4>{{ single_news.header }}</h4></a>
+                                            <div class="date">{{ single_news.date }}</div>
+                                            <div class="news">
+                                                <p>
+                                                    {% autoescape off %}
+                                                        {{ single_news.text | truncatechars_html:150 | striptags }}
+                                                    {% endautoescape %}
+                                                </p>
+                                            </div>
+                                            <div class="post-info text-right">
+                                                <ul>
+                                                    {% comment %}<li><em>By: </em><a href="#">Robert Imeri</a></li>{% endcomment %}
+                                                    <li><a href="{% url 'news' %}">ДАЛЕЕ</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-										<div class="post-info text-right">
-											<ul>
-												{% comment %}<li><em>By: </em><a href="#">Robert Imeri</a></li>{% endcomment %}
-												<li><a href="single-blog.html">ДАЛЕЕ</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="latest-item">
-									{% comment %}<img src="/static/images/02-blog.jpg" alt="">{% endcomment %}
-									<div class="down-content">
-										<a href="single-blog.html"><h4>НАЗВАНИЕ НОВОСТИ</h4></a>
-                                        <div class="date">01.01.15</div>
-                                        <div class="news">
-                                            <p>In imperdiet tempus nunc, ne hendrerit tortor blan Donec mollis tellus volutpat, porttitor ligula trista. Vesti faucibus risus sit amet risus in</p>
-                                        </div>
-										<div class="post-info text-right">
-											<ul>
-												{% comment %}<li><em>By: </em><a href="#">Robert Imeri</a></li>{% endcomment %}
-												<li><a href="single-blog.html">ДАЛЕЕ</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="latest-item">
-									{% comment %}<img src="http://placehold.it/360x238" alt="">{% endcomment %}
-									<div class="down-content">
-										<a href="single-blog.html"><h4>НАЗВАНИЕ НОВОСТИ</h4></a>
-                                        <div class="date">01.01.15</div>
-                                        <div class="news">
-                                            <p>In imperdiet tempus nunc, ne hendrerit tortor blan Donec mollis tellus volutpat, porttitor ligula trista. Vesti faucibus risus sit amet risus in</p>
-                                        </div>
-										<div class="post-info text-right">
-											<ul>
-												{% comment %}<li><em>By: </em><a href="#">Robert Imeri</a></li>{% endcomment %}
-												<li><a href="single-blog.html">ДАЛЕЕ</a></li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
 						</div>
 					</div>
+                    {% endif %}
 				</section>
 
                 {% endblock page_content %}

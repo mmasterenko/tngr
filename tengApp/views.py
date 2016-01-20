@@ -15,7 +15,8 @@ def home(req):
     }
     context = {
         'info_block': info_block,
-        'stuff': Stuff.objects.all()
+        'stuff': Stuff.objects.all(),
+        'news': News.objects.order_by('-date', '-id')[:3]
     }
     return render(req, 'tengApp/home.html', context)
 
