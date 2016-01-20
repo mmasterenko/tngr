@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>{% block title %}T-ENG main{% endblock %}</title>
+	<title>{% block title %}Т-инжиниринг{% endblock %}</title>
 
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -50,8 +50,8 @@
 							<div class="col-md-6">
 								<div class="left-info">
 									<ul>
-										<li><i class="fa fa-phone"></i>8(921)999 99 99</li>
-										<li><i class="fa fa-envelope-o"></i><a href="mailto:t-enginiring@teyla.com">t-enginiring@teyla.com</a></li>
+										<li><i class="fa fa-phone"></i>{{ general_info.phone }}</li>
+										<li><i class="fa fa-envelope-o"></i><a href="mailto:{{ general_info.email }}">{{ general_info.email }}</a></li>
 									</ul>
 								</div>
 							</div>
@@ -471,18 +471,17 @@
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 								<div class="about-us">
 									<img src="/static/images/ti-logo.png" alt="">
-									<p>"Тейла-Инжиниринг" - профессиональная инженерная компания, входящая в холдинг "ТЕЙЛА" и специализирующаяся
-                                    на выполнении работ по проектированию, поставке и монтажу профессиональных систем связи.</p>
+									<p>{{ general_info.text }}</p>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 								<div class="company-pages">
 									<h2>НАВИГАЦИЯ</h2>
 									<ul class="first-list">
-										<li><a href="#">Главная</a></li>
-										<li><a href="#">Проекты</a></li>
-										<li><a href="#">О компании</a></li>
-										<li><a href="#">Т-бизнесс группа</a></li>
+										<li><a href="{% url 'home' %}">Главная</a></li>
+										<li><a href="{% url 'project' %}">Проекты</a></li>
+										<li><a href="{% url 'about' %}">О компании</a></li>
+										<li><a href="{% url 'business_group' %}">Т-бизнесс группа</a></li>
 									</ul>
                                     {% comment %}
 									<ul class="second-list">
@@ -498,9 +497,9 @@
                                 <div class="company-pages">
 									<h2>КОНТАКТЫ</h2>
 									<ul class="first-list">
-										<li><span>Адрес</span><span>ул.Титова д.58 А 1</span></li>
-										<li><span>Почта</span><a href="mailto:t-enginering@teyla.com">t-enginering@teyla.com</a></li>
-										<li><span>Телефон</span><span>8(921)999 99 99</span></li>
+										<li><span>Адрес</span><span>{{ general_info.address }}</span></li>
+										<li><span>Почта</span><a href="mailto:{{ general_info.email }}">{{ general_info.email }}</a></li>
+										<li><span>Телефон</span><span>{{ general_info.phone }}</span></li>
 									</ul>
                                     {% comment %}
 									<ul class="second-list">
@@ -533,8 +532,8 @@
 						<div class="row">
 							<div class="col-md-6">
                                 <ul>
-                                    <li><i class="fa fa-phone"></i>8(921)999 99 99</li>
-                                    <li><i class="fa fa-envelope-o"></i><a href="mailto:t-enginiring@teyla.com">t-enginiring@teyla.com</a></li>
+                                    <li><i class="fa fa-phone"></i>{{ general_info.phone }}</li>
+                                    <li><i class="fa fa-envelope-o"></i><a href="mailto:{{ general_info.email }}">{{ general_info.email }}</a></li>
                                 </ul>
 							</div>
                             <div class="col-md-6 text-right">
@@ -601,3 +600,4 @@
     {% endblock makeup %}{% endcomment %}
 </body>
 </html>
+
