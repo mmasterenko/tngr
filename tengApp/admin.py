@@ -13,15 +13,17 @@ class ProjectAdmin(admin.ModelAdmin):
         css = {
             "all": ("model_assets/project.css",)
         }
-        js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js", "model_assets/project.js")
+        js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js",
+              "model_assets/project_map.js",
+              "model_assets/project.js",
+              )
+
     fieldsets = [
         (None, {
             'fields': ('name', 'company', 'image', 'desc'),
-            'classes': ('wide',)
         }),
-        (u'карта', {
+        (u'Координаты проекта', {
             'fields': (('latitude', 'longitude'),),
-            'classes': ('wide', 'collapse')
         })
     ]
 
@@ -29,9 +31,9 @@ class ProjectAdmin(admin.ModelAdmin):
 class TeylaGroupAdmin(admin.ModelAdmin):
     class Media:
         css = {
-            "all": ("model_assets/project.css",)
+            "all": ("model_assets/teylagroup.css",)
         }
-        js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js", "model_assets/project.js")
+        js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js", "model_assets/teylagroup.js")
 
 
 admin.site.register(About, AboutAdmin)

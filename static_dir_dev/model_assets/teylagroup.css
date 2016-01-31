@@ -2,11 +2,3 @@ label[for=id_desc], label[for=id_text] {
     float: none;
     margin-bottom: 10px;
 }
-
-#google-map {
-    margin-top: 10px;
-}
-
-fieldset .field-box {
-    float: none;
-}
