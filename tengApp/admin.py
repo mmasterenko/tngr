@@ -14,6 +14,16 @@ class ProjectAdmin(admin.ModelAdmin):
             "all": ("model_assets/project.css",)
         }
         js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js", "model_assets/project.js")
+    fieldsets = [
+        (None, {
+            'fields': ('name', 'company', 'image', 'desc'),
+            'classes': ('wide',)
+        }),
+        (u'карта', {
+            'fields': (('latitude', 'longitude'),),
+            'classes': ('wide', 'collapse')
+        })
+    ]
 
 
 class TeylaGroupAdmin(admin.ModelAdmin):

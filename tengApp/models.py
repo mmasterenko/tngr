@@ -37,6 +37,8 @@ class Project(models.Model):
     company = models.CharField(u'Компания', max_length=100)
     desc = models.TextField(u'Описание')
     image = models.ImageField(u'Картинка', upload_to=upload_path)
+    latitude = models.CharField(u'Широта', max_length=20, null=True, blank=True)
+    longitude = models.CharField(u'Долгота', max_length=20, null=True, blank=True)
 
 
 class About(models.Model):
