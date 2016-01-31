@@ -5,6 +5,7 @@ from .models import About, Document, GeneralInfo, News, Project, Requisites, Stu
 
 
 class AboutAdmin(admin.ModelAdmin):
+    actions = None
     fields = ['name', 'desc', 'image']
 
 
@@ -36,12 +37,16 @@ class TeylaGroupAdmin(admin.ModelAdmin):
         js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js", "model_assets/teylagroup.js")
 
 
+class RequisitesAdmin(admin.ModelAdmin):
+    actions = None
+
+
 admin.site.register(About, AboutAdmin)
 admin.site.register(Document)
 admin.site.register(GeneralInfo)
 admin.site.register(News)
 admin.site.register(Project, ProjectAdmin)
-admin.site.register(Requisites)
+admin.site.register(Requisites, RequisitesAdmin)
 admin.site.register(Stuff)
 admin.site.register(TeylaGroup, TeylaGroupAdmin)
 
