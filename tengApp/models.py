@@ -24,6 +24,10 @@ class GeneralInfo(models.Model):
     address = models.CharField(u'Адрес', max_length=60)
     footerText = models.TextField(u'Текст в футере')
 
+    #logo = models.ImageField(u'Логотип', upload_to=upload_path, null=True, blank=True)
+    #slogan_mainPage = models.CharField(u'Слоган на главной', max_length=150, null=True, blank=True)
+    #slogan_groupPage = models.CharField(u'Слоган Т-Бизнесс групп', max_length=150, null=True, blank=True)
+
 
 class Project(models.Model):
     class Meta:

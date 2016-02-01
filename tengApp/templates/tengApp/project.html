@@ -1,6 +1,12 @@
 {% extends 'tengApp/business_group.html' %}
 {% load staticfiles %}
+{% load google_map %}
 {% block title %}Наши проекты{% endblock %}
+{% block extra_head %}
+    <script>
+    var markers_inode = {% get_markers %}
+    </script>
+{% endblock %}
 {% block page_content_header %}
 {% endblock %}
 {% block page_content_body %}
