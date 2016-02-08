@@ -53,6 +53,7 @@ ADMIN_SHORTCUTS = [
                 'url_name': 'admin:tengApp_generalinfo_changelist',
                 'url_extra': '1',
                 'title': u'Общая информация',
+                'class': 'home'
             }
         ]
     },
@@ -62,18 +63,22 @@ ADMIN_SHORTCUTS = [
             {
                 'url_name': 'admin:tengApp_project_changelist',
                 'title': u'Список проектов',
+                'class': 'flag'
             },
             {
                 'url_name': 'admin:tengApp_about_changelist',
                 'title': u'Информационный блок',
+                'class': 'note'
             },
             {
                 'url_name': 'admin:tengApp_stuff_changelist',
                 'title': u'Наша команда',
+                'class': 'user'
             },
             {
                 'url_name': 'admin:tengApp_news_changelist',
                 'title': u'Новости',
+                'class': 'date'
             },
         ]
     },
@@ -83,11 +88,13 @@ ADMIN_SHORTCUTS = [
             {
                 'url_name': 'admin:tengApp_document_changelist',
                 'title': u'Документы',
+                'class': 'certificate'
             },
             {
                 'url_name': 'admin:tengApp_requisites_changelist',
                 'url_extra': '1',
                 'title': u'Реквизиты',
+                'class': 'card'
             },
         ]
     },
@@ -97,6 +104,7 @@ ADMIN_SHORTCUTS = [
             {
                 'url_name': 'admin:tengApp_teylagroup_changelist',
                 'title': u'Группа компаний Teyla',
+                'class': 'tag'
             }
         ]
     },
