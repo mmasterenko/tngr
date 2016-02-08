@@ -402,12 +402,6 @@
 										<li><a href="{% url 'about' %}">О компании</a></li>
 										<li><a href="{% url 'business_group' %}">Т-бизнесс группа</a></li>
 									</ul>
-                                    {% comment %}
-									<ul class="second-list">
-										<li><a href="#"><i class="fa fa-angle-double-right"></i>Shortcodes</a></li>
-										<li><a href="#"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
-									</ul>
-                                    {% endcomment %}
 								</div>
 							</div>
                             <div class="col-lg-2 col-md-1 col-sm-6 col-xs-12">
@@ -415,31 +409,21 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                                 <div class="company-pages">
 									<h2>КОНТАКТЫ</h2>
-									<ul class="first-list">
-										<li><span>Адрес</span><span>{{ general_info.address }}</span></li>
-										<li><span>Почта</span><a href="mailto:{{ general_info.email }}">{{ general_info.email }}</a></li>
-										<li><span>Телефон</span><span>{{ general_info.phone }}</span></li>
-									</ul>
-                                    {% comment %}
-									<ul class="second-list">
-										<li><a href="#"><i class="fa fa-angle-double-right"></i>Shortcodes</a></li>
-										<li><a href="#"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
-									</ul>
-                                    {% endcomment %}
+                                    <table class="info-table">
+                                        <tr>
+                                            <td>Адрес</td>
+                                            <td>{{ general_info.address }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Почта</td>
+                                            <td><a href="mailto:{{ general_info.email }}">{{ general_info.email }}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Телефон</td>
+                                            <td>{{ general_info.phone }}</td>
+                                        </tr>
+                                    </table>
 								</div>
-								{% comment %}
-                                <div class="subscribe-us">
-									<h2>Subscribe</h2>
-									<input type="text" class="email" name="s" placeholder="" value="">
-									<div class="check-box">
-										<input type="checkbox" id="c1" name="cc"/>
-										<label for="c1">I Accept Newsletter terms</label>
-									</div>
-									<div class="accent-button">
-										<a href="#">Subscribe</a>
-									</div>
-								</div>
-                                {% endcomment %}
 							</div>
 
 						</div>

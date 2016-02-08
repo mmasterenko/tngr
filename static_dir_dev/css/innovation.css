@@ -958,6 +958,27 @@ footer .about-us p {
   line-height: 24px;
   width: 90%;
 }
+footer .company-pages .info-table {
+  color: #afafaf;
+}
+footer .company-pages .info-table td {
+  padding-top: 15px;
+}
+footer .company-pages .info-table td:first-child {
+  vertical-align: top;
+}
+footer .company-pages .info-table td:last-child {
+  padding-left: 20px;
+}
+footer .company-pages .info-table a {
+  color: #afafaf;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+footer .company-pages .info-table a:hover {
+  color: #0092ff;
+}
+
 footer .company-pages ul {
   padding: 0;
   margin: 0;
