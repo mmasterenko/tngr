@@ -10,7 +10,7 @@
                     <div class="col-md-12">
                         {% block page_content_heading %}
                             <h1>Т-БИЗНЕСС ГРУПП</h1>
-                            <h3>{{ ginfo.slogan_groupPage }}</h3>
+                            <h3>{{ ginfo.slogan_groupPage|default_if_none:'' }}</h3>
                         {% endblock %}
                     </div>
                 </div>
