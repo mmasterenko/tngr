@@ -79,7 +79,13 @@
 					<div id="main-header" class="main-header header-sticky">
 						<div class="inner-header container clearfix">
 							<div class="logo">
-								<a href="{% url 'home' %}"><img src="{{ general_info.logo.url }}" alt="logo"></a>
+                                <a href="{% url 'home' %}">
+                                    {% if general_info.logo %}
+                                        <img src="{{ general_info.logo.url }}" alt="logo">
+                                    {% else %}
+                                        <img src="/static/images/ti-logo.png" alt="logo">
+                                    {% endif %}
+                                </a>
 							</div>
 							<div class="header-right-toggle pull-right hidden-md hidden-lg">
 								<a href="javascript:void(0)" class="side-menu-button"><i class="fa fa-bars"></i></a>
@@ -389,7 +395,11 @@
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 								<div class="about-us">
-									<img src="{{ general_info.logo.url }}" alt="logo">
+                                    {% if general_info.logo %}
+									    <img src="{{ general_info.logo.url }}" alt="logo">
+                                    {% else %}
+                                        <img src="/static/images/ti-logo.png" alt="logo">
+                                    {% endif %}
 									<p>{{ general_info.text }}</p>
 								</div>
 							</div>
