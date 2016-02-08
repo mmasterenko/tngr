@@ -8,7 +8,8 @@ def general_info(req):
             'address': info.address,
             'phone': info.phone,
             'email': info.email,
-            'text': info.footerText
+            'text': info.footerText,
+            'logo': info.logo
         }
     except AttributeError:
         info = {}
