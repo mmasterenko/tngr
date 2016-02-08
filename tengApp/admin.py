@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from .models import About, Document, GeneralInfo, News, Project, Requisites, Stuff, TeylaGroup
+from .models import About, Document, GeneralInfo, News, Project, Requisites, Stuff, TeylaGroup, Actions
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -41,6 +41,10 @@ class RequisitesAdmin(admin.ModelAdmin):
     actions = None
 
 
+#class ActionsAdmin(admin.ModelAdmin):
+#    actions = None
+
+
 admin.site.register(About, AboutAdmin)
 admin.site.register(Document)
 admin.site.register(GeneralInfo)
@@ -49,7 +53,8 @@ admin.site.register(Project, ProjectAdmin)
 admin.site.register(Requisites, RequisitesAdmin)
 admin.site.register(Stuff)
 admin.site.register(TeylaGroup, TeylaGroupAdmin)
+admin.site.register(Actions)
 
-admin.site.site_header = u'Интерфейс администратора'
+admin.site.site_header = u'Тейла Инжиниринг / Интерфейс администратора'
 admin.site.index_title = u'Управление'
 admin.site.site_title = u'Тейла Инжиниринг'

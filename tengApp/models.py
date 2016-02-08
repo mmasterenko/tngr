@@ -149,3 +149,18 @@ class Requisites(models.Model):
     doc = models.FileField(u'.doc', upload_to=upload_file_path)
     txt = models.FileField(u'.txt', upload_to=upload_file_path)
 
+
+class Actions(models.Model):
+    class Meta:
+        verbose_name_plural = u'баннеры'
+        verbose_name = u'баннер'
+
+    def __unicode__(self):
+        return '%s' % self.header
+
+    img = models.ImageField(u'картинка', upload_to=upload_path)
+    header = models.CharField(u'заголовок', max_length=80, blank=True, null=True)
+    text = models.TextField(u'текст', blank=True, null=True)
+    is_hide_header = models.BooleanField(u'Скрыть заголовок', default=True)
+    is_hide_text = models.BooleanField(u'Скрыть основной текст', default=True)
+
