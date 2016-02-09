@@ -54,16 +54,22 @@ ADMIN_SHORTCUTS = [
                 'url_extra': '1',
                 'title': u'Общая информация',
                 'class': 'home'
-            }
+            },
+            {
+                'url_name': 'admin:tengApp_settings_changelist',
+                'url_extra': '1',
+                'title': u'Настройки',
+                'class': 'config'
+            },
         ]
     },
     {
         'title': u'Главная Страница',
         'shortcuts': [
             {
-                'url_name': 'admin:tengApp_project_changelist',
-                'title': u'Список проектов',
-                'class': 'flag'
+                'url_name': 'admin:tengApp_actions_changelist',
+                'title': u'Баннеры',
+                'class': 'picture'
             },
             {
                 'url_name': 'admin:tengApp_about_changelist',
@@ -79,6 +85,16 @@ ADMIN_SHORTCUTS = [
                 'url_name': 'admin:tengApp_news_changelist',
                 'title': u'Новости',
                 'class': 'date'
+            },
+        ]
+    },
+    {
+        'title': u'Страница "Проекты"',
+        'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_project_changelist',
+                'title': u'Список проектов',
+                'class': 'flag'
             },
         ]
     },

@@ -1,43 +1,30 @@
 {% extends 'tengApp/business_group.html' %}
 {% load staticfiles %}
-{% block title %}Новости{% endblock %}
+{% block title %}{{ settings.newsPage_title|default_if_none:'Новости' }}{% endblock %}
+{% block description %}{{ settings.newsPage_meta_desc|default_if_none:'' }}{% endblock %}
+{% block keywords %}{{ settings.newsPage_meta_keywords|default_if_none:'' }}{% endblock %}
 {% block page_content_heading %}
-    <h1>НОВОСТИ</h1>
+    <h1>{{ settings.newsPage_header|default_if_none:'Новости' }}</h1>
 {% endblock %}
 {% block page_content_body %}
 
     <section id="news">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-9 col-md-offset-1 article-col">
-                    <h3 class="clearfix">
-                        <span class="h3">Из-за курсов валют...</span>
-                        <span class="date"><i class="fa fa-calendar"></i> 27.11.2014</span>
-                    </h3>
-                    <div class="full-text">
-                        <p>Из-за роста курсов мировых валют цены на зап.части и тех.жидкости
-                            в наших прайсах не актуальны! Для точной информации необходимо
-                            уточнять стоимость и наличие зап.частей по телефонам.
-                        </p>
+            {% for newsItem in news %}
+                <div class="row">
+                    <div class="col-md-9 col-md-offset-1 article-col">
+                        <h3 class="clearfix">
+                            <span class="h3">{{ newsItem.header }}</span>
+                            <span class="date"><i class="fa fa-calendar"></i> {{ newsItem.date }}</span>
+                        </h3>
+                        <div class="full-text">
+                            {% autoescape off %}
+                                {{ newsItem.text }}
+                            {% endautoescape %}
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-9 col-md-offset-1 article-col">
-                    <h3 class="clearfix">
-                        <span class="h3">C 27.11.2014 по 01.12.2014 сервис не работает!!!</span>
-                        <span class="date"><i class="fa fa-calendar"></i> 27.11.2014</span>
-                    </h3>
-                    <div class="full-text">
-                        <p>
-                            Уважаемые клиенты!
-                        </p>
-                        <p>
-                            С 27 ноября наш сервис закрыт по техническим причинам!
-                            Мы вновь сможем Вас принять в обнавленном сервисе уже 1-го декабря!!!
-                            Рады стараться для Наших клиентов!
-                        </p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
 

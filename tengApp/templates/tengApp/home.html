@@ -8,7 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>{% block title %}Т-инжиниринг{% endblock %}</title>
+	<title>{% block title %}{{ settings.indexPage_title|default_if_none:'Т-инжиниринг' }}{% endblock %}</title>
+    <meta name="keywords" content="{% block keywords %}{{ settings.indexPage_meta_desc|default_if_none:'' }}{% endblock %}">
+    <meta name="description" content="{% block description %}{{ settings.indexPage_meta_keywords|default_if_none:'' }}{% endblock %}">
 
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -125,29 +127,24 @@
 					<div class="fullwidthbanner-container">
 						<div class="fullwidthbanner">
 							<ul>
-								<li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
-									<img src="/static/images/main-img.jpg" data-fullwidthcentering="on" alt="slide">
-									{% comment %}
-                                    <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">This is Innovation<br>Construction</div>
-									<div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
-									<div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Donec gravida ex lacus, vitae ultrices urna blandit vitae. Pellentesque cursus neque<br> urna at vulputate nunc rutrum ut morbi</div>
-									<div class="tp-caption first-banner-button sfb tp-resizeme start container" data-x="left" data-hoffset="0" data-y="450" data-speed="1000" data-start="2200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><a href="#">Contact Us</a></div>
-                                    {% endcomment %}
-								</li>
-                                {% comment %}
-                                <li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
-                                    <img src="http://placehold.it/1920x448?text=second" data-fullwidthcentering="on" alt="slide">
-                                    <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Some text</div>
-                                    <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
-                                    <div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Some small text</div>
-                                </li>
-                                <li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
-                                    <img src="http://placehold.it/1920x448?text=third" data-fullwidthcentering="on" alt="slide">
-                                    <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Another text</div>
-                                    <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
-                                    <div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">Small description</div>
-                                </li>
-                                {% endcomment %}
+                                {% if actions %}
+                                    {% for action in actions %}
+                                        <li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
+                                            <img src="{{ action.img.url }}" data-fullwidthcentering="on" alt="slide">
+                                            {% if not action.is_hide_header %}
+                                                <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="180" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">{{ action.header|default_if_none:'' }}</div>
+                                            {% endif %}
+                                            {% if not action.is_hide_text %}
+                                                <div class="tp-caption first-line lft tp-resizeme start" data-x="left" data-hoffset="0" data-y="340" data-speed="1000" data-start="200" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0"><div class="line-dec"></div></div>
+                                                <div class="tp-caption second-line lfb tp-resizeme start" data-x="left" data-hoffset="0" data-y="380" data-speed="1000" data-start="800" data-easing="Power4.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0" data-endelementdelay="0">{{ action.text|default_if_none:'' }}</div>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                {% else %}
+                                    <li class="first-slide" data-transition="fade" data-slotamount="10" data-masterspeed="300">
+                                        <img src="/static/images/main-img.jpg" data-fullwidthcentering="on" alt="slide">
+                                    </li>
+                                {% endif %}
 							</ul>
 						</div>
 					</div>
@@ -158,7 +155,7 @@
 						<div class="row">
 							<div class="col-md-10 col-md-offset-2">
 								<div class="cta-content">
-									<h6>{{ ginfo.slogan_mainPage }}</h6>
+									<h6>{{ ginfo.slogan_mainPage|default_if_none:'' }}</h6>
 								</div>
 							</div>
 						</div>

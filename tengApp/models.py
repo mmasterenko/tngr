@@ -159,8 +159,39 @@ class Actions(models.Model):
         return '%s' % self.header
 
     img = models.ImageField(u'картинка', upload_to=upload_path)
-    header = models.CharField(u'заголовок', max_length=80, blank=True, null=True)
+    header = models.CharField(u'заголовок', max_length=100, default='')
     text = models.TextField(u'текст', blank=True, null=True)
-    is_hide_header = models.BooleanField(u'Скрыть заголовок', default=True)
-    is_hide_text = models.BooleanField(u'Скрыть основной текст', default=True)
+    is_hide_header = models.BooleanField(u'Не отображать заголовок', default=True)
+    is_hide_text = models.BooleanField(u'Не отображать текст', default=True)
 
+
+class Settings(models.Model):
+    class Meta:
+        verbose_name_plural = u'настройки'
+        verbose_name = u'настройки'
+
+    def __unicode__(self):
+        return u'настройки'
+
+    indexPage_title = models.CharField('<title>', max_length=100, null=True, blank=True)
+    indexPage_meta_desc = models.CharField('meta description', max_length=100, null=True, blank=True)
+    indexPage_meta_keywords = models.CharField('meta keywords', max_length=100, null=True, blank=True)
+
+    projectPage_title = models.CharField('<title>', max_length=100, null=True, blank=True)
+    projectPage_meta_desc = models.CharField('meta description', max_length=100, null=True, blank=True)
+    projectPage_meta_keywords = models.CharField('meta keywords', max_length=100, null=True, blank=True)
+
+    aboutPage_header = models.CharField(u'Заголовок', max_length=100, null=True, blank=True)
+    aboutPage_title = models.CharField('<title>', max_length=100, null=True, blank=True)
+    aboutPage_meta_desc = models.CharField('meta description', max_length=100, null=True, blank=True)
+    aboutPage_meta_keywords = models.CharField('meta keywords', max_length=100, null=True, blank=True)
+
+    businessPage_header = models.CharField(u'Заголовок', max_length=100, null=True, blank=True)
+    businessPage_title = models.CharField('<title>', max_length=100, null=True, blank=True)
+    businessPage_meta_desc = models.CharField('meta description', max_length=100, null=True, blank=True)
+    businessPage_meta_keywords = models.CharField('meta keywords', max_length=100, null=True, blank=True)
+
+    newsPage_header = models.CharField(u'Заголовок', max_length=100, null=True, blank=True)
+    newsPage_title = models.CharField('<title>', max_length=100, null=True, blank=True)
+    newsPage_meta_desc = models.CharField('meta description', max_length=100, null=True, blank=True)
+    newsPage_meta_keywords = models.CharField('meta keywords', max_length=100, null=True, blank=True)
