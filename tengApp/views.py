@@ -53,7 +53,8 @@ def project(req):
 
 
 def news(req):
-    return render(req, 'tengApp/news.html')
+    context = {'news': News.objects.order_by('-date', '-id')}
+    return render(req, 'tengApp/news.html', context=context)
 
 
 def media(req, path):

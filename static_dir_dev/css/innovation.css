@@ -4342,6 +4342,7 @@ section#news .article-col .date {
   color: #0092ff;
 }
 
+section#news .article-col .full-text,
 section#news .article-col .full-text p {
   color: #777777;
   font-size: 13px;
