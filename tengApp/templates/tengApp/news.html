@@ -1,8 +1,10 @@
 {% extends 'tengApp/business_group.html' %}
 {% load staticfiles %}
-{% block title %}Новости{% endblock %}
+{% block title %}{{ settings.newsPage_title|default_if_none:'Новости' }}{% endblock %}
+{% block description %}{{ settings.newsPage_meta_desc|default_if_none:'' }}{% endblock %}
+{% block keywords %}{{ settings.newsPage_meta_keywords|default_if_none:'' }}{% endblock %}
 {% block page_content_heading %}
-    <h1>НОВОСТИ</h1>
+    <h1>{{ settings.newsPage_header|default_if_none:'Новости' }}</h1>
 {% endblock %}
 {% block page_content_body %}
 

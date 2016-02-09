@@ -1,8 +1,10 @@
 {% extends 'tengApp/business_group.html' %}
 {% load staticfiles %}
-{% block title %}О компании{% endblock %}
+{% block title %}{{ settings.aboutPage_title|default_if_none:'О компании' }}{% endblock %}
+{% block description %}{{ settings.aboutPage_meta_desc|default_if_none:'' }}{% endblock %}
+{% block keywords %}{{ settings.aboutPage_meta_keywords|default_if_none:'' }}{% endblock %}
 {% block page_content_heading %}
-    <h1>О КОМПАНИИ</h1>
+    <h1>{{ settings.aboutPage_header|default_if_none:'О компании' }}</h1>
 {% endblock %}
 {% block page_content_body %}
     <section class="projects-page">

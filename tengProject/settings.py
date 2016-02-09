@@ -54,7 +54,13 @@ ADMIN_SHORTCUTS = [
                 'url_extra': '1',
                 'title': u'Общая информация',
                 'class': 'home'
-            }
+            },
+            {
+                'url_name': 'admin:tengApp_settings_changelist',
+                'url_extra': '1',
+                'title': u'Настройки',
+                'class': 'config'
+            },
         ]
     },
     {

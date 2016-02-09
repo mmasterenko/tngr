@@ -1,4 +1,4 @@
-from .models import GeneralInfo
+from .models import GeneralInfo, Settings
 
 
 def general_info(req):
@@ -13,4 +13,4 @@ def general_info(req):
         }
     except AttributeError:
         info = {}
-    return {'general_info': info}
+    return {'general_info': info, 'settings': Settings.objects.first()}
