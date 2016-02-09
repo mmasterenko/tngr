@@ -159,8 +159,8 @@ class Actions(models.Model):
         return '%s' % self.header
 
     img = models.ImageField(u'картинка', upload_to=upload_path)
-    header = models.CharField(u'заголовок', max_length=80, blank=True, null=True)
+    header = models.CharField(u'заголовок', max_length=100, default='')
     text = models.TextField(u'текст', blank=True, null=True)
-    is_hide_header = models.BooleanField(u'Скрыть заголовок', default=True)
-    is_hide_text = models.BooleanField(u'Скрыть основной текст', default=True)
+    is_hide_header = models.BooleanField(u'Не отображать заголовок', default=True)
+    is_hide_text = models.BooleanField(u'Не отображать текст', default=True)
 

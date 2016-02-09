@@ -4,7 +4,7 @@ import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
-from .models import About, TeylaGroup, Project, News, Stuff, Document, Requisites, GeneralInfo
+from .models import About, TeylaGroup, Project, News, Stuff, Document, Requisites, GeneralInfo, Actions
 from django.core.paginator import Paginator
 
 
@@ -21,7 +21,8 @@ def home(req):
         'stuff': Stuff.objects.all(),
         'news': News.objects.order_by('-date', '-id')[:3],
         'projects': Project.objects.order_by('-id')[:3],
-        'ginfo': GeneralInfo.objects.first()
+        'ginfo': GeneralInfo.objects.first(),
+        'actions': Actions.objects.all()
     }
     return render(req, 'tengApp/home.html', context)
 
