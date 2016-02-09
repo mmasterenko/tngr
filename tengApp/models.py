@@ -100,8 +100,8 @@ class News(models.Model):
     header = models.CharField(u'Заголовок', max_length=80)
     text = models.TextField(u'Текст')
     date = models.DateField(u'Дата', default=now)
-    uri_help_text = u'URI под которым будет доступна новость. например: /udivitelnaya-novost/'
-    url = SlugNullField(u'URI', help_text=uri_help_text, null=True, blank=True, unique=True, max_length=90, default=None)
+    uri_help_text = u'URL под которым будет доступна новость. например: /udivitelnaya-novost/'
+    url = SlugNullField(u'URL', help_text=uri_help_text, null=True, blank=True, unique=True, max_length=90, default=None)
 
 
 class TeylaGroup(models.Model):
@@ -211,6 +211,12 @@ class FlatPages(SEOFieldsMixin):
         verbose_name_plural = u'простые страницы'
         verbose_name = u'страницу'
 
+    def __unicode__(self):
+        return self.header
+
     menu = models.CharField(u'прикрепить к меню', max_length=10, choices=PAGE_CHOICE)
+    submenu = models.CharField(u'надпись в меню', max_length=20, default=u'подменю_1')
     header = models.CharField(u'заголовок', max_length=100)
     text = models.TextField(u'содержание')
+    help_text = u'URL под которым будет доступна страница. например: /novaya-stranica/'
+    url = SlugNullField(u'URL', help_text=help_text, null=True, blank=True, unique=True, max_length=150, default=None)

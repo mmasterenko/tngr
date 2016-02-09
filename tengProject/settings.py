@@ -61,6 +61,11 @@ ADMIN_SHORTCUTS = [
                 'title': u'Настройки',
                 'class': 'config'
             },
+            {
+                'url_name': 'admin:tengApp_flatpages_changelist',
+                'title': u'Простые страницы',
+                'class': 'file2'
+            },
         ]
     },
     {
