@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from .models import About, Document, GeneralInfo, News, Project, Requisites, Stuff, TeylaGroup, Actions, Settings
+from .models import About, Document, GeneralInfo, News, Project, Requisites, \
+    Stuff, TeylaGroup, Actions, Settings, FlatPages
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -71,6 +72,23 @@ class SettingsAdmin(admin.ModelAdmin):
     ]
 
 
+class FlatPagesAdmin(admin.ModelAdmin):
+    class Media:
+        css = {
+            "all": ("model_assets/ckeditor.css",)
+        }
+        js = ("http://cdn.ckeditor.com/4.5.7/full/ckeditor.js", "model_assets/ckeditor.js")
+    fieldsets = [
+        (None, {
+            'fields': ('menu', 'header', 'text')
+        }),
+        (u'SEO настройки', {
+            'fields': ('title', 'meta_desc', 'meta_keywords'),
+            'classes': ('wide', 'collapse'),
+        })
+    ]
+
+
 admin.site.register(About, AboutAdmin)
 admin.site.register(Document)
 admin.site.register(GeneralInfo)
@@ -81,6 +99,7 @@ admin.site.register(Stuff)
 admin.site.register(TeylaGroup, TeylaGroupAdmin)
 admin.site.register(Actions)
 admin.site.register(Settings, SettingsAdmin)
+admin.site.register(FlatPages, FlatPagesAdmin)
 
 admin.site.site_header = u'Тейла Инжиниринг / Интерфейс администратора'
 admin.site.index_title = u'Управление'

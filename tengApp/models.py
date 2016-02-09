@@ -4,6 +4,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.timezone import now
 from .utils import SlugNullField
+from .model_mixins import SEOFieldsMixin
 
 upload_path = 'images/original'
 upload_file_path = 'files'
@@ -195,3 +196,21 @@ class Settings(models.Model):
     newsPage_title = models.CharField('<title>', max_length=100, null=True, blank=True)
     newsPage_meta_desc = models.CharField('meta description', max_length=100, null=True, blank=True)
     newsPage_meta_keywords = models.CharField('meta keywords', max_length=100, null=True, blank=True)
+
+
+PAGE_CHOICE = (
+    ('main', u'Главная'),
+    ('project', u'Проекты'),
+    ('about', u'О компании'),
+    ('t-group', u'Т-бизнесс групп'),
+)
+
+
+class FlatPages(SEOFieldsMixin):
+    class Meta:
+        verbose_name_plural = u'простые страницы'
+        verbose_name = u'страницу'
+
+    menu = models.CharField(u'прикрепить к меню', max_length=10, choices=PAGE_CHOICE)
+    header = models.CharField(u'заголовок', max_length=100)
+    text = models.TextField(u'содержание')
