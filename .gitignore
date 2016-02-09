@@ -1,3 +1,5 @@
+gunicorn.sh
+requirements_freeze.txt
 media/
 upload/
 devfiles
