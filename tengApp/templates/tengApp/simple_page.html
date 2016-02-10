@@ -1,0 +1,21 @@
+{% extends 'tengApp/business_group.html' %}
+{% load staticfiles %}
+{% block title %}
+    {% if page.title %}
+        {{ page.title }}
+    {% else %}
+        {{ page.header }}
+    {% endif %}
+{% endblock %}
+{% block description %}{{ page.meta_desc|default_if_none:'' }}{% endblock %}
+{% block keywords %}{{ page.meta_keywords|default_if_none:'' }}{% endblock %}
+{% block page_content_heading %}
+    <h1>{{ page.header }}</h1>
+{% endblock %}
+{% block page_content_body %}
+    <div class="simple-page-content">
+        {% autoescape off %}
+            {{ page.text }}
+        {% endautoescape %}
+    </div>
+{% endblock %}
