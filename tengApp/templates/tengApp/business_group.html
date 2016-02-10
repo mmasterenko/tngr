@@ -63,9 +63,8 @@
         {% endblock %}
     </div>
 {% endblock %}
-{% comment %}
 {% block makeup %}
-    <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/business_group.png"></script>
+    {% if debug %}
+        <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/business_group.png"></script>
+    {% endif %}
 {% endblock makeup %}
-{% endcomment %}
-

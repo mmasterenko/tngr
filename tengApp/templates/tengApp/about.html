@@ -135,9 +135,10 @@
         </div>
     </section>
 {% endblock %}
-{% comment %}
 {% block makeup %}
-    <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/requisites.png"></script>
+    {% if debug %}
+        <script src="{% static 'js/makeup/makeup.js' %}?maket=/static/js/makeup/requisites.png"></script>
+    {% endif %}
 {% endblock makeup %}
-{% endcomment %}
+
 
