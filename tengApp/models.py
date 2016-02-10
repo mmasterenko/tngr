@@ -214,9 +214,9 @@ class FlatPages(SEOFieldsMixin):
     def __unicode__(self):
         return self.header
 
-    menu = models.CharField(u'прикрепить к меню', max_length=10, choices=PAGE_CHOICE)
+    menu = models.CharField(u'прикрепить к меню', max_length=10, choices=PAGE_CHOICE, null=True, blank=True)
     submenu = models.CharField(u'надпись в меню', max_length=20, default=u'подменю_1')
     header = models.CharField(u'заголовок', max_length=100)
     text = models.TextField(u'содержание')
     help_text = u'URL под которым будет доступна страница. например: /novaya-stranica/'
-    url = SlugNullField(u'URL', help_text=help_text, null=True, blank=True, unique=True, max_length=150, default=None)
+    url = SlugNullField(u'URL', help_text=help_text, unique=True, max_length=150, default=None)

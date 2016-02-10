@@ -4,7 +4,7 @@ import os
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.conf import settings
-from .models import About, TeylaGroup, Project, News, Stuff, Document, Requisites, GeneralInfo, Actions
+from .models import About, TeylaGroup, Project, News, Stuff, Document, Requisites, GeneralInfo, Actions, FlatPages
 from django.core.paginator import Paginator
 
 
@@ -76,3 +76,8 @@ def media(req, path):
 
     image_data = open(file_name, 'rb').read()
     return HttpResponse(image_data, content_type=content_type)
+
+
+def simple_page(req, page_url=None):
+    context = {'page': FlatPages.objects.filter(url=page_url).first()}
+    return render(req, 'tengApp/simple_page.html', context=context)

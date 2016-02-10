@@ -1,4 +1,4 @@
-from .models import GeneralInfo, Settings
+from .models import GeneralInfo, Settings, FlatPages
 
 
 def general_info(req):
@@ -11,6 +11,14 @@ def general_info(req):
             'text': info.footerText,
             'logo': info.logo
         }
+        fp = FlatPages.objects.values('submenu', 'url')
+        menu = {
+            'home': fp.filter(menu='main'),
+            'project': fp.filter(menu='project'),
+            'about': fp.filter(menu='about'),
+            'group': fp.filter(menu='t-group'),
+        }
     except AttributeError:
         info = {}
-    return {'general_info': info, 'settings': Settings.objects.first()}
+        menu = {}
+    return {'general_info': info, 'settings': Settings.objects.first(), 'mainMenu': menu}

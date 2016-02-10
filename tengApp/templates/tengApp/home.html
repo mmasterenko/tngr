@@ -94,24 +94,53 @@
 							</div>
 							<nav class="main-navigation text-right hidden-xs hidden-sm">
 								<ul>
-									<li>
-                                        <a href="{% url 'home' %}">ГЛАВНАЯ</a>
-                                        {% comment %}
-                                        <a class="has-submenu" href="{% url 'home' %}">ГЛАВНАЯ</a>
-                                        <ul class="sub-menu">
-											<li><a href="index.html">Homepage 1</a></li>
-											<li><a href="homepage-2.html">Homepage 2</a></li>
-											<li><a href="homepage-3.html">Homepage 3</a></li>
-											<li><a href="homepage-4.html">Homepage 4</a></li>
-											<li><a href="homepage-5.html">Homepage 5</a></li>
-										</ul>
-                                        {% endcomment %}
+                                    <li>
+                                        {% if mainMenu.home %}
+                                            <a class="has-submenu" href="{% url 'home' %}">ГЛАВНАЯ</a>
+                                            <ul class="sub-menu">
+                                                {% for menuItem in mainMenu.home %}
+                                                    <li><a href="/{{ menuItem.url }}/">{{ menuItem.submenu }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% else %}
+                                            <a href="{% url 'home' %}">ГЛАВНАЯ</a>
+                                        {% endif %}
+                                    </li>
+                                    <li>
+                                        {% if mainMenu.project %}
+                                            <a class="has-submenu" href="{% url 'project' %}">ПРОЕКТЫ</a>
+                                            <ul class="sub-menu">
+                                                {% for menuItem in mainMenu.project %}
+                                                    <li><a href="/{{ menuItem.url }}/">{{ menuItem.submenu }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% else %}
+                                            <a href="{% url 'project' %}" class="">ПРОЕКТЫ</a>
+                                        {% endif %}
 									</li>
-									<li><a href="{% url 'project' %}" class="">ПРОЕКТЫ</a>
+                                    <li>
+                                        {% if mainMenu.about %}
+                                            <a class="has-submenu" href="{% url 'about' %}">О КОМПАНИИ</a>
+                                            <ul class="sub-menu">
+                                                {% for menuItem in mainMenu.about %}
+                                                    <li><a href="/{{ menuItem.url }}/">{{ menuItem.submenu }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% else %}
+                                            <a href="{% url 'about' %}" class="">О КОМПАНИИ</a>
+                                        {% endif %}
 									</li>
-									<li><a href="{% url 'about' %}" class="">О КОМПАНИИ</a>
-									</li>
-									<li><a href="{% url 'business_group' %}" class="">Т-БИЗНЕСС ГРУППА</a>
+                                    <li>
+                                        {% if mainMenu.group %}
+                                            <a class="has-submenu" href="{% url 'business_group' %}">Т-БИЗНЕСС ГРУППА</a>
+                                            <ul class="sub-menu">
+                                                {% for menuItem in mainMenu.group %}
+                                                    <li><a href="/{{ menuItem.url }}/">{{ menuItem.submenu }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% else %}
+                                            <a href="{% url 'business_group' %}" class="">Т-БИЗНЕСС ГРУППА</a>
+                                        {% endif %}
 									</li>
 									<li>
                                         {% comment %}
