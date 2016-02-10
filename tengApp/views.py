@@ -2,7 +2,7 @@
 
 import os
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
 from .models import About, TeylaGroup, Project, News, Stuff, Document, Requisites, GeneralInfo, Actions, FlatPages
 from django.core.paginator import Paginator
@@ -79,5 +79,8 @@ def media(req, path):
 
 
 def simple_page(req, page_url=None):
-    context = {'page': FlatPages.objects.filter(url=page_url).first()}
+    page = FlatPages.objects.filter(url=page_url).first()
+    if not page:
+        return HttpResponseNotFound('Not found')
+    context = {'page': page}
     return render(req, 'tengApp/simple_page.html', context=context)
