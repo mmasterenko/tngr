@@ -8,5 +8,5 @@ register = template.Library()
 @register.simple_tag(takes_context=True)
 def get_markers(context):
     request = context['request']
-    markers = list(Project.objects.values('latitude', 'longitude'))
+    markers = list(Project.objects.values('latitude', 'longitude', 'name'))
     return json.dumps(markers)

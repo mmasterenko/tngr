@@ -52,15 +52,21 @@ function initMap() {
     for (i in markers_inode) {
         var latLng = new google.maps.LatLng(markers_inode[i].latitude, markers_inode[i].longitude);
         var marker = new google.maps.Marker({
-            'position': latLng
-            //'title': markers_inode[i].title,
-            //'label': 'метка',
-            //'teng_id': markers_inode[i].id
+            'position': latLng,
+            'title': markers_inode[i].name
         });
         markers.push(marker);
+        attachBubble(marker, marker.getTitle());
     }
     var markerCluster = new MarkerClusterer(map, markers);
 
+}
+
+function attachBubble(marker, title) {
+    var bubble = new google.maps.InfoWindow({content: title});
+    marker.addListener('click', function () {
+        bubble.open(map, marker);
+    });
 }
 
 
