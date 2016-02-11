@@ -53,7 +53,7 @@ class Project(models.Model):
         return self.name
 
     area = models.ForeignKey(ProjectArea, verbose_name=u'название региона', null=True, blank=True)
-    name = models.CharField(u'Название', max_length=100)
+    name = models.CharField(u'Название проекта', max_length=100)
     company = models.CharField(u'Компания', max_length=100)
     desc = models.TextField(u'Описание')
     image = models.ImageField(u'Картинка', upload_to=upload_path)

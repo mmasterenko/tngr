@@ -99,12 +99,12 @@ ADMIN_SHORTCUTS = [
             {
                 'url_name': 'admin:tengApp_projectarea_changelist',
                 'title': u'Регионы',
-                'class': 'flag'
+                'class': 'pin'
             },
             {
                 'url_name': 'admin:tengApp_project_changelist',
                 'title': u'Проекты',
-                'class': 'pin'
+                'class': 'flag'
             },
         ]
     },

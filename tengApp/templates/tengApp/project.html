@@ -23,7 +23,11 @@
                 <div class="group text-center">
                     {% if areas %}
                         {% for area in areas %}
-                            <span class="btn filter" data-tab="tab{{ forloop.counter }}">{{ area.name }}</span>
+                            <span class="btn filter"
+                                  data-area-lat="{{ area.lat }}"
+                                  data-area-lng="{{ area.lng }}"
+                                  data-area-zoom="{{ area.zoom }}"
+                                  data-tab="tab{{ forloop.counter }}">{{ area.name }}</span>
                         {% endfor %}
                     {% endif %}
                 </div>
@@ -62,9 +66,11 @@
 {% block js_plugins %}
     <script src="{% static 'bower_components/js-marker-clusterer/src/markerclusterer.js' %}"></script>
     <script src="{% static 'js/map.js' %}"></script>
+    {% comment %}
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC37S4JUrdlmWAB3CmczT6gL_U0pP-Dvj0&callback=initMap">
     </script>
+    {% endcomment %}
 {% endblock %}
 {% block makeup %}
     {% if debug %}

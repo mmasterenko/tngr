@@ -54,7 +54,11 @@ def project(req):
     projects = Project.objects.select_related('area').all()
     areas = []
     for area in ProjectArea.objects.all():
-        d = {'name': area.name,
+        d = {'id': area.id,
+             'name': area.name,
+             'lat': area.latitude,
+             'lng': area.longitude,
+             'zoom': area.zoom,
              'projects': group_list(projects.filter(area=area), 3)
              }
         areas.append(d)
