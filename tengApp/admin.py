@@ -112,11 +112,14 @@ class FlatPagesAdmin(admin.ModelAdmin):
             "all": ("model_assets/ckeditor.css",)
         }
         js = ("http://cdn.ckeditor.com/4.5.7/full/ckeditor.js", "model_assets/ckeditor.js")
-    list_display = ('header', 'menu', 'submenu', 'url')
+    list_display = ('id', 'header', 'menu', 'submenu', 'url', 'order')
+    list_display_links = ('header',)
     list_filter = ('menu',)
+    list_editable = ('order',)
+    ordering = ('-order', 'id')
     fieldsets = [
         (None, {
-            'fields': ('menu', 'submenu', 'header', 'url', 'text'),
+            'fields': ('menu', 'submenu', 'header', 'url', 'order', 'text'),
             'classes': ('wide',)
         }),
         (u'SEO настройки', {

@@ -4,7 +4,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.utils.timezone import now
 from .utils import SlugNullField
-from .model_mixins import SEOFieldsMixin
+from .model_mixins import SEOFieldsMixin, OrderFieldMixin
 
 upload_path = 'images/original'
 upload_file_path = 'files'
@@ -221,7 +221,7 @@ PAGE_CHOICE = (
 )
 
 
-class FlatPages(SEOFieldsMixin):
+class FlatPages(OrderFieldMixin, SEOFieldsMixin):
     class Meta:
         verbose_name_plural = u'простые страницы'
         verbose_name = u'страницу'

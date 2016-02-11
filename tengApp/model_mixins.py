@@ -4,6 +4,14 @@ from django.utils import six
 from django.utils.encoding import smart_text
 
 
+class OrderFieldMixin(models.Model):
+    class Meta:
+        abstract = True
+    help_text = u'значение этого поля влияет на порядок следования элементов ' \
+                u'(чем меньше значение, тем ниже расположен элемент)'
+    order = models.SmallIntegerField(u'порядок', null=True, blank=True, help_text=help_text, default=-1)
+
+
 class SEOFieldsMixin(models.Model):
     class Meta:
         abstract = True
