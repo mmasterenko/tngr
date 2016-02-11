@@ -30,7 +30,7 @@ def home(req):
 
 
 def business_group(req):
-    pagntor = Paginator(TeylaGroup.objects.all(), 3)
+    pagntor = Paginator(TeylaGroup.objects.order_by('-order', 'id'), 3)
     context = {
         'teyla_group': [pagntor.page(number).object_list for number in pagntor.page_range],
         'ginfo': GeneralInfo.objects.first()
@@ -40,7 +40,7 @@ def business_group(req):
 
 def about(req):
     info = About.objects.all()
-    pagntor = Paginator(Document.objects.all(), 3)
+    pagntor = Paginator(Document.objects.order_by('-order', 'id'), 3)
     context = {
         'about': info.get(code='about'),
         'docs': [pagntor.page(number).object_list for number in pagntor.page_range],
@@ -51,9 +51,9 @@ def about(req):
 
 
 def project(req):
-    projects = Project.objects.select_related('area').all()
+    projects = Project.objects.select_related('area').order_by('-order', 'id')
     areas = []
-    for area in ProjectArea.objects.all():
+    for area in ProjectArea.objects.order_by('-order', 'id'):
         d = {'id': area.id,
              'name': area.name,
              'lat': area.latitude,

@@ -30,7 +30,7 @@ class GeneralInfo(models.Model):
     slogan_groupPage = models.CharField(u'Слоган Т-Бизнесс групп', max_length=150, null=True, blank=True)
 
 
-class ProjectArea(models.Model):
+class ProjectArea(OrderFieldMixin, models.Model):
     class Meta:
         verbose_name = u'регион'
         verbose_name_plural = u'регионы'
@@ -44,7 +44,7 @@ class ProjectArea(models.Model):
     zoom = models.CharField(u'масштаб', max_length=6, null=True, blank=True, default='8')
 
 
-class Project(models.Model):
+class Project(OrderFieldMixin, models.Model):
     class Meta:
         verbose_name = u'проект'
         verbose_name_plural = u'проекты'
@@ -101,7 +101,7 @@ class Stuff(models.Model):
     photo = models.ImageField(u'Фото', upload_to=upload_path)
 
 
-class News(models.Model):
+class News(SEOFieldsMixin, models.Model):
     class Meta:
         verbose_name = u'новость'
         verbose_name_plural = u'новости'
@@ -119,7 +119,7 @@ class News(models.Model):
     url = SlugNullField(u'URL', help_text=uri_help_text, null=True, blank=True, unique=True, max_length=90, default=None)
 
 
-class TeylaGroup(models.Model):
+class TeylaGroup(OrderFieldMixin, models.Model):
     class Meta:
         verbose_name = u'группа компаний'
         verbose_name_plural = verbose_name
@@ -139,7 +139,7 @@ class TeylaGroup(models.Model):
     image = models.ImageField(u'Картинка', upload_to=upload_path)
 
 
-class Document(models.Model):
+class Document(OrderFieldMixin, models.Model):
     class Meta:
         verbose_name = u'документ'
         verbose_name_plural = u'документы'
@@ -166,7 +166,7 @@ class Requisites(models.Model):
     txt = models.FileField(u'.txt', upload_to=upload_file_path)
 
 
-class Actions(models.Model):
+class Actions(OrderFieldMixin, models.Model):
     class Meta:
         verbose_name_plural = u'баннеры'
         verbose_name = u'баннер'

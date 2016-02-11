@@ -19,7 +19,10 @@ class ProjectAreaAdmin(admin.ModelAdmin):
               "model_assets/projectarea_map.js",
               "model_assets/projectarea.js",
               )
-    list_display = ('name', 'latitude', 'longitude', 'zoom')
+    list_display = ('id', 'name', 'latitude', 'longitude', 'zoom', 'order')
+    list_display_links = ('name',)
+    list_editable = ('order',)
+    ordering = ('-order', 'id')
     actions = None
     fieldsets = [
         (None, {
@@ -42,8 +45,11 @@ class ProjectAdmin(admin.ModelAdmin):
               "model_assets/project_map.js",
               "model_assets/project.js",
               )
-    list_display = ('name', 'company', 'area')
+    list_display = ('id', 'name', 'company', 'area', 'order')
+    list_display_links = ('name',)
     list_filter = ('area',)
+    list_editable = ('order',)
+    ordering = ('-order', 'id')
     fieldsets = [
         (None, {
             'fields': ('area', 'name', 'company', 'image', 'desc'),
@@ -60,6 +66,10 @@ class TeylaGroupAdmin(admin.ModelAdmin):
             "all": ("model_assets/teylagroup.css",)
         }
         js = ("http://cdn.ckeditor.com/4.5.3/basic/ckeditor.js", "model_assets/teylagroup.js")
+    list_display = ('name', 'link', 'order')
+    list_editable = ('order',)
+    ordering = ('-order', 'id')
+    exclude = ('order',)
 
 
 class RequisitesAdmin(admin.ModelAdmin):
@@ -67,7 +77,10 @@ class RequisitesAdmin(admin.ModelAdmin):
 
 
 class ActionsAdmin(admin.ModelAdmin):
-    list_display = ('header', 'is_hide_header', 'is_hide_text')
+    list_display = ('header', 'is_hide_header', 'is_hide_text', 'order')
+    list_editable = ('order',)
+    ordering = ('-order', 'id')
+    exclude = ('order',)
 
 
 class SettingsAdmin(admin.ModelAdmin):
@@ -102,8 +115,19 @@ class NewsAdmin(admin.ModelAdmin):
             "all": ("model_assets/ckeditor.css",)
         }
         js = ("http://cdn.ckeditor.com/4.5.7/standard/ckeditor.js", "model_assets/ckeditor.js")
-    fields = ('header', 'date', 'url', 'text')
+    fieldsets = [
+        (None, {
+            'fields': ('header', 'date', 'url', 'text'),
+            'classes': ('wide',)
+        }),
+        (u'SEO настройки', {
+            'fields': ('title', 'meta_desc', 'meta_keywords'),
+            'classes': ('wide', 'collapse'),
+        })
+    ]
     prepopulated_fields = {'url': ('header',)}
+    list_display = ('header', 'url', 'date')
+    date_hierarchy = 'date'
 
 
 class FlatPagesAdmin(admin.ModelAdmin):
@@ -130,8 +154,15 @@ class FlatPagesAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ('header',)}
 
 
+class DocumentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'order')
+    list_editable = ('order',)
+    ordering = ('-order', 'id')
+    exclude = ('order',)
+
+
 admin.site.register(About, AboutAdmin)
-admin.site.register(Document)
+admin.site.register(Document, DocumentAdmin)
 admin.site.register(GeneralInfo)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Project, ProjectAdmin)
