@@ -2,12 +2,34 @@
 
 from django.contrib import admin
 from .models import About, Document, GeneralInfo, News, Project, Requisites, \
-    Stuff, TeylaGroup, Actions, Settings, FlatPages
+    Stuff, TeylaGroup, Actions, Settings, FlatPages, ProjectArea
 
 
 class AboutAdmin(admin.ModelAdmin):
     actions = None
     fields = ['name', 'desc', 'image']
+
+
+class ProjectAreaAdmin(admin.ModelAdmin):
+    class Media:
+        css = {
+            "all": ("model_assets/project.css",)
+        }
+        js = (
+              "model_assets/projectarea_map.js",
+              "model_assets/projectarea.js",
+              )
+
+    fieldsets = [
+        (None, {
+            'fields': ('name',),
+            'classes': ('wide',)
+        }),
+        (u'Настройки карты', {
+            'fields': ('zoom', ('latitude', 'longitude')),
+            'description': u'С помощью карты задайте центральную точку и масштаб для данного региона'
+        })
+    ]
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -22,7 +44,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
     fieldsets = [
         (None, {
-            'fields': ('name', 'company', 'image', 'desc'),
+            'fields': ('area', 'name', 'company', 'image', 'desc'),
         }),
         (u'Координаты проекта', {
             'fields': (('latitude', 'longitude'),),
@@ -108,6 +130,7 @@ admin.site.register(Document)
 admin.site.register(GeneralInfo)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(ProjectArea, ProjectAreaAdmin)
 admin.site.register(Requisites, RequisitesAdmin)
 admin.site.register(Stuff)
 admin.site.register(TeylaGroup, TeylaGroupAdmin)

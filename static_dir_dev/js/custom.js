@@ -436,15 +436,15 @@ jQuery( document ).ready(function( $ ) {
 	 * my custom js (masterenko)
 	 * ======================================== */
 
-	if(location.pathname === '/about/') {
+	if(true) {   // (location.pathname === '/about/')
 		var about_menu = $('.page-content .projects-page .tabs .group .btn.filter');
-		var current_menu;
+		var current_menu = about_menu.first();
 		if(location.hash) {
-			current_menu = about_menu.filter(function () {
-				return $(this).data('hash') == location.hash
-			});
-		} else {
-			current_menu = about_menu.first();
+			if(about_menu.is('[data-hash]')) {
+				current_menu = about_menu.filter(function () {
+					return $(this).data('hash') == location.hash
+				});
+			}
 		}
 		current_menu.addClass('active');
 		var tab_id = current_menu.data('tab');

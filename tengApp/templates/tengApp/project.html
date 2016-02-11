@@ -17,6 +17,138 @@
         <div id="google-map"></div>
     </section>
 
+    <section class="projects-page">
+        <div class="container tabs">
+            <div class="row">
+                <div class="group text-center">
+                    <span class="btn filter" data-tab="tab1">Северо-западный АО</span>
+                    <span class="btn filter" data-tab="tab2">Центральный АО</span>
+                    <span class="btn filter" data-tab="tab3">Поволжский АО</span>
+                    <span class="btn filter" data-tab="tab4">Дальневосточный АО</span>
+                </div>
+            </div>
+            <div class="row tab-content projects">
+                <div id="tab1" class="tab active">
+                    <div class="row">
+                        {% for project in projects %}
+                            <div class="col-md-4">
+                                <div class="service-item">
+                                    <div class="fsi-frame-348x192">
+                                        <span class="fsi-helper"></span>
+                                        <img class="fsi-img-348x192" src='{{ project.image.url }}' alt="">
+                                    </div>
+                                    <h4>{{ project.name }}</h4>
+                                    <p>{{ project.company }}</p>
+                                    <div class="latest-projects">
+                                        {% autoescape off %}
+                                            {{ project.desc }}
+                                        {% endautoescape %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="tab2" class="tab">
+                    <div class="container-fluid">
+                        {% for docs_row in docs %}
+                        <div class="row">
+                            {% for doc in docs_row %}
+                            <div class="col-sm-6 col-md-4 col-lg-4">
+                                <div class="fsi-frame-360x410">
+                                    <span class="fsi-helper"></span>
+                                    <img class="fsi-img" src='{{ doc.img.url }}' alt="">
+                                </div>
+                                <h5>{{ doc.name }}</h5>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="tab3" class="tab">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 col-lg-3">
+                                <ul>
+                                    <li><a href="{{ requisites.pdf.url }}">Скачать .pdf</a></li>
+                                    <li><a href="{{ requisites.doc.url }}">Скачать .doc</a></li>
+                                    <li><a href="{{ requisites.txt.url }}">Скачать .txt</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8 col-lg-9 par">
+                                <h4>{{ requisites.header }}</h4>
+                                <pre>
+{{ requisites.text }}
+                                </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tab4" class="tab">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="http://placehold.it/370x280?text=yandex map" alt="">
+                            </div>
+                            <div class="col-lg-8 text-content">
+                                <h4>ФИЗИЧЕСКИМ ЛИЦАМ</h4>
+                                <div class="top-text">
+                                    Оставить заявку на подключение или получить консультацию специалиста
+                                    Вы можете по телефонам:
+                                </div>
+                                <ul>
+                                    <li><span>СПб и Ленобласть</span><span>8 (812) 65-555-65</span></li>
+                                    <li><span>Тихвин</span><span>8 (813-67) 31-331</span></li>
+                                </ul>
+                                <div class="row bottom-text">
+                                    <div class="col-md-4">
+                                        ул. Огородная, д.18, этаж 3 <br>
+                                        ПН-ПТ, с 9.00 до 18.00 <br>
+                                        Перерыв с 14:30 до 15:30
+                                    </div>
+                                    <div class="col-md-8">
+                                        Колл-центр работает для Вас ежедневно с 9:00 до 23:00.
+                                        В другое время Вы можете воспользоваться автоответчиком
+                                        и записать Ваше сообщение. Наши специалисты свяжутся в Вами.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <img src="http://placehold.it/370x280?text=yandex map" alt="">
+                            </div>
+                            <div class="col-lg-8 text-content">
+                                <h4>ЮРИДИЧЕСКИМ ЛИЦАМ</h4>
+                                <div class="top-text">
+                                    Оставить заявку на подключение или получить консультацию специалиста
+                                    Вы можете по телефонам:
+                                </div>
+                                <ul>
+                                    <li><span>СПб и Ленобласть</span><span>8 (812) 65-555-65</span></li>
+                                    <li><span>Тихвин</span><span>8 (813-67) 31-331</span></li>
+                                </ul>
+                                <div class="row bottom-text">
+                                    <div class="col-md-4">
+                                        ул. Огородная, д.18, этаж 3 <br>
+                                        ПН-ПТ, с 9.00 до 18.00 <br>
+                                        Перерыв с 14:30 до 15:30
+                                    </div>
+                                    <div class="col-md-8">
+                                        Колл-центр работает для Вас ежедневно с 9:00 до 23:00.
+                                        В другое время Вы можете воспользоваться автоответчиком
+                                        и записать Ваше сообщение. Наши специалисты свяжутся в Вами.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
 {% block js_plugins %}
     <script src="{% static 'bower_components/js-marker-clusterer/src/markerclusterer.js' %}"></script>

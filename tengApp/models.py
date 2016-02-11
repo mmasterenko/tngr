@@ -30,6 +30,20 @@ class GeneralInfo(models.Model):
     slogan_groupPage = models.CharField(u'Слоган Т-Бизнесс групп', max_length=150, null=True, blank=True)
 
 
+class ProjectArea(models.Model):
+    class Meta:
+        verbose_name = u'регион'
+        verbose_name_plural = u'регионы'
+
+    def __unicode__(self):
+        return self.name
+
+    name = models.CharField(u'название региона', max_length=50)
+    latitude = models.CharField(u'широта', max_length=20, null=True, blank=True, default='59.950366')
+    longitude = models.CharField(u'долгота', max_length=20, null=True, blank=True, default='30.076602')
+    zoom = models.CharField(u'масштаб', max_length=6, null=True, blank=True, default='8')
+
+
 class Project(models.Model):
     class Meta:
         verbose_name = u'проект'
@@ -38,6 +52,7 @@ class Project(models.Model):
     def __unicode__(self):
         return self.name
 
+    area = models.ForeignKey(ProjectArea, verbose_name=u'название региона', null=True, blank=True)
     name = models.CharField(u'Название', max_length=100)
     company = models.CharField(u'Компания', max_length=100)
     desc = models.TextField(u'Описание')
