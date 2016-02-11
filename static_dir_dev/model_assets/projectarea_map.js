@@ -25,14 +25,26 @@ var styles = [
 
 var map, marker;
 function initMap() {
+    var $ = django.jQuery;
+    var lat = $('#id_latitude').val();
+    var lng = $('#id_longitude').val();
+    var zoom = Number( $('#id_zoom').val() );
+    var latLng = {lat: Number(lat), lng: Number(lng)};
     map = new google.maps.Map(document.getElementById('google-map'), {
-        center: {lat: 59.950366, lng: 30.076602},
-        zoom: 8,
+        center: latLng, // {lat: 59.950366, lng: 30.076602},
+        zoom: zoom,     // 8,
         styles: styles,
         scrollwheel: false
     });
 
-    map.addListener('click', function(e) {
-        placeMarker(e.latLng);
+    map.addListener('dragend', function() {
+        var center = map.getCenter();
+        django.jQuery('#id_latitude').val(center.lat());
+        django.jQuery('#id_longitude').val(center.lng());
+    });
+
+    map.addListener('zoom_changed', function() {
+        var zoom = map.getZoom();
+        django.jQuery('#id_zoom').val(zoom);
     });
 }

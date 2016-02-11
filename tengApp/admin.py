@@ -19,7 +19,8 @@ class ProjectAreaAdmin(admin.ModelAdmin):
               "model_assets/projectarea_map.js",
               "model_assets/projectarea.js",
               )
-
+    list_display = ('name', 'latitude', 'longitude', 'zoom')
+    actions = None
     fieldsets = [
         (None, {
             'fields': ('name',),
@@ -41,7 +42,8 @@ class ProjectAdmin(admin.ModelAdmin):
               "model_assets/project_map.js",
               "model_assets/project.js",
               )
-
+    list_display = ('name', 'company', 'area')
+    list_filter = ('area',)
     fieldsets = [
         (None, {
             'fields': ('area', 'name', 'company', 'image', 'desc'),

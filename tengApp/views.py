@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
 import os
+from utils import group_list
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
-from .models import About, TeylaGroup, Project, News, Stuff, Document, Requisites, GeneralInfo, Actions, FlatPages
 from django.core.paginator import Paginator
+from .models import About, TeylaGroup, Project, News, Stuff, Document, \
+    Requisites, GeneralInfo, Actions, FlatPages, ProjectArea
 
 
 def home(req):
@@ -49,7 +51,17 @@ def about(req):
 
 
 def project(req):
-    return render(req, 'tengApp/project.html')
+    projects = Project.objects.select_related('area').all()
+    areas = []
+    for area in ProjectArea.objects.all():
+        d = {'name': area.name,
+             'projects': group_list(projects.filter(area=area), 3)
+             }
+        areas.append(d)
+    context = {
+        'areas': areas
+    }
+    return render(req, 'tengApp/project.html', context=context)
 
 
 def news(req):

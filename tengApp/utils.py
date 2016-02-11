@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import six
 from django.utils.encoding import smart_text
+from django.core.paginator import Paginator
 
 
 class SlugNullField(models.SlugField):
@@ -23,3 +24,8 @@ class SlugNullField(models.SlugField):
         else:
             # otherwise, just pass the value
             return self.to_python(value)
+
+
+def group_list(obj_list, n):
+    pager = Paginator(obj_list, n)
+    return [pager.page(N).object_list for N in pager.page_range]

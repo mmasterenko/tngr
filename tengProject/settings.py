@@ -58,7 +58,7 @@ ADMIN_SHORTCUTS = [
             {
                 'url_name': 'admin:tengApp_settings_changelist',
                 'url_extra': '1',
-                'title': u'Настройки',
+                'title': u'Заголовки',
                 'class': 'config'
             },
             {
@@ -97,13 +97,13 @@ ADMIN_SHORTCUTS = [
         'title': u'Страница "Проекты"',
         'shortcuts': [
             {
-                'url_name': 'admin:tengApp_project_changelist',
-                'title': u'Список проектов',
+                'url_name': 'admin:tengApp_projectarea_changelist',
+                'title': u'Регионы',
                 'class': 'flag'
             },
             {
-                'url_name': 'admin:tengApp_projectarea_changelist',
-                'title': u'Регионы',
+                'url_name': 'admin:tengApp_project_changelist',
+                'title': u'Проекты',
                 'class': 'pin'
             },
         ]
