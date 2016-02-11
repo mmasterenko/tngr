@@ -66,8 +66,8 @@ class RequisitesAdmin(admin.ModelAdmin):
     actions = None
 
 
-#class ActionsAdmin(admin.ModelAdmin):
-#    actions = None
+class ActionsAdmin(admin.ModelAdmin):
+    list_display = ('header', 'is_hide_header', 'is_hide_text')
 
 
 class SettingsAdmin(admin.ModelAdmin):
@@ -136,7 +136,7 @@ admin.site.register(ProjectArea, ProjectAreaAdmin)
 admin.site.register(Requisites, RequisitesAdmin)
 admin.site.register(Stuff)
 admin.site.register(TeylaGroup, TeylaGroupAdmin)
-admin.site.register(Actions)
+admin.site.register(Actions, ActionsAdmin)
 admin.site.register(Settings, SettingsAdmin)
 admin.site.register(FlatPages, FlatPagesAdmin)
 
