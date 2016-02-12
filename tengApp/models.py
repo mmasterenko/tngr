@@ -278,3 +278,20 @@ class FlatPages(OrderFieldMixin, SEOFieldsMixin):
     text = models.TextField(u'содержание')
     help_text = u'URL под которым будет доступна страница. например: /novaya-stranica/'
     url = SlugNullField(u'URL', help_text=help_text, unique=True, max_length=150, default=None)
+
+
+class AboutContact(models.Model):
+    class Meta:
+        verbose_name_plural = u'контакты'
+        verbose_name = u'контакты'
+
+    def __unicode__(self):
+        return u'контакты'
+
+    area1 = models.CharField(u'участок 1', max_length=30)
+    area2 = models.CharField(u'участок 2', max_length=30)
+    phone1 = models.CharField(u'телефон 1', max_length=30)
+    phone2 = models.CharField(u'телефон 2', max_length=30)
+    text1 = models.TextField(u'текст вверху')
+    text2 = models.TextField(u'текст внизу слева')
+    text3 = models.TextField(u'текст внизу справа')

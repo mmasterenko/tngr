@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from .models import About, Document, GeneralInfo, News, Project, Requisites, \
-    Stuff, TeylaGroup, Actions, Settings, FlatPages, ProjectArea, MainPageSettings, \
-    ProjectPageSettings, AboutPageSettings, BusinessPageSettings
+from .models import *
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -224,6 +222,10 @@ class StaffAdmin(admin.ModelAdmin):
     ordering = ('id',)
 
 
+class AboutContactAdmin(admin.ModelAdmin):
+    actions = None
+
+
 admin.site.register(GeneralInfo, GeneralInfoAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Document, DocumentAdmin)
@@ -240,6 +242,7 @@ admin.site.register(MainPageSettings, MainPageSettingsAdmin)
 admin.site.register(ProjectPageSettings, ProjectPageSettingsAdmin)
 admin.site.register(AboutPageSettings, AboutPageSettingsAdmin)
 admin.site.register(BusinessPageSettings, BusinessPageSettingsAdmin)
+admin.site.register(AboutContact, AboutContactAdmin)
 
 admin.site.site_header = u'Тейла Инжиниринг / Интерфейс администратора'
 admin.site.index_title = u'Управление'

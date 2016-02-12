@@ -81,28 +81,23 @@
                             <div class="col-md-7 col-lg-8 text-content">
                                 <h4>КЛИЕНТАМ</h4>
                                 <div class="top-text">
-                                    Оставить заявку на подключение или получить консультацию специалиста
-                                    Вы можете по телефонам:
+                                    {{ contacts.text1|linebreaksbr }}
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-5 col-lg-4"><span>СПб и Ленобласть</span></div>
-                                    <div class="col-md-7 col-lg-8"><span>8 (812) 65-555-65</span></div>
+                                    <div class="col-md-5 col-lg-4"><span>{{ contacts.area1 }}</span></div>
+                                    <div class="col-md-7 col-lg-8"><span>{{ contacts.phone1 }}</span></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-5 col-lg-4"><span>Тихвин</span></div>
-                                    <div class="col-md-7 col-lg-8"><span>8 (813-67) 31-331</span></div>
+                                    <div class="col-md-5 col-lg-4"><span>{{ contacts.area2 }}</span></div>
+                                    <div class="col-md-7 col-lg-8"><span>{{ contacts.phone2 }}</span></div>
                                 </div>
                                 <br>
                                 <div class="row bottom-text">
                                     <div class="col-md-5 col-lg-4">
-                                        ул. Огородная, д.18, этаж 3 <br>
-                                        ПН-ПТ, с 9.00 до 18.00 <br>
-                                        Перерыв с 14:30 до 15:30
+                                        {{ contacts.text2|linebreaksbr }}
                                     </div>
                                     <div class="col-md-7 col-lg-8">
-                                        Колл-центр работает для Вас ежедневно с 9:00 до 23:00.
-                                        В другое время Вы можете воспользоваться автоответчиком
-                                        и записать Ваше сообщение. Наши специалисты свяжутся в Вами.
+                                        {{ contacts.text3|linebreaksbr }}
                                     </div>
                                 </div>
                             </div>

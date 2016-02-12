@@ -134,6 +134,12 @@ ADMIN_SHORTCUTS = [
                 'title': u'Реквизиты',
                 'class': 'card'
             },
+            {
+                'url_name': 'admin:tengApp_aboutcontact_changelist',
+                'url_extra': '1',
+                'title': u'Контакты',
+                'class': 'phone'
+            },
         ]
     },
     {

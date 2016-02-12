@@ -47,7 +47,7 @@ def about(req):
         'docs': [pagntor.page(number).object_list for number in pagntor.page_range],
         'requisites': Requisites.objects.first(),
         'settings': AboutPageSettings.objects.first(),
-        'contacts': ''
+        'contacts': AboutContact.objects.first()
     }
     return render(req, 'tengApp/about.html', context)
 
