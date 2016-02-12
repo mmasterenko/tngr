@@ -164,18 +164,54 @@ class DocumentAdmin(admin.ModelAdmin):
 
 class MainPageSettingsAdmin(admin.ModelAdmin):
     actions = None
+    fieldsets = [
+        (None, {
+            'fields': ('slogan',),
+            'classes': ('wide',)
+        }),
+        (u'SEO настройки', {
+            'fields': ('title', 'meta_desc', 'meta_keywords'),
+            'classes': ('wide', 'collapse'),
+        })
+    ]
 
 
 class ProjectPageSettingsAdmin(admin.ModelAdmin):
     actions = None
+    fieldsets = [
+        (u'SEO настройки', {
+            'fields': ('title', 'meta_desc', 'meta_keywords'),
+            'classes': ('wide',),
+        })
+    ]
 
 
 class AboutPageSettingsAdmin(admin.ModelAdmin):
     actions = None
+    fieldsets = [
+        (None, {
+            'fields': ('header',),
+            'classes': ('wide',)
+        }),
+        (u'SEO настройки', {
+            'fields': ('title', 'meta_desc', 'meta_keywords'),
+            'classes': ('wide', 'collapse'),
+        })
+    ]
 
 
 class BusinessPageSettingsAdmin(admin.ModelAdmin):
     actions = None
+    fieldsets = [
+        (None, {
+            'fields': ('header', 'slogan'),
+            'classes': ('wide',)
+        }),
+        (u'SEO настройки', {
+            'fields': ('title', 'meta_desc', 'meta_keywords'),
+            'classes': ('wide', 'collapse'),
+        })
+    ]
 
 
 class GeneralInfoAdmin(admin.ModelAdmin):
