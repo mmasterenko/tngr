@@ -5,11 +5,12 @@ from django.core.urlresolvers import reverse
 from django.utils.timezone import now
 from .utils import SlugNullField
 from .model_mixins import SEOFieldsMixin, OrderFieldMixin
+from .storages import MyImgStorage
 
 upload_path = 'images/original'
 upload_file_path = 'files'
 
-# модели для главной страницы
+staff_photo_fs = MyImgStorage(width=100, height=100, img_path=upload_path)
 
 
 class GeneralInfo(models.Model):
@@ -98,7 +99,7 @@ class Stuff(models.Model):
     surname = models.CharField(u'Фамилия', max_length=50)
     position = models.CharField(u'Должность', max_length=50)
     quote = models.TextField(u'Цитата')
-    photo = models.ImageField(u'Фото', upload_to=upload_path)
+    photo = models.ImageField(u'Фото', upload_to=upload_path, storage=staff_photo_fs)
 
 
 class News(SEOFieldsMixin, models.Model):
