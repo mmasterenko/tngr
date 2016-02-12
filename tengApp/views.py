@@ -5,7 +5,6 @@ from utils import group_list
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
-from django.core.paginator import Paginator
 from .models import *
 
 
@@ -30,9 +29,8 @@ def home(req):
 
 
 def business_group(req):
-    pagntor = Paginator(TeylaGroup.objects.order_by('-order', 'id'), 3)
     context = {
-        'teyla_group': [pagntor.page(number).object_list for number in pagntor.page_range],
+        'teyla_group': group_list(TeylaGroup.objects.order_by('-order', 'id'), 3),
         'ginfo': GeneralInfo.objects.first(),
         'settings': BusinessPageSettings.objects.first()
     }
@@ -41,10 +39,9 @@ def business_group(req):
 
 def about(req):
     info = About.objects.all()
-    pagntor = Paginator(Document.objects.order_by('-order', 'id'), 3)
     context = {
         'about': info.get(code='about'),
-        'docs': [pagntor.page(number).object_list for number in pagntor.page_range],
+        'docs': group_list(Document.objects.order_by('-order', 'id'), 3),
         'requisites': Requisites.objects.first(),
         'settings': AboutPageSettings.objects.first(),
         'contacts': AboutContact.objects.first()
