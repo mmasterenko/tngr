@@ -213,6 +213,49 @@ class Settings(models.Model):
     newsPage_meta_keywords = models.CharField('meta keywords', max_length=100, null=True, blank=True)
 
 
+class MainPageSettings(SEOFieldsMixin):
+    class Meta:
+        verbose_name_plural = u'настройки главной страницы'
+        verbose_name = u'настройки'
+
+    def __unicode__(self):
+        return u'настройки'
+
+    slogan = models.CharField(u'Слоган на главной', max_length=150, null=True, blank=True)
+
+
+class ProjectPageSettings(SEOFieldsMixin):
+    class Meta:
+        verbose_name_plural = u'настройки страницы Проекты'
+        verbose_name = u'настройки'
+
+    def __unicode__(self):
+        return u'настройки'
+
+
+class AboutPageSettings(SEOFieldsMixin):
+    class Meta:
+        verbose_name_plural = u'настройки страницы О компании'
+        verbose_name = u'настройки'
+
+    def __unicode__(self):
+        return u'настройки'
+
+    header = models.CharField(u'Заголовок', max_length=100, null=True, blank=True)
+
+
+class BusinessPageSettings(SEOFieldsMixin):
+    class Meta:
+        verbose_name_plural = u'настройки страницы Т-бизнесс групп'
+        verbose_name = u'настройки'
+
+    def __unicode__(self):
+        return u'настройки'
+
+    header = models.CharField(u'Заголовок', max_length=100, null=True, blank=True)
+    slogan = models.CharField(u'Слоган Т-Бизнесс групп', max_length=150, null=True, blank=True)
+
+
 PAGE_CHOICE = (
     ('main', u'Главная'),
     ('project', u'Проекты'),

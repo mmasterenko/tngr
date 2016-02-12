@@ -6,8 +6,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
 from django.core.paginator import Paginator
-from .models import About, TeylaGroup, Project, News, Stuff, Document, \
-    Requisites, GeneralInfo, Actions, FlatPages, ProjectArea
+from .models import *
 
 
 def home(req):
@@ -24,7 +23,8 @@ def home(req):
         'news': News.objects.order_by('-date', '-id')[:3],
         'projects': Project.objects.order_by('-id')[:3],
         'ginfo': GeneralInfo.objects.first(),
-        'actions': Actions.objects.all()
+        'actions': Actions.objects.all(),
+        'settings': MainPageSettings.objects.first()
     }
     return render(req, 'tengApp/home.html', context)
 
@@ -33,7 +33,8 @@ def business_group(req):
     pagntor = Paginator(TeylaGroup.objects.order_by('-order', 'id'), 3)
     context = {
         'teyla_group': [pagntor.page(number).object_list for number in pagntor.page_range],
-        'ginfo': GeneralInfo.objects.first()
+        'ginfo': GeneralInfo.objects.first(),
+        'settings': BusinessPageSettings.objects.first()
     }
     return render(req, 'tengApp/business_group.html', context)
 
@@ -45,6 +46,7 @@ def about(req):
         'about': info.get(code='about'),
         'docs': [pagntor.page(number).object_list for number in pagntor.page_range],
         'requisites': Requisites.objects.first(),
+        'settings': AboutPageSettings.objects.first(),
         'contacts': ''
     }
     return render(req, 'tengApp/about.html', context)
@@ -63,13 +65,17 @@ def project(req):
              }
         areas.append(d)
     context = {
-        'areas': areas
+        'areas': areas,
+        'settings': ProjectPageSettings.objects.first()
     }
     return render(req, 'tengApp/project.html', context=context)
 
 
 def news(req):
-    context = {'news': News.objects.order_by('-date', '-id')}
+    context = {
+        'news': News.objects.order_by('-date', '-id'),
+        'settings': Settings.objects.first()
+    }
     return render(req, 'tengApp/news.html', context=context)
 
 

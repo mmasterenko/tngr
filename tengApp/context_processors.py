@@ -21,4 +21,4 @@ def general_info(req):
     except AttributeError:
         info = {}
         menu = {}
-    return {'general_info': info, 'settings': Settings.objects.first(), 'mainMenu': menu}
+    return {'general_info': info, 'mainMenu': menu}

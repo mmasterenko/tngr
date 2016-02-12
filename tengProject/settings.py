@@ -56,21 +56,26 @@ ADMIN_SHORTCUTS = [
                 'class': 'home'
             },
             {
-                'url_name': 'admin:tengApp_settings_changelist',
-                'url_extra': '1',
-                'title': u'Заголовки',
-                'class': 'config'
-            },
-            {
                 'url_name': 'admin:tengApp_flatpages_changelist',
                 'title': u'Простые страницы',
                 'class': 'file2'
+            },
+            {
+                'url_name': 'admin:tengApp_news_changelist',
+                'title': u'Новости',
+                'class': 'date'
             },
         ]
     },
     {
         'title': u'Главная Страница',
         'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_mainpagesettings_changelist',
+                'url_extra': '1',
+                'title': u'Настройки',
+                'class': 'config'
+            },
             {
                 'url_name': 'admin:tengApp_actions_changelist',
                 'title': u'Баннеры',
@@ -86,16 +91,17 @@ ADMIN_SHORTCUTS = [
                 'title': u'Наша команда',
                 'class': 'user'
             },
-            {
-                'url_name': 'admin:tengApp_news_changelist',
-                'title': u'Новости',
-                'class': 'date'
-            },
         ]
     },
     {
         'title': u'Страница "Проекты"',
         'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_projectpagesettings_changelist',
+                'url_extra': '1',
+                'title': u'Настройки',
+                'class': 'config'
+            },
             {
                 'url_name': 'admin:tengApp_projectarea_changelist',
                 'title': u'Регионы',
@@ -112,6 +118,12 @@ ADMIN_SHORTCUTS = [
         'title': u'Страница "О компании"',
         'shortcuts': [
             {
+                'url_name': 'admin:tengApp_aboutpagesettings_changelist',
+                'url_extra': '1',
+                'title': u'Настройки',
+                'class': 'config'
+            },
+            {
                 'url_name': 'admin:tengApp_document_changelist',
                 'title': u'Документы',
                 'class': 'certificate'
@@ -127,6 +139,12 @@ ADMIN_SHORTCUTS = [
     {
         'title': u'Страница "Т-Бизнесс группа"',
         'shortcuts': [
+            {
+                'url_name': 'admin:tengApp_businesspagesettings_changelist',
+                'url_extra': '1',
+                'title': u'Настройки',
+                'class': 'config'
+            },
             {
                 'url_name': 'admin:tengApp_teylagroup_changelist',
                 'title': u'Группа компаний Teyla',

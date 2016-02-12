@@ -1,9 +1,9 @@
 {% extends 'tengApp/business_group.html' %}
 {% load staticfiles %}
 {% load google_map %}
-{% block title %}{{ settings.projectPage_title|default_if_none:'Проекты' }}{% endblock %}
-{% block description %}{{ settings.projectPage_meta_desc|default_if_none:'' }}{% endblock %}
-{% block keywords %}{{ settings.projectPage_meta_keywords|default_if_none:'' }}{% endblock %}
+{% block title %}{{ settings.title|default_if_none:'Проекты' }}{% endblock %}
+{% block description %}{{ settings.meta_desc|default_if_none:'' }}{% endblock %}
+{% block keywords %}{{ settings.meta_keywords|default_if_none:'' }}{% endblock %}
 {% block extra_head %}
     <script>
     var markers_inode = {% get_markers %}

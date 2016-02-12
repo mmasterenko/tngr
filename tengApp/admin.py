@@ -2,7 +2,8 @@
 
 from django.contrib import admin
 from .models import About, Document, GeneralInfo, News, Project, Requisites, \
-    Stuff, TeylaGroup, Actions, Settings, FlatPages, ProjectArea
+    Stuff, TeylaGroup, Actions, Settings, FlatPages, ProjectArea, MainPageSettings, \
+    ProjectPageSettings, AboutPageSettings, BusinessPageSettings
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -19,7 +20,7 @@ class ProjectAreaAdmin(admin.ModelAdmin):
               "model_assets/projectarea_map.js",
               "model_assets/projectarea.js",
               )
-    list_display = ('id', 'name', 'latitude', 'longitude', 'zoom', 'order')
+    list_display = ('name', 'latitude', 'longitude', 'zoom', 'order')
     list_display_links = ('name',)
     list_editable = ('order',)
     ordering = ('-order', 'id')
@@ -45,7 +46,7 @@ class ProjectAdmin(admin.ModelAdmin):
               "model_assets/project_map.js",
               "model_assets/project.js",
               )
-    list_display = ('id', 'name', 'company', 'area', 'order')
+    list_display = ('name', 'company', 'area', 'order')
     list_display_links = ('name',)
     list_filter = ('area',)
     list_editable = ('order',)
@@ -136,7 +137,7 @@ class FlatPagesAdmin(admin.ModelAdmin):
             "all": ("model_assets/ckeditor.css",)
         }
         js = ("http://cdn.ckeditor.com/4.5.7/full/ckeditor.js", "model_assets/ckeditor.js")
-    list_display = ('id', 'header', 'menu', 'submenu', 'url', 'order')
+    list_display = ('header', 'menu', 'submenu', 'url', 'order')
     list_display_links = ('header',)
     list_filter = ('menu',)
     list_editable = ('order',)
@@ -161,18 +162,48 @@ class DocumentAdmin(admin.ModelAdmin):
     exclude = ('order',)
 
 
+class MainPageSettingsAdmin(admin.ModelAdmin):
+    actions = None
+
+
+class ProjectPageSettingsAdmin(admin.ModelAdmin):
+    actions = None
+
+
+class AboutPageSettingsAdmin(admin.ModelAdmin):
+    actions = None
+
+
+class BusinessPageSettingsAdmin(admin.ModelAdmin):
+    actions = None
+
+
+class GeneralInfoAdmin(admin.ModelAdmin):
+    actions = None
+    exclude = ('slogan_mainPage', 'slogan_groupPage')
+
+
+class StaffAdmin(admin.ModelAdmin):
+    list_display = ('__unicode__', 'position', 'quote')
+    ordering = ('id',)
+
+
+admin.site.register(GeneralInfo, GeneralInfoAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Document, DocumentAdmin)
-admin.site.register(GeneralInfo)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(ProjectArea, ProjectAreaAdmin)
 admin.site.register(Requisites, RequisitesAdmin)
-admin.site.register(Stuff)
+admin.site.register(Stuff, StaffAdmin)
 admin.site.register(TeylaGroup, TeylaGroupAdmin)
 admin.site.register(Actions, ActionsAdmin)
 admin.site.register(Settings, SettingsAdmin)
 admin.site.register(FlatPages, FlatPagesAdmin)
+admin.site.register(MainPageSettings, MainPageSettingsAdmin)
+admin.site.register(ProjectPageSettings, ProjectPageSettingsAdmin)
+admin.site.register(AboutPageSettings, AboutPageSettingsAdmin)
+admin.site.register(BusinessPageSettings, BusinessPageSettingsAdmin)
 
 admin.site.site_header = u'Тейла Инжиниринг / Интерфейс администратора'
 admin.site.index_title = u'Управление'

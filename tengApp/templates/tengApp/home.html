@@ -8,9 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-	<title>{% block title %}{{ settings.indexPage_title|default_if_none:'Т-инжиниринг' }}{% endblock %}</title>
-    <meta name="keywords" content="{% block keywords %}{{ settings.indexPage_meta_desc|default_if_none:'' }}{% endblock %}">
-    <meta name="description" content="{% block description %}{{ settings.indexPage_meta_keywords|default_if_none:'' }}{% endblock %}">
+	<title>{% block title %}{{ settings.title|default_if_none:'Т-инжиниринг' }}{% endblock %}</title>
+    <meta name="keywords" content="{% block keywords %}{{ settings.meta_desc|default_if_none:'' }}{% endblock %}">
+    <meta name="description" content="{% block description %}{{ settings.meta_keywords|default_if_none:'' }}{% endblock %}">
 
 
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -195,7 +195,7 @@
 						<div class="row">
 							<div class="col-md-10 col-md-offset-2">
 								<div class="cta-content">
-									<h6>{{ ginfo.slogan_mainPage|default_if_none:'' }}</h6>
+									<h6>{{ settings.slogan|default_if_none:'' }}</h6>
 								</div>
 							</div>
 						</div>

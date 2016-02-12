@@ -1,8 +1,8 @@
 {% extends 'tengApp/home.html' %}
 {% load staticfiles %}
-{% block title %}{{ settings.businessPage_title|default_if_none:'Т-бизнесс групп' }}{% endblock %}
-{% block description %}{{ settings.businessPage_meta_desc|default_if_none:'' }}{% endblock %}
-{% block keywords %}{{ settings.businessPage_meta_keywords|default_if_none:'' }}{% endblock %}
+{% block title %}{{ settings.title|default_if_none:'Т-бизнесс групп' }}{% endblock %}
+{% block description %}{{ settings.meta_desc|default_if_none:'' }}{% endblock %}
+{% block keywords %}{{ settings.meta_keywords|default_if_none:'' }}{% endblock %}
 {% block page_content %}
     <div class="page-content">
         {% block page_content_header %}
@@ -11,8 +11,8 @@
                 <div class="row">
                     <div class="col-md-12">
                         {% block page_content_heading %}
-                            <h1>{{ settings.businessPage_header|default_if_none:'Т-БИЗНЕСС ГРУПП' }}</h1>
-                            <h3>{{ ginfo.slogan_groupPage|default_if_none:'' }}</h3>
+                            <h1>{{ settings.header|default_if_none:'Т-БИЗНЕСС ГРУПП' }}</h1>
+                            <h3>{{ settings.slogan|default_if_none:'' }}</h3>
                         {% endblock %}
                     </div>
                 </div>
