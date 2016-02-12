@@ -4134,8 +4134,10 @@ html[xmlns] .flexslider .slides {
 }
 
 .fsi-frame-360x270 {
-  width: 360px;
-  height: 270px;
+  /*width: 360px;*/
+  /*height: 270px;*/
+  max-width: 360px;
+  max-height: 270px;
   white-space: nowrap;
   text-align: center;
   border: 1px solid #0092ff;
@@ -4177,14 +4179,18 @@ html[xmlns] .flexslider .slides {
 }
 @media (min-width: 1200px) {
   .fsi-frame-360x410 {
-    width: 360px;
-    height: 410px;
+    /*width: 360px;*/
+    /*height: 410px;*/
+    max-width: 360px;
+    max-height: 410px;
     /*padding: 0;*/
     overflow: hidden;
   }
   .fsi-frame-348x192 {
-    width: 348px;
-    height: 192px;
+    /*width: 348px;*/
+    /*height: 192px;*/
+    max-width: 348px;
+    max-height: 192px;
     /*padding: 0;*/
   }
 }
