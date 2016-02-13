@@ -22,7 +22,6 @@ class ProjectAreaAdmin(admin.ModelAdmin):
     list_display_links = ('name',)
     list_editable = ('order',)
     ordering = ('-order', 'id')
-    actions = None
     fieldsets = [
         (None, {
             'fields': ('name',),

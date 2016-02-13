@@ -48,6 +48,7 @@ function initMap() {
     });
 
     var i, markers = [];
+    var content;
 
     for (i in markers_inode) {
         var latLng = new google.maps.LatLng(markers_inode[i].latitude, markers_inode[i].longitude);
@@ -56,14 +57,16 @@ function initMap() {
             'title': markers_inode[i].name
         });
         markers.push(marker);
-        attachBubble(marker, marker.getTitle());
+        content = '<strong>'+ marker.getTitle() +'</strong>'+'<br>'+
+        markers_inode[i].company;
+        attachBubble(marker, content);
     }
     var markerCluster = new MarkerClusterer(map, markers);
 
 }
 
-function attachBubble(marker, title) {
-    var bubble = new google.maps.InfoWindow({content: title});
+function attachBubble(marker, content) {
+    var bubble = new google.maps.InfoWindow({content: content});
     marker.addListener('click', function () {
         bubble.open(map, marker);
     });
