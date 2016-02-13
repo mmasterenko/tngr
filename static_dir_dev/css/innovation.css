@@ -4377,3 +4377,26 @@ section#news .article-col .full-text p {
   line-height: 26px;
   font-family: 'Montserrat', sans-serif;
 }
+
+.x-pagination ul li a {
+    color: #0092ff;
+    font-size: 16px;
+    font-weight: 300;
+    border-color: #0092ff !important;
+    line-height: normal !important;
+    padding: 6px 12px !important;
+}
+.x-pagination ul li a:hover, .x-pagination ul li a:focus {
+    color: #0092ff !important;
+}
+.x-pagination ul li.active a {
+    background-color: #0092ff !important;
+    border-color: #0092ff !important;
+    color: #fff !important;
+}
+.x-pagination ul li:first-child>a {
+  border-radius: 5px 0 0 5px;
+}
+.x-pagination ul li:last-child>a {
+  border-radius: 0 5px 5px 0;
+}

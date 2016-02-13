@@ -5,6 +5,7 @@ from utils import group_list
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
+from django.core.paginator import Paginator
 from .models import *
 
 
@@ -68,9 +69,12 @@ def project(req):
     return render(req, 'tengApp/project.html', context=context)
 
 
-def news(req):
+def news(req, page_id=None):
+    if not page_id:
+        page_id = 1
+    news_pages = Paginator(News.objects.all(), 3)
     context = {
-        'news': News.objects.order_by('-date', '-id'),
+        'news': news_pages.page(page_id),
         'settings': Settings.objects.first()
     }
     return render(req, 'tengApp/news.html', context=context)

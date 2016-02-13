@@ -102,15 +102,16 @@ class Stuff(models.Model):
     photo = models.ImageField(u'Фото', upload_to=upload_path, storage=staff_photo_fs)
 
 
-class News(SEOFieldsMixin, models.Model):
+class News(models.Model):
     class Meta:
         verbose_name = u'новость'
         verbose_name_plural = u'новости'
+        ordering = ('-date', '-id')
 
     def __unicode__(self):
         return self.header
 
-    def get_absolute_url(self):
+    def get_page_url(self):
         return reverse('news', args=[self.id])
 
     header = models.CharField(u'Заголовок', max_length=80)

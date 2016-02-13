@@ -25,6 +25,40 @@
                     </div>
                 </div>
             {% endfor %}
+
+            {% if news.paginator.num_pages > 1 %}
+                <div class="row x-pagination">
+                    <div class="col-sm-12 text-center">
+                        <nav>
+                            <ul class="pagination pagination-lg">
+                                {% if news.has_previous %}
+                                    <li>
+                                        <a href="{% url 'news' news.previous_page_number %}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% for n_page in news.paginator.page_range %}
+                                    <li {% if news.number == n_page %}class="active"{% endif %}>
+                                        {% if news.number == n_page and not news.has_next or news.number == n_page and n_page == 1 %}
+                                            <a href="javascript:void(0)">{{ n_page }}</a>
+                                        {% else %}
+                                            <a href="{% url 'news' n_page %}">{{ n_page }}</a>
+                                        {% endif %}
+                                    </li>
+                                {% endfor %}
+                                {% if news.has_next %}
+                                    <li>
+                                        <a href="{% url 'news' news.next_page_number %}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </section>
 

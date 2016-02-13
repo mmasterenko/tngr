@@ -115,15 +115,11 @@ class NewsAdmin(admin.ModelAdmin):
         js = ("http://cdn.ckeditor.com/4.5.7/standard/ckeditor.js", "model_assets/ckeditor.js")
     fieldsets = [
         (None, {
-            'fields': ('header', 'date', 'url', 'text'),
+            'fields': ('header', 'date', 'text'),
             'classes': ('wide',)
         }),
-        (u'SEO настройки', {
-            'fields': ('title', 'meta_desc', 'meta_keywords'),
-            'classes': ('wide', 'collapse'),
-        })
     ]
-    prepopulated_fields = {'url': ('header',)}
+    # prepopulated_fields = {'url': ('header',)}
     list_display = ('header', 'url', 'date')
     date_hierarchy = 'date'
 
