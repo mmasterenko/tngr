@@ -229,12 +229,16 @@ class BusinessPageSettingsAdmin(admin.ModelAdmin):
 
 
 class GeneralInfoAdmin(admin.ModelAdmin):
+    class Media:
+        js = ('model_assets/generalInfo.js',)
     actions = None
     exclude = ('slogan_mainPage', 'slogan_groupPage')
 
 
 class StaffAdmin(admin.ModelAdmin):
-    list_display = ('__unicode__', 'position', 'quote')
+    class Media:
+        js = ('model_assets/staff.js',)
+    list_display = ('__unicode__', 'position', 'quote', 'photo')
     ordering = ('id',)
 
 
