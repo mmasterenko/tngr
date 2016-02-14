@@ -4400,3 +4400,12 @@ section#news .article-col .full-text p {
 .x-pagination ul li:last-child>a {
   border-radius: 0 5px 5px 0;
 }
+
+@media (max-width: 768px) {
+  .projects-page .tab-content .tab {
+    padding: 0 15px;
+  }
+  #tabs-info .tab-links {
+    margin-left: -5px;
+  }
+}

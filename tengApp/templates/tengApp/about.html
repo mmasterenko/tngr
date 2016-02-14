@@ -46,6 +46,7 @@
                                     <img class="fsi-img" src='{{ doc.img.url }}' alt="">
                                 </div>
                                 <h5>{{ doc.name }}</h5>
+                                <div class="visible-xs"><br></div>
                             </div>
                             {% endfor %}
                         </div>
@@ -76,9 +77,9 @@
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
                                 <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=11UOiJ6frIelT7f6O0Cg39NOOJ_Hgyh_&width=370&height=280&lang=ru_RU&sourceType=constructor"></script>
-                                {% comment %}<img src="http://placehold.it/370x280?text=yandex map" alt="">{% endcomment %}
                             </div>
                             <div class="col-md-7 col-lg-8 text-content">
+                                <div class="visible-xs visible-sm"><br></div>
                                 <h4>КЛИЕНТАМ</h4>
                                 <div class="top-text">
                                     {{ contacts.text1|linebreaksbr }}
@@ -87,6 +88,7 @@
                                     <div class="col-md-5 col-lg-4"><span>{{ contacts.area1 }}</span></div>
                                     <div class="col-md-7 col-lg-8"><span>{{ contacts.phone1 }}</span></div>
                                 </div>
+                                <div class="visible-xs visible-sm"><br></div>
                                 <div class="row">
                                     <div class="col-md-5 col-lg-4"><span>{{ contacts.area2 }}</span></div>
                                     <div class="col-md-7 col-lg-8"><span>{{ contacts.phone2 }}</span></div>
@@ -96,6 +98,7 @@
                                     <div class="col-md-5 col-lg-4">
                                         {{ contacts.text2|linebreaksbr }}
                                     </div>
+                                    <div class="visible-xs visible-sm"><br></div>
                                     <div class="col-md-7 col-lg-8">
                                         {{ contacts.text3|linebreaksbr }}
                                     </div>
