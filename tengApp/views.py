@@ -6,7 +6,10 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
 from django.core.paginator import Paginator
-from .models import *
+from .local_settings import NEWS_PER_PAGE
+from .models import AboutContact, AboutPageSettings, About, Actions, ProjectPageSettings, ProjectArea, \
+    Project, TeylaGroup, Requisites, Settings, News, BusinessPageSettings, MainPageSettings, GeneralInfo, \
+    Document, Stuff, FlatPages
 
 
 def home(req):
@@ -72,7 +75,7 @@ def project(req):
 def news(req, page_id=None):
     if not page_id:
         page_id = 1
-    news_pages = Paginator(News.objects.all(), 3)
+    news_pages = Paginator(News.objects.all(), NEWS_PER_PAGE)
     context = {
         'news': news_pages.page(page_id),
         'settings': Settings.objects.first()

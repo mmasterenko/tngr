@@ -111,9 +111,6 @@ class News(models.Model):
     def __unicode__(self):
         return self.header
 
-    def get_page_url(self):
-        return reverse('news', args=[self.id])
-
     header = models.CharField(u'Заголовок', max_length=80)
     text = models.TextField(u'Текст')
     date = models.DateField(u'Дата', default=now)
@@ -273,6 +270,9 @@ class FlatPages(OrderFieldMixin, SEOFieldsMixin):
 
     def __unicode__(self):
         return self.header
+
+    def get_absolute_url(self):
+        return reverse('simple_page', kwargs={'page_url': self.url})
 
     menu = models.CharField(u'прикрепить к меню', max_length=10, choices=PAGE_CHOICE, null=True, blank=True)
     submenu = models.CharField(u'надпись в меню', max_length=20, default=u'подменю_1')

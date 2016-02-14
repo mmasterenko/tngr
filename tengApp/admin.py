@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from django.contrib import admin
-from .models import *
+from django.core.paginator import Paginator
+from django.core.urlresolvers import reverse
+from .local_settings import NEWS_PER_PAGE
+from .models import AboutContact, AboutPageSettings, About, Actions, ProjectPageSettings, ProjectArea, \
+    Project, TeylaGroup, Requisites, Settings, News, BusinessPageSettings, MainPageSettings, GeneralInfo, \
+    Document, Stuff, FlatPages
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -73,6 +78,10 @@ class TeylaGroupAdmin(admin.ModelAdmin):
 class RequisitesAdmin(admin.ModelAdmin):
     actions = None
 
+    @staticmethod
+    def view_on_site(model_obj):
+        return reverse('about') + '#requisites'
+
 
 class ActionsAdmin(admin.ModelAdmin):
     list_display = ('header', 'is_hide_header', 'is_hide_text', 'order')
@@ -123,6 +132,14 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = ('header', 'url', 'date')
     date_hierarchy = 'date'
 
+    @staticmethod
+    def view_on_site(news_obj):
+        paginator = Paginator(News.objects.all(), NEWS_PER_PAGE)
+        for i in paginator.page_range:
+            page = paginator.page(i)
+            if news_obj in page:
+                return reverse('news', kwargs={'page_id': page.number})
+
 
 class FlatPagesAdmin(admin.ModelAdmin):
     class Media:
@@ -153,6 +170,10 @@ class DocumentAdmin(admin.ModelAdmin):
     list_editable = ('order',)
     ordering = ('-order', 'id')
     exclude = ('order',)
+
+    @staticmethod
+    def view_on_site(model_obj):
+        return reverse('about') + '#docs'
 
 
 class MainPageSettingsAdmin(admin.ModelAdmin):
@@ -219,6 +240,10 @@ class StaffAdmin(admin.ModelAdmin):
 
 class AboutContactAdmin(admin.ModelAdmin):
     actions = None
+
+    @staticmethod
+    def view_on_site(model_obj):
+        return reverse('about') + '#contacts'
 
 
 admin.site.register(GeneralInfo, GeneralInfoAdmin)
