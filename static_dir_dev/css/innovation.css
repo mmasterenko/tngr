@@ -4118,9 +4118,9 @@ html[xmlns] .flexslider .slides {
   /*width: 100%;*/
   /*height: 100%;*/
   white-space: nowrap;
-  text-align: center;
-  border: 1px solid #0092ff;
-  overflow: hidden;
+  /*text-align: center;*/
+  /*border: 1px solid #0092ff;*/
+  /*overflow: hidden;*/
 }
 .fsi-img-348x192 {
   float: none;
@@ -4131,6 +4131,7 @@ html[xmlns] .flexslider .slides {
   max-height: 192px;
   /*width: 96%;*/
   /*height: 96%;*/
+  border: 1px solid #0092ff;
 }
 
 .fsi-frame-360x270 {
@@ -4139,12 +4140,12 @@ html[xmlns] .flexslider .slides {
   max-width: 360px;
   max-height: 270px;
   white-space: nowrap;
-  text-align: center;
-  border: 1px solid #0092ff;
+  /*text-align: center;*/
+  /*border: 1px solid #0092ff;*/
   float: left;
   margin-right: 30px;
   background-color: white;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .fsi-img-360x270 {
   float: none;
@@ -4153,6 +4154,7 @@ html[xmlns] .flexslider .slides {
   vertical-align: middle;
   /*max-width: 360px;*/
   max-height: 270px;
+  border: 1px solid #0092ff;
 }
 
 .fsi-frame-360x410 {
@@ -4161,11 +4163,11 @@ html[xmlns] .flexslider .slides {
   /*width: 100%;*/
   /*height: 100%;*/
   white-space: nowrap;
-  text-align: center;
-  border: 1px solid #0092ff;
+  /*text-align: center;*/
+  /*border: 1px solid #0092ff;*/
   background-color: white;
   /*padding: 5px 0;*/
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .fsi-frame-360x410 .fsi-img {
   float: none;
@@ -4176,6 +4178,7 @@ html[xmlns] .flexslider .slides {
   max-height: 410px;
   /*width: 96%;*/
   /*height: 96%;*/
+  border: 1px solid #0092ff;
 }
 @media (min-width: 1200px) {
   .fsi-frame-360x410 {
@@ -4184,7 +4187,7 @@ html[xmlns] .flexslider .slides {
     max-width: 360px;
     max-height: 410px;
     /*padding: 0;*/
-    overflow: hidden;
+    /*overflow: hidden;*/
   }
   .fsi-frame-348x192 {
     /*width: 348px;*/

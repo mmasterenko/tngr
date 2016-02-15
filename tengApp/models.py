@@ -11,8 +11,8 @@ upload_path = 'images/original'
 upload_file_path = 'files'
 
 
-def get_storage(w=None, h=None):
-    return MyImgStorage(width=w, height=h, img_path=upload_path)
+def get_storage(w=None, h=None, crop=None):
+    return MyImgStorage(width=w, height=h, img_path=upload_path, crop=crop)
 
 staff_photo_fs = MyImgStorage(width=180, height=180, img_path=upload_path, crop=True)
 
@@ -67,7 +67,8 @@ class Project(OrderFieldMixin, models.Model):
     company = models.CharField(u'Компания', max_length=100)
     desc = models.TextField(u'Описание')
     help_text = u'размеры 300x200'
-    image = models.ImageField(u'Картинка', upload_to=upload_path, help_text=help_text, storage=get_storage(600, 400))
+    image = models.ImageField(u'Картинка', upload_to=upload_path, help_text=help_text,
+                              storage=get_storage(600, 400, crop=True))
     latitude = models.CharField(u'Широта', max_length=20, null=True, blank=True)
     longitude = models.CharField(u'Долгота', max_length=20, null=True, blank=True)
 
@@ -91,7 +92,7 @@ class About(models.Model):
     desc = models.TextField(u'Текст')
     help_text = u'размеры 360x250'
     image = models.ImageField(u'Картинка', upload_to=upload_path, null=True, blank=True,
-                              help_text=help_text, storage=get_storage(720, 500))
+                              help_text=help_text, storage=get_storage(720, 500, crop=True))
     code = models.CharField(max_length=15, choices=CODE_CHOICE, null=True)  # hidden in admin interface
 
 
@@ -149,7 +150,8 @@ class TeylaGroup(OrderFieldMixin, models.Model):
     link = models.URLField(u'Ссылка')
     desc = models.TextField(u'Описание')
     help_text = u'размеры 300x200'
-    image = models.ImageField(u'Картинка', upload_to=upload_path, help_text=help_text, storage=get_storage(600, 400))
+    image = models.ImageField(u'Картинка', upload_to=upload_path, help_text=help_text,
+                              storage=get_storage(600, 400, crop=True))
 
 
 class Document(OrderFieldMixin, models.Model):
