@@ -57,10 +57,10 @@ function initMap() {
             'title': markers_inode[i].name
         });
         markers.push(marker);
-        content = '<div><img src="/media/'+markers_inode[i].image+'"></div><br>'+
+        content = '<div class="marker-infowindow"><div><img src="/media/'+markers_inode[i].image+'"></div><br>'+
         '<div><strong>'+ marker.getTitle() +'</strong></div>'+
         '<div>'+markers_inode[i].company+'</div>'+
-        '<div class="marker-desc">'+markers_inode[i].desc+'</div>';
+        '<div class="marker-desc">'+markers_inode[i].desc+'</div></div>';
         attachBubble(marker, content);
     }
     var markerCluster = new MarkerClusterer(map, markers);

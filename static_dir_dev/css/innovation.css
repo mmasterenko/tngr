@@ -4413,3 +4413,10 @@ section#news .article-col .full-text p {
 .marker-desc ul {
   padding-left: 25px;
 }
+
+.marker-infowindow {
+  max-width: 200px;
+}
+.marker-infowindow img {
+  max-width: 200px;
+}
