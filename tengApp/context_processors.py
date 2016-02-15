@@ -1,16 +1,8 @@
-from .models import GeneralInfo, Settings, FlatPages
+from .models import GeneralInfo, FlatPages
 
 
 def general_info(req):
-    info = GeneralInfo.objects.first()
     try:
-        info = {
-            'address': info.address,
-            'phone': info.phone,
-            'email': info.email,
-            'text': info.footerText,
-            'logo': info.logo
-        }
         fp = FlatPages.objects.order_by('-order', 'id').values('submenu', 'url')
         menu = {
             'home': fp.filter(menu='main'),
@@ -18,7 +10,6 @@ def general_info(req):
             'about': fp.filter(menu='about'),
             'group': fp.filter(menu='t-group'),
         }
-    except AttributeError:
-        info = {}
+    except Exception:
         menu = {}
-    return {'general_info': info, 'mainMenu': menu}
+    return {'general_info': GeneralInfo.objects.first(), 'mainMenu': menu}

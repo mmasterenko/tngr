@@ -436,12 +436,12 @@
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 								<div class="about-us">
-                                    {% if general_info.logo %}
-									    <img src="{{ general_info.logo.url }}" alt="logo">
+                                    {% if general_info.logo_down %}
+									    <img src="{{ general_info.logo_down.url }}" alt="logo">
                                     {% else %}
                                         <img src="/static/images/ti-logo.png" alt="logo">
                                     {% endif %}
-									<p>{{ general_info.text }}</p>
+									<p>{{ general_info.footerText }}</p>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">

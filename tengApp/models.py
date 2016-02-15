@@ -25,10 +25,8 @@ class GeneralInfo(models.Model):
     email = models.EmailField(u'E-mail')
     address = models.CharField(u'Адрес', max_length=60)
     footerText = models.TextField(u'Текст в футере')
-
-    logo = models.ImageField(u'Логотип', upload_to=upload_path, null=True, blank=True)
-    slogan_mainPage = models.CharField(u'Слоган на главной', max_length=150, null=True, blank=True)
-    slogan_groupPage = models.CharField(u'Слоган Т-Бизнесс групп', max_length=150, null=True, blank=True)
+    logo = models.ImageField(u'Логотип (верхний)', upload_to=upload_path, null=True, blank=True)
+    logo_down = models.ImageField(u'Логотип (нижний)', upload_to=upload_path, null=True, blank=True)
 
 
 class ProjectArea(OrderFieldMixin, models.Model):
