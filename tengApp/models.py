@@ -10,7 +10,9 @@ from .storages import MyImgStorage
 upload_path = 'images/original'
 upload_file_path = 'files'
 
-staff_photo_fs = MyImgStorage(width=100, height=100, img_path=upload_path)
+
+def get_storage(w=None, h=None):
+    return MyImgStorage(width=w, height=h, img_path=upload_path)
 
 
 class GeneralInfo(models.Model):
@@ -25,8 +27,11 @@ class GeneralInfo(models.Model):
     email = models.EmailField(u'E-mail')
     address = models.CharField(u'Адрес', max_length=60)
     footerText = models.TextField(u'Текст в футере')
-    logo = models.ImageField(u'Логотип (верхний)', upload_to=upload_path, null=True, blank=True)
-    logo_down = models.ImageField(u'Логотип (нижний)', upload_to=upload_path, null=True, blank=True)
+    help_text = u'размеры 172x64'
+    logo = models.ImageField(u'Логотип (верхний)', upload_to=upload_path, null=True, blank=True,
+                             help_text=help_text, storage=get_storage(344, 128))
+    logo_down = models.ImageField(u'Логотип (нижний)', upload_to=upload_path, null=True, blank=True,
+                                  help_text=help_text, storage=get_storage(344, 128))
 
 
 class ProjectArea(OrderFieldMixin, models.Model):
@@ -59,7 +64,8 @@ class Project(OrderFieldMixin, models.Model):
     name = models.CharField(u'Название проекта', max_length=100)
     company = models.CharField(u'Компания', max_length=100)
     desc = models.TextField(u'Описание')
-    image = models.ImageField(u'Картинка', upload_to=upload_path)
+    help_text = u'размеры 300x200'
+    image = models.ImageField(u'Картинка', upload_to=upload_path, help_text=help_text, storage=get_storage(600, 400))
     latitude = models.CharField(u'Широта', max_length=20, null=True, blank=True)
     longitude = models.CharField(u'Долгота', max_length=20, null=True, blank=True)
 
@@ -81,7 +87,9 @@ class About(models.Model):
 
     name = models.CharField(u'Заголовок', max_length=100)
     desc = models.TextField(u'Текст')
-    image = models.ImageField(u'Картинка', upload_to=upload_path, null=True, blank=True)
+    help_text = u'размеры 360x250'
+    image = models.ImageField(u'Картинка', upload_to=upload_path, null=True, blank=True,
+                              help_text=help_text, storage=get_storage(720, 500))
     code = models.CharField(max_length=15, choices=CODE_CHOICE, null=True)  # hidden in admin interface
 
 
@@ -101,7 +109,8 @@ class Stuff(models.Model):
     surname = models.CharField(u'Фамилия', max_length=50)
     position = models.CharField(u'Должность', max_length=50)
     quote = models.TextField(u'Цитата')
-    photo = models.ImageField(u'Фото', upload_to=upload_path, storage=staff_photo_fs)
+    help_text = u'размеры 90x90'
+    photo = models.ImageField(u'Фото', upload_to=upload_path, storage=get_storage(180, 180), help_text=help_text)
 
 
 class News(models.Model):
@@ -137,7 +146,8 @@ class TeylaGroup(OrderFieldMixin, models.Model):
     name = models.CharField(u'Название', max_length=100)
     link = models.URLField(u'Ссылка')
     desc = models.TextField(u'Описание')
-    image = models.ImageField(u'Картинка', upload_to=upload_path)
+    help_text = u'размеры 300x200'
+    image = models.ImageField(u'Картинка', upload_to=upload_path, help_text=help_text, storage=get_storage(600, 400))
 
 
 class Document(OrderFieldMixin, models.Model):
@@ -149,7 +159,8 @@ class Document(OrderFieldMixin, models.Model):
         return self.name
 
     name = models.CharField(u'Название', max_length=100)
-    img = models.ImageField(u'Фото', upload_to=upload_path)
+    help_text = u'размеры 300x410'
+    img = models.ImageField(u'Фото', upload_to=upload_path, help_text=help_text, storage=get_storage(600, 820))
 
 
 class Requisites(models.Model):
@@ -175,7 +186,8 @@ class Actions(OrderFieldMixin, models.Model):
     def __unicode__(self):
         return '%s' % self.header
 
-    img = models.ImageField(u'картинка', upload_to=upload_path)
+    help_text = u'размер подгоняется автоматически по ширине экрана (размер по умолчанию 1920x450)'
+    img = models.ImageField(u'картинка', upload_to=upload_path, help_text=help_text)
     header = models.CharField(u'заголовок', max_length=100, default='')
     text = models.TextField(u'текст', blank=True, null=True)
     is_hide_header = models.BooleanField(u'Не отображать заголовок', default=True)
