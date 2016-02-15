@@ -4411,6 +4411,7 @@ section#news .article-col .full-text p {
 }
 
 .marker-desc ul {
+  padding-top: 10px;
   padding-left: 25px;
 }
 
