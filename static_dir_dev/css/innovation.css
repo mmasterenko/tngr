@@ -4421,3 +4421,13 @@ section#news .article-col .full-text p {
 .marker-infowindow img {
   max-width: 300px;
 }
+
+.about-us img {
+  max-width: 172px;
+  max-height: 64px;
+}
+
+.header-logo img {
+  max-width: 172px;
+  max-height: 64px;
+}

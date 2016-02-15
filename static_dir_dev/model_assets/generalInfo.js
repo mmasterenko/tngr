@@ -4,7 +4,7 @@
             var img_url = $(this).find('a').attr('href');
             var img = $('<img>').attr({
                 'src': img_url
-            });
+            }).css({'max-width': '172px', 'max-height': '64px'});
             $(this).find('a').html(img);
         });
     });
