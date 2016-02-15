@@ -4409,3 +4409,7 @@ section#news .article-col .full-text p {
     margin-left: -5px;
   }
 }
+
+.marker-desc ul {
+  padding-left: 25px;
+}

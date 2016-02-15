@@ -53,6 +53,10 @@ class Project(OrderFieldMixin, models.Model):
     def __unicode__(self):
         return self.name
 
+    @property
+    def img_url(self):
+        return self.image.url
+
     area = models.ForeignKey(ProjectArea, verbose_name=u'название региона', null=True, blank=True)
     name = models.CharField(u'Название проекта', max_length=100)
     company = models.CharField(u'Компания', max_length=100)
