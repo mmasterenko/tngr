@@ -5,16 +5,18 @@ from django.core.files import locks
 from django.core.files.move import file_move_safe
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 class MyImgStorage(FileSystemStorage):
     def __init__(self, *args, **kwargs):
         self.width = self.height = self.img_path = None
+        self.crop = None  # boolean
         try:
             self.width = kwargs.pop('width')
             self.height = kwargs.pop('height')
             self.img_path = kwargs.pop('img_path')
+            self.crop = kwargs.pop('crop')
         except KeyError:
             pass
         super(MyImgStorage, self).__init__(*args, **kwargs)
@@ -118,7 +120,12 @@ class MyImgStorage(FileSystemStorage):
         size_path = os.path.join(settings.MEDIA_ROOT, self.img_path, file_name)
 
         im = Image.open(full_path)
-        im.thumbnail(size)
+
+        if self.crop:
+            im = ImageOps.fit(im, size, Image.BICUBIC)
+        else:
+            im.thumbnail(size, Image.BICUBIC)
+
         im.save(size_path)
 
         if self.file_permissions_mode is not None:

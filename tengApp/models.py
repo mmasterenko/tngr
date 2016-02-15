@@ -14,6 +14,8 @@ upload_file_path = 'files'
 def get_storage(w=None, h=None):
     return MyImgStorage(width=w, height=h, img_path=upload_path)
 
+staff_photo_fs = MyImgStorage(width=180, height=180, img_path=upload_path, crop=True)
+
 
 class GeneralInfo(models.Model):
     class Meta:
@@ -110,7 +112,7 @@ class Stuff(models.Model):
     position = models.CharField(u'Должность', max_length=50)
     quote = models.TextField(u'Цитата')
     help_text = u'размеры 90x90'
-    photo = models.ImageField(u'Фото', upload_to=upload_path, storage=get_storage(180, 180), help_text=help_text)
+    photo = models.ImageField(u'Фото', upload_to=upload_path, storage=staff_photo_fs, help_text=help_text)
 
 
 class News(models.Model):
