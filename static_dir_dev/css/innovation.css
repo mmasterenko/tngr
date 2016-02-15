@@ -4127,7 +4127,7 @@ html[xmlns] .flexslider .slides {
   clear: none;
   margin: 0;
   vertical-align: middle;
-  /*max-width: 348px;*/
+  max-width: 348px;
   max-height: 192px;
   /*width: 96%;*/
   /*height: 96%;*/
@@ -4152,7 +4152,7 @@ html[xmlns] .flexslider .slides {
   clear: none;
   margin: 0;
   vertical-align: middle;
-  /*max-width: 360px;*/
+  max-width: 360px;
   max-height: 270px;
   border: 1px solid #0092ff;
 }
@@ -4174,7 +4174,7 @@ html[xmlns] .flexslider .slides {
   clear: none;
   margin: 0;
   vertical-align: middle;
-  /*max-width: 350px;*/
+  max-width: 350px;
   max-height: 410px;
   /*width: 96%;*/
   /*height: 96%;*/
