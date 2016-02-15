@@ -3338,9 +3338,15 @@ section.full-width .section-heading .line-dec {
   }
 }
 #tabs-info .tab-content .text-content {
-  padding: 20px 0 20px 20px;
+  /*padding: 20px 0 20px 20px;*/
   background-color: #E1E7E9;
 }
+@media (max-width: 530px) {
+  #tabs-info .tab-content .text-content {
+    padding: 0;
+  }
+}
+
 #tabs-info .tab-content .text-content h2 {
   margin-top: 9px;
   margin-bottom: 0px;
