@@ -5,8 +5,7 @@ import json
 register = template.Library()
 
 
-@register.simple_tag(takes_context=True)
-def get_markers(context):
-    request = context['request']
+@register.simple_tag()
+def get_markers():
     markers = list(Project.objects.values('latitude', 'longitude', 'name', 'company', 'desc', 'image'))
     return json.dumps(markers)
