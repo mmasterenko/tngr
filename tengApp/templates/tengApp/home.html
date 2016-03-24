@@ -132,7 +132,7 @@
 									</li>
                                     <li>
                                         {% if mainMenu.group %}
-                                            <a class="has-submenu" href="{% url 'business_group' %}">Т-БИЗНЕСС ГРУППА</a>
+                                            <a class="has-submenu" href="{% url 'business_group' %}">Т-БИЗНЕС ГРУПП</a>
                                             <ul class="sub-menu">
                                                 {% for menuItem in mainMenu.group %}
                                                     <li><a href="/{{ menuItem.url }}/">{{ menuItem.submenu }}</a></li>
