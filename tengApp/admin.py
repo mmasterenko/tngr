@@ -13,6 +13,14 @@ class AboutAdmin(admin.ModelAdmin):
     actions = None
     fields = ['name', 'desc', 'image']
 
+    # class Media:
+    #     css = {
+    #         "all": ("model_assets/ckeditor.css",)
+    #     }
+    #     js = ("http://cdn.ckeditor.com/4.5.8/standard/ckeditor.js",
+    #           "model_assets/project.js",
+    #           )
+
 
 class ProjectAreaAdmin(admin.ModelAdmin):
     class Media:

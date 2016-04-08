@@ -1,4 +1,5 @@
-label[for=id_text] {
+label[for=id_text],
+label[for=id_desc] {
     float: none;
     margin-bottom: 10px;
 }
