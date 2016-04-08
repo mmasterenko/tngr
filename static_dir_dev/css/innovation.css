@@ -4455,3 +4455,7 @@ section#news .article-col .full-text p {
   line-height: 26px;
   font-family: 'Montserrat', sans-serif;
 }
+
+.no-border {
+  border: none;
+}
