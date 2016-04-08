@@ -4440,3 +4440,18 @@ section#news .article-col .full-text p {
   max-width: 172px;
   max-height: 64px;
 }
+
+/*
+ * additional fixes
+ */
+
+#tabs-info .tab > div.text-content > pre {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #3d3d3d;
+  line-height: 26px;
+  font-family: 'Montserrat', sans-serif;
+}
