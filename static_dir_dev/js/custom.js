@@ -73,9 +73,15 @@ jQuery( document ).ready(function( $ ) {
 	    + '<div class="col-md-2"><span class="number">%S</span> <span class="label">seconds</span></div>'));
     });
 
+	var tab_link = $('#tabs-info div.row > div.section-heading > h6 > a');
+	var old_href = tab_link.attr('href');
+
     // Tabs script
     $('.tabs .tab-links a').on('click', function(e)  {
         var currentAttrValue = $(this).attr('href');
+
+		var currentHash = $(this).data('hash');
+		tab_link.attr('href', old_href + currentHash);
  
         // Show/Hide Tabs
         $('.tabs ' + currentAttrValue).fadeIn(500).siblings().hide();;
