@@ -94,6 +94,9 @@ class About(models.Model):
     image = models.ImageField(u'Картинка', upload_to=upload_path, null=True, blank=True,
                               help_text=help_text, storage=get_storage(720, 500, crop=True))
     code = models.CharField(max_length=15, choices=CODE_CHOICE, null=True)  # hidden in admin interface
+    is_visible = models.BooleanField(u'отображать на странице', default=True,
+                                     help_text=u'уберите эту галочку, если не хотите чтобы данный блок '
+                                               u'отображался на главной странице')
 
 
 class Stuff(models.Model):

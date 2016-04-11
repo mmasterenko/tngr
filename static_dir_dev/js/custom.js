@@ -496,6 +496,16 @@ jQuery( document ).ready(function( $ ) {
 		});
 	}
 
+	var f_tab = $('#tabs-info div.row ul > li:first-child'); // f_tab means first_tab
+	f_tab.addClass('active');
+	f_tab.find('a > i.left-bg').remove();
+
+	var currHash = f_tab.find('a').data('hash');
+	tab_link.attr('href', old_href + currHash);
+
+	var f_tab_content = $('#tabs-info div.tab-content > .tab:first-child');
+	f_tab_content.addClass('active');
+
 	/* ========================================
 	 * END my_custom_js
 	 * ======================================== */

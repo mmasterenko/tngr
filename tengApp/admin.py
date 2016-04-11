@@ -11,8 +11,11 @@ from .models import AboutContact, AboutPageSettings, About, Actions, ProjectPage
 
 class AboutAdmin(admin.ModelAdmin):
     actions = None
-    fields = ['name', 'desc', 'image']
+    list_display = ('__unicode__', 'is_visible')
+    list_editable = ('is_visible',)
+    fields = ['name', 'desc', 'image', 'is_visible']
 
+    # readonly_fields = ('code',)
     # class Media:
     #     css = {
     #         "all": ("model_assets/ckeditor.css",)

@@ -238,6 +238,7 @@
 						</div>
 					</div>
 				</section>
+                {% if info_block.about.is_visible or info_block.docs.is_visible or info_block.requisites.is_visible or info_block.contacts.is_visible %}
 				<div id="tabs-info">
 					<div class="container">	
 						<div class="row">
@@ -246,13 +247,17 @@
                                     <div class="row">
                                         <div class="col-md-9">
                                             <ul class="tab-links">
-                                                <li class="active">
+                                                {% if info_block.about.is_visible %}
+                                                <li>
                                                     <a href="#tab1" data-hash="#about">
+                                                        <i class="left-bg"></i>
                                                         <span>О КОМПАНИИ</span>
                                                         <i class="right-bg"></i>
                                                     </a>
                                                     <div class="visible-xs visible-sm"><br></div>
                                                 </li>
+                                                {% endif %}
+                                                {% if info_block.docs.is_visible %}
                                                 <li>
                                                     <a href="#tab2" data-hash="#docs">
                                                         <i class="left-bg"></i>
@@ -261,6 +266,8 @@
                                                     </a>
                                                     <div class="visible-xs visible-sm"><br></div>
                                                 </li>
+                                                {% endif %}
+                                                {% if info_block.requisites.is_visible %}
                                                 <li>
                                                     <a href="#tab3" data-hash="#requisites">
                                                         <i class="left-bg"></i>
@@ -269,7 +276,9 @@
                                                     </a>
                                                     <div class="visible-xs visible-sm"><br></div>
                                                 </li>
-                                                <li class="">
+                                                {% endif %}
+                                                {% if info_block.contacts.is_visible %}
+                                                <li>
                                                     <a href="#tab4" data-hash="#contacts">
                                                         <i class="left-bg"></i>
                                                         <span>КОНТАКТЫ</span>
@@ -277,6 +286,7 @@
                                                     </a>
                                                     <div class="visible-xs visible-sm"><br></div>
                                                 </li>
+                                                {% endif %}
                                             </ul>
                                         </div>
                                         <div class="section-heading col-md-3 text-right">
@@ -286,7 +296,8 @@
                                     </div>
 
 								    <div class="tab-content">
-								        <div id="tab1" class="tab active">
+                                        {% if info_block.about.is_visible %}
+								        <div id="tab1" class="tab">
                                             {% if info_block.about.image %}
                                                 <div class="fsi-frame-360x270">
                                                     <span class="fsi-helper"></span>
@@ -299,7 +310,9 @@
                                                     {{ info_block.about.desc }}
                                                 </p>
 								        	</div>
-								        </div>								 
+								        </div>
+                                        {% endif %}
+                                        {% if info_block.docs.is_visible %}
 								        <div id="tab2" class="tab">
                                             {% if info_block.docs.image %}
                                                 <div class="fsi-frame-360x270">
@@ -313,7 +326,9 @@
                                                     {{ info_block.docs.desc }}
                                                 </p>
 								        	</div>
-								        </div>							 
+								        </div>
+                                        {% endif %}
+                                        {% if info_block.requisites.is_visible %}
 								        <div id="tab3" class="tab">
                                             {% if info_block.requisites.image %}
                                                 <div class="fsi-frame-360x270">
@@ -328,6 +343,8 @@
                                                 </pre>
 								        	</div>
 								        </div>
+                                        {% endif %}
+                                        {% if info_block.contacts.is_visible %}
 								        <div id="tab4" class="tab">
                                             {% if info_block.contacts.image %}
                                                 <div class="fsi-frame-360x270">
@@ -342,12 +359,14 @@
                                                 </pre>
 								        	</div>
 								        </div>
+                                        {% endif %}
 								    </div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+                {% endif %}
 				<section class="testimonials">
 					<div class="container">
 						<div class="row">
