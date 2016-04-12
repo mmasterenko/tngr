@@ -82,14 +82,33 @@ ADMIN_SHORTCUTS = [
                 'class': 'picture'
             },
             {
-                'url_name': 'admin:tengApp_about_changelist',
-                'title': u'Информационный блок',
-                'class': 'note'
-            },
-            {
                 'url_name': 'admin:tengApp_stuff_changelist',
                 'title': u'Наша команда',
                 'class': 'user'
+            },
+            {
+                'url_name': 'admin:tengApp_aboutcompany_changelist',
+                'title': u'О компании',
+                'class': 'note',
+                'url_extra': '1'
+            },
+            {
+                'url_name': 'admin:tengApp_aboutdocs_changelist',
+                'title': u'Документы',
+                'class': 'certificate',
+                'url_extra': '1'
+            },
+            {
+                'url_name': 'admin:tengApp_aboutrequisites_changelist',
+                'title': u'Реквизиты',
+                'class': 'card',
+                'url_extra': '1'
+            },
+            {
+                'url_name': 'admin:tengApp_aboutcontacts_changelist',
+                'title': u'Контакты',
+                'class': 'phone',
+                'url_extra': '1'
             },
         ]
     },

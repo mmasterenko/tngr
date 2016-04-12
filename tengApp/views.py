@@ -7,18 +7,17 @@ from django.http import HttpResponse, HttpResponseNotFound
 from django.conf import settings
 from django.core.paginator import Paginator
 from .local_settings import NEWS_PER_PAGE
-from .models import AboutContact, AboutPageSettings, About, Actions, ProjectPageSettings, ProjectArea, \
+from .models import AboutContact, AboutPageSettings, Actions, ProjectPageSettings, ProjectArea, \
     Project, TeylaGroup, Requisites, Settings, News, BusinessPageSettings, MainPageSettings, GeneralInfo, \
-    Document, Stuff, FlatPages
+    Document, Stuff, FlatPages, AboutCompany, AboutContacts, AboutRequisites, AboutDocs
 
 
 def home(req):
-    info = About.objects.all()
     info_block = {
-        'about': info.get(code='about'),  # for 'code' see About.CODE_CHOICE property
-        'docs': info.get(code='docs'),
-        'requisites': info.get(code='requisites'),
-        'contacts': info.get(code='contacts')
+        'about': AboutCompany.objects.first(),
+        'docs': AboutDocs.objects.first(),
+        'requisites': AboutRequisites.objects.first(),
+        'contacts': AboutContacts.objects.first()
     }
     context = {
         'info_block': info_block,
@@ -42,9 +41,8 @@ def business_group(req):
 
 
 def about(req):
-    info = About.objects.all()
     context = {
-        'about': info.get(code='about'),
+        'about': AboutCompany.objects.first(),
         'docs': group_list(Document.objects.order_by('-order', 'id'), 3),
         'requisites': Requisites.objects.first(),
         'settings': AboutPageSettings.objects.first(),

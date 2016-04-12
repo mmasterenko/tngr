@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="/static/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/static/css/icon-font.css">
 	<link rel="stylesheet" href="/static/css/flat-icon.css">
-	<link rel="stylesheet" href="/static/css/innovation.css?rev=2">
+	<link rel="stylesheet" href="/static/css/innovation.css?rev=3">
 
 	<link rel="stylesheet" href="/static/rs-plugin/css/settings.css">
 
@@ -306,9 +306,9 @@
                                             {% endif %}
                                             <div class="text-content">
 								        		<h2>{{ info_block.about.name }}</h2>
-                                                <p>
+                                                {% autoescape off %}
                                                     {{ info_block.about.desc }}
-                                                </p>
+                                                {% endautoescape %}
 								        	</div>
 								        </div>
                                         {% endif %}
@@ -322,9 +322,9 @@
                                             {% endif %}
 								        	<div class="text-content">
 								        		<h2>{{ info_block.docs.name }}</h2>
-                                                <p>
+                                                {% autoescape off %}
                                                     {{ info_block.docs.desc }}
-                                                </p>
+                                                {% endautoescape %}
 								        	</div>
 								        </div>
                                         {% endif %}

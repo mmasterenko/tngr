@@ -73,30 +73,45 @@ class Project(OrderFieldMixin, models.Model):
     longitude = models.CharField(u'Долгота', max_length=20, null=True, blank=True)
 
 
-class About(models.Model):
+class AbstractAbout(models.Model):
     class Meta:
-        verbose_name = u'информационный блок'
-        verbose_name_plural = verbose_name
-
-    CODE_CHOICE = (
-        ('about', u'о компании'),
-        ('docs', u'документы'),
-        ('requisites', u'реквизиты'),
-        ('contacts', u'контакты'),
-    )
+        abstract = True
 
     def __unicode__(self):
-        return self.get_code_display()
+        return self.name
 
     name = models.CharField(u'Заголовок', max_length=100)
     desc = models.TextField(u'Текст')
     help_text = u'размеры 360x250'
     image = models.ImageField(u'Картинка', upload_to=upload_path, null=True, blank=True,
                               help_text=help_text, storage=get_storage(720, 500, crop=True))
-    code = models.CharField(max_length=15, choices=CODE_CHOICE, null=True)  # hidden in admin interface
     is_visible = models.BooleanField(u'отображать на странице', default=True,
                                      help_text=u'уберите эту галочку, если не хотите чтобы данный блок '
                                                u'отображался на главной странице')
+
+
+class AboutCompany(AbstractAbout):
+    class Meta:
+        verbose_name = u'о компании'
+        verbose_name_plural = verbose_name
+
+
+class AboutDocs(AbstractAbout):
+    class Meta:
+        verbose_name = u'документ'
+        verbose_name_plural = u'документы'
+
+
+class AboutRequisites(AbstractAbout):
+    class Meta:
+        verbose_name = u'реквизит'
+        verbose_name_plural = u'реквизиты'
+
+
+class AboutContacts(AbstractAbout):
+    class Meta:
+        verbose_name = u'контакт'
+        verbose_name_plural = u'контакты'
 
 
 class Stuff(models.Model):

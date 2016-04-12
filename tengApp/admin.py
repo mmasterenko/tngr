@@ -4,25 +4,45 @@ from django.contrib import admin
 from django.core.paginator import Paginator
 from django.core.urlresolvers import reverse
 from .local_settings import NEWS_PER_PAGE
-from .models import AboutContact, AboutPageSettings, About, Actions, ProjectPageSettings, ProjectArea, \
+from .models import AboutContact, AboutPageSettings, Actions, ProjectPageSettings, ProjectArea, \
     Project, TeylaGroup, Requisites, Settings, News, BusinessPageSettings, MainPageSettings, GeneralInfo, \
-    Document, Stuff, FlatPages
+    Document, Stuff, FlatPages, AboutCompany, AboutContacts, AboutDocs, AboutRequisites
 
 
-class AboutAdmin(admin.ModelAdmin):
+@admin.register(AboutCompany)
+class AboutCompanyAdmin(admin.ModelAdmin):
     actions = None
-    list_display = ('__unicode__', 'is_visible')
-    list_editable = ('is_visible',)
-    fields = ['name', 'desc', 'image', 'is_visible']
 
-    # readonly_fields = ('code',)
-    # class Media:
-    #     css = {
-    #         "all": ("model_assets/ckeditor.css",)
-    #     }
-    #     js = ("http://cdn.ckeditor.com/4.5.8/standard/ckeditor.js",
-    #           "model_assets/project.js",
-    #           )
+    class Media:
+        css = {
+            "all": ("model_assets/ckeditor.css",)
+        }
+        js = ("http://cdn.ckeditor.com/4.5.8/standard/ckeditor.js",
+              "model_assets/about_ckeditor.js",
+              )
+
+
+@admin.register(AboutDocs)
+class AboutDocsAdmin(admin.ModelAdmin):
+    actions = None
+
+    class Media:
+        css = {
+            "all": ("model_assets/ckeditor.css",)
+        }
+        js = ("http://cdn.ckeditor.com/4.5.8/standard/ckeditor.js",
+              "model_assets/about_ckeditor.js",
+              )
+
+
+@admin.register(AboutRequisites)
+class AboutRequisitesAdmin(admin.ModelAdmin):
+    actions = None
+
+
+@admin.register(AboutContacts)
+class AboutContactsAdmin(admin.ModelAdmin):
+    actions = None
 
 
 class ProjectAreaAdmin(admin.ModelAdmin):
@@ -262,7 +282,6 @@ class AboutContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(GeneralInfo, GeneralInfoAdmin)
-admin.site.register(About, AboutAdmin)
 admin.site.register(Document, DocumentAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Project, ProjectAdmin)

@@ -4456,6 +4456,10 @@ section#news .article-col .full-text p {
   font-family: 'Montserrat', sans-serif;
 }
 
+#tabs-info .tab > div.text-content a {
+  color: #0092ff;
+}
+
 .no-border {
   border: none;
 }
