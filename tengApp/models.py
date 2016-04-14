@@ -332,10 +332,10 @@ class AboutContact(models.Model):
     def __unicode__(self):
         return u'контакты'
 
-    area1 = models.CharField(u'участок 1', max_length=30)
-    area2 = models.CharField(u'участок 2', max_length=30)
-    phone1 = models.CharField(u'телефон 1', max_length=30)
-    phone2 = models.CharField(u'телефон 2', max_length=30)
-    text1 = models.TextField(u'текст вверху')
-    text2 = models.TextField(u'текст внизу слева')
-    text3 = models.TextField(u'текст внизу справа')
+    area1 = models.CharField(u'участок 1', max_length=30, null=True, blank=True)
+    area2 = models.CharField(u'участок 2', max_length=30, null=True, blank=True)
+    phone1 = models.CharField(u'телефон 1', max_length=30, null=True, blank=True)
+    phone2 = models.CharField(u'телефон 2', max_length=30, null=True, blank=True)
+    text1 = models.TextField(u'текст вверху', null=True, blank=True)
+    text2 = models.TextField(u'текст внизу слева', null=True, blank=True)
+    text3 = models.TextField(u'текст внизу справа', null=True, blank=True)
