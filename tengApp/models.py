@@ -96,6 +96,12 @@ class AboutCompany(AbstractAbout):
         verbose_name_plural = verbose_name
 
 
+class AboutCompanyAboutPage(AbstractAbout):
+    class Meta:
+        verbose_name = u'о компании'
+        verbose_name_plural = verbose_name
+
+
 class AboutDocs(AbstractAbout):
     class Meta:
         verbose_name = u'документ'

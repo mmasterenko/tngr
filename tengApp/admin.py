@@ -6,7 +6,20 @@ from django.core.urlresolvers import reverse
 from .local_settings import NEWS_PER_PAGE
 from .models import AboutContact, AboutPageSettings, Actions, ProjectPageSettings, ProjectArea, \
     Project, TeylaGroup, Requisites, Settings, News, BusinessPageSettings, MainPageSettings, GeneralInfo, \
-    Document, Stuff, FlatPages, AboutCompany, AboutContacts, AboutDocs, AboutRequisites
+    Document, Stuff, FlatPages, AboutCompany, AboutContacts, AboutDocs, AboutRequisites, AboutCompanyAboutPage
+
+
+@admin.register(AboutCompanyAboutPage)
+class AboutCompanyAboutPageAdmin(admin.ModelAdmin):
+    actions = None
+
+    class Media:
+        css = {
+            "all": ("model_assets/ckeditor.css",)
+        }
+        js = ("http://cdn.ckeditor.com/4.5.8/standard/ckeditor.js",
+              "model_assets/about_ckeditor.js",
+              )
 
 
 @admin.register(AboutCompany)

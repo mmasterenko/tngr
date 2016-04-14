@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 from .local_settings import NEWS_PER_PAGE
 from .models import AboutContact, AboutPageSettings, Actions, ProjectPageSettings, ProjectArea, \
     Project, TeylaGroup, Requisites, Settings, News, BusinessPageSettings, MainPageSettings, GeneralInfo, \
-    Document, Stuff, FlatPages, AboutCompany, AboutContacts, AboutRequisites, AboutDocs
+    Document, Stuff, FlatPages, AboutCompany, AboutContacts, AboutRequisites, AboutDocs, AboutCompanyAboutPage
 
 
 def home(req):
@@ -42,7 +42,7 @@ def business_group(req):
 
 def about(req):
     context = {
-        'about': AboutCompany.objects.first(),
+        'about': AboutCompanyAboutPage.objects.first(),
         'docs': group_list(Document.objects.order_by('-order', 'id'), 3),
         'requisites': Requisites.objects.first(),
         'settings': AboutPageSettings.objects.first(),

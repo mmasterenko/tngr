@@ -143,6 +143,12 @@ ADMIN_SHORTCUTS = [
                 'class': 'config'
             },
             {
+                'url_name': 'admin:tengApp_aboutcompanyaboutpage_changelist',
+                'title': u'О компании',
+                'class': 'note',
+                'url_extra': '1',
+            },
+            {
                 'url_name': 'admin:tengApp_document_changelist',
                 'title': u'Документы',
                 'class': 'certificate'
