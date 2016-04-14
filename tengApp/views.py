@@ -84,21 +84,22 @@ def news(req, page_id=None):
 def media(req, path):
     file_name = os.path.join(settings.MEDIA_ROOT, path)
     _, file_ext = os.path.splitext(file_name)
-
-    # todo: заменить эту цепочку if-ов на словарь
-    content_type = 'image/jpeg'  # default value
-    if file_ext.lower() in ('.jpg', '.jpeg'):
-        content_type = 'image/jpeg'
-    if file_ext.lower() in ('.png',):
-        content_type = 'image/png'
-    if file_ext.lower() in ('.pdf',):
-        content_type = 'application/pdf'
-    if file_ext.lower() in ('.txt',):
-        content_type = 'text/plain'
-    if file_ext.lower() in ('.doc', '.docx'):
-        content_type = 'application/octet-stream'
-
     image_data = open(file_name, 'rb').read()
+
+    mime_types = {
+        'image/jpeg': ('.jpg', '.jpeg'),
+        'image/png': ('.png',),
+        'application/pdf': ('.pdf',),
+        'text/plain': ('.txt',)
+    }
+
+    content_type = 'application/octet-stream'  # default: binary data
+    for mime, ext in mime_types.items():
+        if file_ext.lower() in ext:
+            content_type = mime
+            break
+
+    content_type = 'application/octet-stream'  # для того чтобы скачивалось, а не открывалось в браузере
     return HttpResponse(image_data, content_type=content_type)
 
 
